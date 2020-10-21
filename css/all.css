@@ -59,6 +59,11 @@ table {
           box-sizing: border-box;
 }
 
+a {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
 .user-body {
   color: #666;
   line-height: 1.6;
@@ -84,7 +89,7 @@ ul {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border: 1px solid #E5E5E5;
+  border: 1px solid #e5e5e5;
   border-bottom: none;
   background-color: #fff;
 }
@@ -117,7 +122,7 @@ ul {
 }
 
 .user-menu {
-  border: 1px solid #E5E5E5;
+  border: 1px solid #e5e5e5;
   border-top: none;
   padding-left: 160px;
   position: relative;
@@ -169,6 +174,10 @@ ul {
   color: #666;
 }
 
+.user-menu a h5 {
+  font-weight: bold;
+}
+
 .user-menu .menu-link-style {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -187,7 +196,7 @@ ul {
 
 .user-profile-photo img {
   border-radius: 5px;
-  border: 1px solid #E5E5E5;
+  border: 1px solid #e5e5e5;
 }
 
 .user-profile__right {
@@ -216,7 +225,8 @@ ul {
           align-items: flex-end;
 }
 
-.people-count__view-num, .follow-num {
+.people-count__view-num,
+.follow-num {
   font-weight: 500;
   font-size: 24px;
 }
@@ -245,7 +255,7 @@ ul {
 .hr {
   height: 30px;
   margin-bottom: 20px;
-  color: #E5E5E5;
+  color: #e5e5e5;
 }
 
 .user-profile__settingBtn {
@@ -286,7 +296,6 @@ ul {
   margin-top: 20px;
   float: left;
   width: calc(100% - 330px);
-  background-color: #fff;
 }
 
 .ir-profile-header {
@@ -309,7 +318,203 @@ ul {
 .userBoard {
   margin-top: 14px;
   background-color: white;
-  border: 1px solid #E5E5E5;
+  border: 1px solid #e5e5e5;
+  position: relative;
+  padding: 14px;
+  padding-bottom: 7px;
+  margin-bottom: 7px;
+  font-weight: bold;
+  color: #00a0e9;
+  cursor: pointer;
+}
+
+.userBoard i {
+  margin-right: 4px;
+  font-size: 14px;
+}
+
+.user-Rside__myiTom {
+  margin-top: 0px;
+  position: relative;
+  padding-left: 68px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #fc6e51;
+  border: 1px solid #fc6e51;
+}
+
+.user-Rside__myiTom img {
+  position: absolute;
+  left: 6px;
+  top: -10px;
+  width: 58px;
+}
+
+.userBoard__title {
+  margin-bottom: 7px;
+}
+
+.userBoard__side-icon {
+  position: absolute;
+  top: 20px;
+  right: 14px;
+}
+
+.block-list {
+  color: #979797;
+}
+
+/* 左邊區塊 */
+.ir-profile-header {
+  position: relative;
+  padding: 14px 0px;
+  margin: 0px 14px;
+  padding-left: 80px;
+  font-size: 24px;
+  -webkit-box-shadow: 0 30px 0 #fff inset, 0 60px 0 #ffe8cc inset;
+          box-shadow: 0 30px 0 #fff inset, 0 60px 0 #ffe8cc inset;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+.ir-profile-header img {
+  position: absolute;
+  left: 4px;
+  top: -15px;
+  width: 66px;
+  vertical-align: middle;
+}
+
+.ir-profile-years {
+  position: relative;
+  padding-left: 16px;
+  padding-bottom: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #495057;
+}
+
+.ir-profile-years::before {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background-color: #495057;
+}
+
+.ir-profile-years--bottom-line {
+  border-bottom: 1px solid #ddd;
+}
+
+.ir-profile-content {
+  padding: 10px 20px;
+  background-color: #fff;
+}
+
+.group__badge {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.4;
+  border-radius: 16px;
+  background-color: #4a89dc;
+  margin-bottom: 6px;
+}
+
+.group__badge:hover {
+  background-color: #5f97e0;
+}
+
+.ir-profile-list {
+  padding: 12px 4px 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.qa-list__title--ironman {
+  margin-top: 1px;
+  margin-bottom: 4px;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.qa-list__title--ironman a {
+  color: #303233;
+  font-size: 18px;
+}
+
+.qa-list__title--ironman a:hover {
+  color: #007db6;
+}
+
+.qa-list__info--ironman {
+  color: #e8590c;
+  font-size: 14px;
+}
+
+.qa-list__info--ironman .rss-btn {
+  float: right;
+  margin: 0 8px;
+  padding: 0;
+  font-size: 14px;
+  color: #f26522;
+  padding: 0px 6px;
+  border-radius: 10px;
+}
+
+.profile-main--index {
+  margin-top: 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+}
+
+.ir-profile-index {
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+}
+
+.profile-main__title {
+  display: block;
+  margin-bottom: 0;
+  padding: 14px 24px;
+  font-size: 20px;
+  line-height: 1;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+  color: #303233;
+}
+
+.profile-main__content {
+  padding: 24px 30px;
+}
+
+.profile-content__title {
+  font-size: 18px;
+  color: #D55906;
+  margin-top: 0;
+  line-height: 1.5;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.profile-content__title span {
+  display: inline-block;
+  margin-left: 8px;
+  font-weight: normal;
+  font-size: 14px;
+  color: #999;
+}
+
+.profile-content__desc {
+  margin-bottom: 30px;
+}
+
+.profile-side__ad {
+  margin-top: 20px;
 }
 
 body {
