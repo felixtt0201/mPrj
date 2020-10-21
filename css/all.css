@@ -55,14 +55,12 @@ table {
 }
 
 * {
-  border: 1px solid #000 !important;
-  color: #666;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  vertical-align: middle;
 }
 
-body {
+.user-body {
+  color: #666;
   line-height: 1.6;
   font-family: "Lato", "PingFang TC", "Helvetica Neue", Helvetica, "微軟正黑體", "新細明體", Arial, sans-serif;
   background-color: #f2f2f2;
@@ -168,6 +166,7 @@ ul {
           flex-direction: column;
   height: 100%;
   width: 100%;
+  color: #666;
 }
 
 .user-menu .menu-link-style {
@@ -183,7 +182,7 @@ ul {
 .user-profile-photo {
   position: absolute;
   left: -30px;
-  top: -134px;
+  top: -114px;
 }
 
 .user-profile-photo img {
