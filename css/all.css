@@ -517,6 +517,18 @@ ul {
   margin-top: 20px;
 }
 
+.footer {
+  clear: both;
+}
+
+.container {
+  height: auto !important;
+}
+
+.user-Rside {
+  margin-bottom: 30px;
+}
+
 body {
   max-width: 1920px;
 }
