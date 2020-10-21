@@ -55,6 +55,220 @@ table {
 }
 
 body {
+  font-family: "Lato", "PingFang TC", "Helvetica Neue", Helvetica, "微軟正黑體", "新細明體", Arial, sans-serif;
+}
+
+.container {
+  height: 2000px;
+}
+
+.container .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .header .headerInner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 8px;
+}
+
+.container .header .headerInner .headerLogo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 35px;
+  padding-right: 20px;
+}
+
+.container .header .headerInner .headerPromote {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0;
+}
+
+.container .header .headerInner .headerPromote .upperAD {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: #303233;
+  line-height: 1.85;
+  margin: 4px;
+  font-size: 14px;
+}
+
+.container .header .headerInner .headerPromote .upperAD a {
+  text-decoration: none;
+  color: black;
+}
+
+.container .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #00a0e9;
+  height: 50px;
+}
+
+.container .menu .menuContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.container .menu .menuContainer .menuLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.container .menu .menuContainer .menuLeft a {
+  text-decoration: none;
+  color: white;
+  line-height: 50px;
+}
+
+.container .menu .menuContainer .menuLeft a:hover {
+  background: #6bb3f1;
+}
+
+.container .menu .menuContainer .menuLeft a li {
+  padding: 0 12px;
+}
+
+.container .menu .menuContainer .menuRight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.container .menu .menuContainer .menuRight a {
+  text-decoration: none;
+  color: white;
+  line-height: 50px;
+}
+
+.container .menu .menuContainer .menuRight a:hover {
+  background: #6bb3f1;
+}
+
+.container .menu .menuContainer .menuRight a li {
+  padding: 0 12px;
+}
+
+.container .menu .menuContainer .menuRight a li .menu__ironman-btn {
+  font-size: 16px;
+  color: white;
+  border: 2px solid #fdee2e;
+  border-radius: 6px;
+  background: #0087aa;
+  margin: 10px 4px 0 4px;
+  padding: 0px 8px 3px;
+  border-top-width: 1px;
+  -webkit-box-shadow: 0px 2px 1px 1px #00637d;
+          box-shadow: 0px 2px 1px 1px #00637d;
+  cursor: pointer;
+}
+
+.container .menu .menuContainer .menuRight a li .menu__ironman-btn:hover {
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
+.container .menu .menuContainer .menuRight a li .fa-sort-down {
+  margin-left: 2px;
+  font-size: 2px;
+  vertical-align: text-top;
+}
+
+.container .menu .menuContainer .menuRight a li .fa-comment-dots {
+  color: #303233;
+  opacity: 40%;
+}
+
+.container .menu .menuContainer .menuRight a li .fa-bell {
+  color: #303233;
+  opacity: 40%;
+}
+
+.container .menu .menuContainer .menuRight a li .accountPhoto {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.container .content {
+  margin-bottom: 100px;
+}
+
+.container .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 30px;
+  padding: 30px 0 20px;
+  background-color: #343a41;
+}
+
+.container .footer .footerInner ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+}
+
+.container .footer .footerInner ul a li {
+  color: white;
+}
+
+.container .footer .footerInner ul a li:hover {
+  color: #37c0ff;
+}
+
+body {
   max-width: 1920px;
   font-family: Microsoft JhengHei;
 }
@@ -980,217 +1194,14 @@ ul {
   margin-top: 20px;
 }
 
-body {
-  font-family: "Lato", "PingFang TC", "Helvetica Neue", Helvetica, "微軟正黑體", "新細明體", Arial, sans-serif;
+.footer {
+  clear: both;
 }
 
 .container {
-  height: 2000px;
+  height: auto !important;
 }
 
-.container .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.user-Rside {
+  margin-bottom: 30px;
 }
-
-.container .header .headerInner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding-bottom: 8px;
-}
-
-.container .header .headerInner .headerLogo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-top: 35px;
-  padding-right: 20px;
-}
-
-.container .header .headerInner .headerPromote {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: 0;
-}
-
-.container .header .headerInner .headerPromote .upperAD {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  color: #303233;
-  line-height: 1.85;
-  margin: 4px;
-  font-size: 14px;
-}
-
-.container .header .headerInner .headerPromote .upperAD a {
-  text-decoration: none;
-  color: black;
-}
-
-.container .menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 16px;
-  font-weight: bold;
-  background-color: #00a0e9;
-  height: 50px;
-}
-
-.container .menu .menuContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 1170px;
-  margin: 0 auto;
-}
-
-.container .menu .menuContainer .menuLeft {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.container .menu .menuContainer .menuLeft a {
-  text-decoration: none;
-  color: white;
-  line-height: 50px;
-}
-
-.container .menu .menuContainer .menuLeft a:hover {
-  background: #6bb3f1;
-}
-
-.container .menu .menuContainer .menuLeft a li {
-  padding: 0 12px;
-}
-
-.container .menu .menuContainer .menuRight {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.container .menu .menuContainer .menuRight a {
-  text-decoration: none;
-  color: white;
-  line-height: 50px;
-}
-
-.container .menu .menuContainer .menuRight a:hover {
-  background: #6bb3f1;
-}
-
-.container .menu .menuContainer .menuRight a li {
-  padding: 0 12px;
-}
-
-.container .menu .menuContainer .menuRight a li .menu__ironman-btn {
-  font-size: 16px;
-  color: white;
-  border: 2px solid #fdee2e;
-  border-radius: 6px;
-  background: #0087aa;
-  margin: 10px 4px 0 4px;
-  padding: 0px 8px 3px;
-  border-top-width: 1px;
-  -webkit-box-shadow: 0px 2px 1px 1px #00637d;
-          box-shadow: 0px 2px 1px 1px #00637d;
-  cursor: pointer;
-}
-
-.container .menu .menuContainer .menuRight a li .menu__ironman-btn:hover {
-  -webkit-transition: 0.2s linear;
-  transition: 0.2s linear;
-}
-
-.container .menu .menuContainer .menuRight a li .fa-sort-down {
-  margin-left: 2px;
-  font-size: 2px;
-  vertical-align: text-top;
-}
-
-.container .menu .menuContainer .menuRight a li .fa-comment-dots {
-  color: #303233;
-  opacity: 40%;
-}
-
-.container .menu .menuContainer .menuRight a li .fa-bell {
-  color: #303233;
-  opacity: 40%;
-}
-
-.container .menu .menuContainer .menuRight a li .accountPhoto {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  vertical-align: middle;
-}
-
-.container .content {
-  margin-bottom: 100px;
-}
-
-.container .footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: 30px;
-  padding: 30px 0 20px;
-  background-color: #343a41;
-}
-
-.container .footer .footerInner ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: white;
-}
-
-.container .footer .footerInner ul a li {
-  color: white;
-}
-
-.container .footer .footerInner ul a li:hover {
-  color: #37c0ff;
-}
-/*# sourceMappingURL=all.css.map */
