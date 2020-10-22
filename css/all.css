@@ -873,7 +873,8 @@ a {
   font-size: 13px;
 }
 
-.content_input-account {
+.content_input-account,
+.content_input-password {
   padding-bottom: 17px;
 }
 
