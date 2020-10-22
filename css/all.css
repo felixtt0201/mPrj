@@ -873,7 +873,8 @@ a {
   font-size: 13px;
 }
 
-.content_input-account {
+.content_input-account,
+.content_input-password {
   padding-bottom: 17px;
 }
 
@@ -1174,3 +1175,4 @@ a {
 .profile-pagination {
   text-align: center;
 }
+/*# sourceMappingURL=all.css.map */
