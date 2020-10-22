@@ -236,3 +236,17 @@ a.mk__editor-pre {
     background-color: #6cc177;
   }
 }
+.draft-container{
+  display: flex;
+}
+.draft-markdowan-tutorial{
+  position: relative;
+  width: 100px;
+  height: 300px;
+  margin-left: -45px;
+  margin-top: 128px;
+}
+.draft-ques-markdown{
+  left: 0;
+  cursor: pointer;
+}
