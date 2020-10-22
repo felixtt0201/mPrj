@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/all.css">
 </head>
 
-<body>
+<body class="bg">
     <div class="container">
         <div class="header">
             <div class="headerInner">
@@ -99,6 +99,55 @@
             </div>
             <div class="rightSide">
 
+            </div>
+        </div>
+        <div class="content-ques_outside">
+            <div class="content-ques_outside_title">
+                <label for="subject">標題</label>
+                <span>請在100字內簡要說明問題(必填)</span>
+                <input type="text" id="subject" placeholder="一句話說明你的問題">
+            </div>
+            <div class="content-ques_outside_description">
+                <label for="description">問題描述</label>
+                <span>請試著使用文字、圖片或程式碼，完整說明問題</span>
+                <span class="alert">
+                    本站編輯器採 Markdown 語法，請勿使用 HTML Code，以避免內容濾掉無法呈現</span>
+                <div class="content-ques_outside_editor">
+                    <div class="editor-bar">
+                        <ul>
+                            <li><a href="#"><i class="fas fa-bold"></i></a></li>
+                            <li><a href="#"><i class="fas fa-italic"></i></a></li>
+                            <li><a href="#"><i class="fas fa-link"></i></a></li>
+                            <li><a href="#"><i class="fa fa-quote-left"></i></a></li>
+                            <li><a href="#"><i class="fa fa-code"></i></a></li>
+                            <li><a href="#"><i class="far fa-image"></i></a></li>
+                            <i class="separator">|</i>
+                            <li><a href="#"><i class="fa fa-upload"></i></a></li>
+                            <li><a href="#"><i class="fas fa-chart-pie"></i></a></li><li><a href="#"><i class="fa fa-list-ol"></i></a></li>
+                            <li><a href="#"><i class="fa fa-list-ul"></i></a></li>
+                            <li><a href="#"><i class="fa fa-minus"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                            <i class="separator">|</i>
+                            <li><a href="#"><i class="fa fa-undo no-disable"></i></a></li>
+                            <li><a href="#"><i class="fas fa-redo"></i></a></li>
+                            <li><a href="#"><i class="far fa-smile-wink"></i></a></li>
+                            <i class="separator">|</i>
+                            <li><a href="#">預覽</a></li>
+                        </ul>
+                    </div><textarea id="description" cols="10" rows="5" placeholder="描述問題..."></textarea>
+                    <div class="ques-markdown">
+                        <i class="fas fa-play"></i>Markdown常用語法
+                    </div>
+
+                </div>
+            </div>
+            <div class="content-ques_outside_tag">
+                <label for="tag">標籤</label>
+                <span>Tag 下得越明確，就越容易吸引邦友來幫忙解答（至少須設定一個)</span>
+                <input type="text" id="tag">
+            </div>
+            <div class="submit">
+                <button type="submit" class="subbtn">發問</button>
             </div>
         </div>
         <div class="footer">
