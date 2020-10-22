@@ -2,66 +2,67 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.js'></script>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.css' />
-    <link rel="stylesheet" href="dist/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.js'></script>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.css' />
+  <link rel="stylesheet" href="dist/css/all.min.css">
 
 </head>
 
 <body class='register-body'>
-    <div class="header_register">
-        <div class="header_register-tittle">
-            <h1></h1><a href="#">會員中心</a>
-        </div>
+  <div class="header_register">
+    <div class="header_register-tittle">
+      <h1></h1><a href="#">會員中心</a>
+    </div>
 
-        <ul>
-            <li><a href="#">登入</a></li>
-            <li><a href="#">註冊</a></li>
-        </ul>
-    </div>
-    <div class="content_bgi">
-        <div class="content_register_out">
-            <form action="" class="content_register">
-                <h2>登入iThome會員</h2>
-                <div class="content_input">
-                    <div class="content_input-account">
-                        <i class="fa fa-user form-control-feedback"></i><input type="text" placeholder="帳號(非email)"
-                            class="account">
-                    </div>
-                    <div class="content_input-password">
-                        <i class="fa fa-lock form-control-feedback"></i><input type="password" placeholder="密碼"
-                            class="password">
-                    </div>
-                </div>
-                <div class="checkbox">
-                    <input type="checkbox" id="check"><label for="check">記住我的帳號密碼</label>
-
-                </div>
-                <button type="submit" id="login">登入</button>
-                <div class="forget_register">
-                    <a href="#">忘記帳號</a>
-                    <a href="#">忘記密碼</a>
-                    <a href="#">重寄驗證信</a>
-                </div>
-                <a href="#" class="fb-login"><i class="fab fa-facebook-square">
-                    </i>使用Facebook帳號登入</a>
-            </form>
-            <a href="#" class="notnumber">還不是會員嗎？點我註冊</a>
+    <ul>
+      <li><a href="#">登入</a></li>
+      <li><a href="#">註冊</a></li>
+    </ul>
+  </div>
+  <div class="content_bgi">
+    <div class="content_register_out">
+      <form action="" class="content_register" required="required">
+        <h2>註冊iThome會員</h2>
+        <div class="content_input">
+          <div class="content_input-account">
+            <i class="fas fa-id-card form-control-feedback"></i><input type="text" placeholder="姓名" class="account"
+              id="inputName" required="required" />
+          </div>
+          <div class="content_input-password">
+            <i class="fas fa-envelope form-control-feedback"></i><input type="email" placeholder="E-mail"
+              class="password" id="inputEmail" required="required" />
+          </div>
+          <div class="content_input-account">
+            <i class="fa fa-user form-control-feedback"></i><input type="text" placeholder="帳號(非email)" class="account"
+              id="inputAccount" required="required" />
+          </div>
+          <div class="content_input-password">
+            <i class="fa fa-lock form-control-feedback"></i><input type="password" placeholder="密碼" class="password"
+              id="inputPassword" required="required" />
+          </div>
         </div>
+        <button type="submit" id="login" required="required">註冊</button>
+        <a href="#" class="fb-login"><i class="fab fa-facebook-square">
+          </i>使用Facebook帳號註冊</a>
+      </form>
     </div>
-    <div class="footer_register">
-        <ul>
-            <li>頻道服務介紹</li>
-            <li><a href="#">iThome online</a></li>
-            <li><a href="#">iT邦幫忙</a></li>
-            <li><a href="#">Techtalk</a></li>
-        </ul>
-        <p>©僅作火箭隊練習使用</p>
-    </div>
-    <script src="./js/login.js"></script>
+  </div>
+
+
+  <div class="footer_register">
+    <ul>
+      <li>頻道服務介紹</li>
+      <li><a href="#">iThome online</a></li>
+      <li><a href="#">iT邦幫忙</a></li>
+      <li><a href="#">Techtalk</a></li>
+    </ul>
+    <p>©僅作火箭隊練習使用</p>
+  </div>
+  <!-- <script src="./js/register.js"></script> -->
+  <script src="./js/test.js"></script>
 </body>
 
 </html>
