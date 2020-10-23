@@ -1,0 +1,202 @@
+$bg-color-blue:#219AD1;
+$bg-color-deepblue: #3b5998;
+$bg-color-login:#239AD1;
+$font-color-gray:#777;
+$font-family: Microsoft JhengHei;
+
+.register-body{
+    font-family: $font-family;
+    background-image: url(https://member.ithome.com.tw/img/bg2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    background-attachment: fixed;
+    height: 100%;
+}
+a{
+    text-decoration: none;
+}
+.header_register{
+    background-color: $bg-color-blue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    ul{
+        display: flex;
+        font-size: 14px;
+    }
+    a{
+        color: white;
+        padding: 10px 15px;
+    }
+    h1{
+        background-image:url(https://member.ithome.com.tw/img/ithome_logo.png);
+        background-position: center center;
+        background-size: cover;
+        overflow: hidden;
+        text-indent:101%;
+        white-space: nowrap;
+        width: 102px;
+        height: 20px;
+    }
+    .header_register-tittle{
+        display: flex;
+        align-items: center;
+        a{
+            padding-left: 7px;
+            font-size: 18px;
+        }
+    }
+}
+.content_register{
+    width: 350px;        
+    margin: 0 auto;
+    background-color: white;
+    padding: 15px 23px 25px;
+    box-sizing: border-box;
+    h2{
+        font-size: 18px;
+        font-weight: bold;
+        color: $bg-color-login;
+        text-align: center;
+        padding-bottom: 23px;
+        margin-top: 10px;
+    }
+}
+// .content_bgi{
+//     background-image: url(https://member.ithome.com.tw/img/bg2.jpg);
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     overflow: hidden;
+//     background-attachment: fixed;
+//     height: 100%;
+// }
+.content_register_out{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0px 105px 0px;
+}
+.content_input{
+    display: flex;
+    flex-direction: column;
+    // box-sizing:content-box;
+    input{
+        box-sizing:content-box;
+        background-color: rgb(232, 240, 254);
+        width: 256px;
+        height: 26px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 6px 12px 6px 32px;
+        }
+}
+    
+    .form-control-feedback{
+        position: absolute;
+        transform: translate(13px, 13px);
+    }
+    .content_input-account,.content_input-password{
+        // box-sizing:content-box;
+        position: relative;
+        i{
+            font-size: 13px;
+        }
+    }
+    .content_input-account,
+    .content_input-password{
+        padding-bottom: 17px;
+        // box-sizing:content-box;
+    }
+.checkbox{
+    padding: 16px 0px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    input{
+        margin-right: 8px;
+    }
+}
+
+#check:checked{
+    transform: scale(1.5);
+}
+#login{
+    width: 100%;
+    height: 38px;
+    background-color: $bg-color-login;
+    color: white;
+    font-family: $font-family;
+    border-radius: 4px;
+    border: 0;
+    margin-bottom: 21px;
+    &:hover{
+        opacity: 0.9;
+        cursor:pointer;
+    }
+}
+.forget_register{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    font-size: 14px;
+    a{
+        color: $font-color-gray;
+    }
+    
+}
+// box-sizing:content-box;
+.fb-login{
+    background-color: $bg-color-deepblue;
+    height: 40px;
+    vertical-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    font-size: 14px;
+    padding: 6px 12px;
+    box-sizing: border-box;
+}
+.fab{
+    margin-right: 5px;
+}
+.notnumber{
+    background-color: $bg-color-login;
+    display: block;
+    color: white;
+    text-align: center;
+    line-height: 1.6;
+    width: 320px;
+    height: 22px;
+    padding: 15px;
+    font-size: 14px;
+    box-sizing:content-box;
+}
+
+
+
+.footer_register{
+    color: white;
+    background-color: #060605;
+    ul{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    p{
+        text-align: center;
+        padding-bottom: 45px;
+    }
+    li{
+        padding: 34px 15px 20px 15px;
+    }
+    a{
+        color: white;
+    }
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

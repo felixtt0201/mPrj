@@ -1,0 +1,140 @@
+$fz-title-color-blue:#00a0e9;
+$fz-span-color-gray:#666666;
+$fz-span-color-red:#ef4949;
+$fz-size-22: 22px;
+$fz-size-14: 14px;
+@mixin label {
+    font-size: $fz-size-22;
+    color: $fz-title-color-blue;
+    font-weight: bold;
+}
+@mixin span {
+    font-size: $fz-size-14;
+    color: $fz-span-color-gray;
+}
+@mixin radius {
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+.bg{
+    background-color: #F2F2F2;
+}
+*{
+    // border: 1px solid #000 !important;
+    box-sizing: border-box;
+}
+.content-ques_outside{
+    background-color: white;
+    margin: 0 auto;
+    padding: 65px 215px 30px 215px;
+    margin-right: 143px;
+    margin-left: 143px;
+    margin-top: -60px;
+}
+.content-ques_outside_title,.content-ques_outside_description,.content-ques_outside_tag{
+    label{
+        @include label
+        margin-right: 5px;
+    }
+    span{
+        @include span;
+    }
+}
+.content-ques_outside_title input,#tag{
+    width: 100%;
+    @include radius;
+}
+#subject{
+    height: 34px;
+    padding: 12px 6px;
+    opacity: 0.8;
+    margin-top: 13px;
+    margin-bottom: 40px;
+}
+#description{
+  width: 100%;
+  @include radius;
+  border-top: 0px;
+  border-radius: 0px 0px 4px 4px;
+  min-height: 500px;
+  margin-bottom: 47px;
+  outline: 0;
+  padding: 10px;
+}
+.ques-markdown{
+    background-color: #5e646a;
+    writing-mode: vertical-lr;
+    width: 32px;
+    display: flex;
+    align-items: center;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 14px;
+    padding: 2px;
+    position: absolute;
+    top: 0;
+    right: -31px;
+    border-radius: 0 6px 6px 0;
+    border: 1px solid $fz-span-color-gray;
+    i{
+        font-size: 1px;
+    }
+}
+.alert{
+    display: block;
+    color: red !important;
+    margin: 11px 0px;
+}
+.content-ques_outside_editor{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.editor-bar{
+    ul{
+        display: flex;
+        border: 1px solid #ddd;
+        border-radius: 4px 0 0 0;
+        justify-content: space-around;
+        padding: 15px;
+        position: relative;
+    }
+    a{
+        color: $fz-span-color-gray;
+        &:hover{
+            border: 1px solid gray;
+            padding: 3px;
+            border-radius: 4px;
+            opacity: 0.8;
+        }
+    }
+}
+#tag{
+    margin-top: 13px;
+    min-height: 36px;
+    margin-bottom: 40px;
+}
+.subbtn{
+    width: 140px;
+    height: 43px;
+    background-color:$fz-title-color-blue;
+    color: white;
+    border: 0;
+    outline: 0;
+    border-radius: 4px;
+    font-size: 16px;
+    &:hover{
+        opacity: 0.8;
+        outline: 0;
+    }
+}
+.submit{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+.footer{
+    ul{
+        margin-top: 26px;
+    }
+}
