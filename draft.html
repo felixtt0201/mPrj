@@ -15,7 +15,8 @@
     sizes="32x32">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css' />
   <link rel="stylesheet" href="/dist/css/all.min.css">
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+  <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 </head>
 
 <body class='draft-body'>
@@ -115,8 +116,8 @@
               </div>
             </div>
             <div class='draft-markdown'>
-              <textarea name=' id=' rows='5' class='draft-form-control' placeholder='在這裡開始寫文章囉...'></textarea>
-              <div class="editor-toolbar">
+              <!-- <textarea name='' id='' rows='5' class='draft-form-control' placeholder='在這裡開始寫文章囉...'></textarea> -->
+              <!-- <div class="editor-toolbar">
                 <a title="粗體 (Cmd-B)" tabindex="-1" class="fas fa-bold"></a>
                 <a title="斜體 (Cmd-I)" tabindex="-1" class="fas fa-italic"></a>
                 <a title="插入連結 (Cmd-K)" tabindex="-1" class="fas fa-link"></a>
@@ -136,12 +137,13 @@
                 <a title="熊俠貼圖" tabindex="-1" class="far fa-smile"></a>
                 <i class="separator">|</i>
                 <a title="預覽 (Cmd-P)" tabindex="-1" class="mk__editor-pre no-disable"></a>
-              </div>
-              <div class="draft-codemirror">
-            
+              </div> -->
+              <textarea id="editor-main" name="description" rows="5" placeholder="在這裡開始寫文章囉..."
+                ></textarea>
+              
                 <div class="draft-textarea-hidden">
                   <textarea autocorrect="off" spellcheck="false" tabindex="0"></textarea>
-                </div>
+
               </div>
             </div>
           </div>
@@ -198,5 +200,11 @@
       </div>
     </div>
   </div>
-
+  <script>
+    var simplemde = new SimpleMDE({
+      element: document.getElementById('editor-main'),
+      spellChecker: false,
+      status: false
+    })
+    </script>
 </body>
