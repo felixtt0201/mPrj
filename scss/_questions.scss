@@ -3,6 +3,12 @@ $fz-span-color-gray:#666666;
 $fz-span-color-red:#ef4949;
 $fz-size-22: 22px;
 $fz-size-14: 14px;
+// ul{
+//     list-style: none;
+// }
+// textarea{
+//     list-style: disc !important;
+// }
 @mixin label {
     font-size: $fz-size-22;
     color: $fz-title-color-blue;
@@ -29,7 +35,6 @@ $fz-size-14: 14px;
     padding: 65px 215px 30px 215px;
     margin-right: 143px;
     margin-left: 143px;
-    margin-top: -60px;
 }
 .content-ques_outside_title,.content-ques_outside_description,.content-ques_outside_tag{
     label{
@@ -43,6 +48,9 @@ $fz-size-14: 14px;
 .content-ques_outside_title input,#tag{
     width: 100%;
     @include radius;
+}
+.content-ques_outside_tag{
+    margin-top: 50px;
 }
 #subject{
     height: 34px;

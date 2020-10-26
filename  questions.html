@@ -114,7 +114,7 @@
                 <span class="alert">
                     本站編輯器採 Markdown 語法，請勿使用 HTML Code，以避免內容濾掉無法呈現</span>
                 <div class="content-ques_outside_editor">
-                    <div class="editor-bar">
+                    <!-- <div class="editor-bar">
                         <ul>
                             <li><a href="#"><i class="fas fa-bold"></i></a></li>
                             <li><a href="#"><i class="fas fa-italic"></i></a></li>
@@ -135,7 +135,12 @@
                             <i class="separator">|</i>
                             <li><a href="#">預覽</a></li>
                         </ul>
-                    </div><textarea id="description" cols="10" rows="5" placeholder="描述問題..."></textarea>
+                    </div> -->
+                    <!-- <textarea id="MyID" class="form-control" name="description" rows="5" placeholder="描述問題..."
+                    style="display: none;"></textarea> -->
+                    <!-- <textarea id="MyID" class="form-control" name="description" rows="5" placeholder="描述問題..."></textarea> -->
+                    <textarea name="" id="MyID" cols="30" rows="10"></textarea>
+                    <!-- <textarea id="description" cols="10" rows="5" placeholder="描述問題..."></textarea> -->
                     <div class="ques-markdown">
                         <i class="fas fa-play"></i>Markdown常用語法
                     </div>
@@ -178,6 +183,18 @@
             </div>
         </div>
     </div>
+    <script>
+        var simplemde = new SimpleMDE({
+            element: document.getElementById("MyID"),
+            // parsingConfig: {
+            // allowAtxHeaderWithoutSpace: true,
+            // strikethrough: false,
+            // underscoresBreakWords: true,
+            // },
+            // spellChecker: false,
+            status: false // 可以讓line&word消失
+        });
+    </script>
 </body>
 
 </html>
