@@ -9,9 +9,9 @@
         sizes="32x32">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css' />
     <link rel="stylesheet" href="css/all.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
-    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
 </head>
+
 <body class="bg">
     <div class="container">
         <div class="header">
@@ -139,7 +139,10 @@
                     <!-- <textarea id="MyID" class="form-control" name="description" rows="5" placeholder="描述問題..."
                     style="display: none;"></textarea> -->
                     <!-- <textarea id="MyID" class="form-control" name="description" rows="5" placeholder="描述問題..."></textarea> -->
-                    <textarea name="" id="MyID" cols="30" rows="10"></textarea>
+                    
+                    <textarea name="MyID"></textarea>
+                    
+                    <!-- <textarea name="" id="MyID" cols="30" rows="10"></textarea> -->
                     <!-- <textarea id="description" cols="10" rows="5" placeholder="描述問題..."></textarea> -->
                     <div class="ques-markdown">
                         <i class="fas fa-play"></i>Markdown常用語法
@@ -183,18 +186,8 @@
             </div>
         </div>
     </div>
-    <script>
-        var simplemde = new SimpleMDE({
-            element: document.getElementById("MyID"),
-            // parsingConfig: {
-            // allowAtxHeaderWithoutSpace: true,
-            // strikethrough: false,
-            // underscoresBreakWords: true,
-            // },
-            // spellChecker: false,
-            status: false // 可以讓line&word消失
-        });
-    </script>
+    <script>CKEDITOR.replace("MyID");</script>
+    
 </body>
 
 </html>
