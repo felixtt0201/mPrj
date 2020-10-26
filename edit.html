@@ -15,7 +15,9 @@
     sizes="32x32">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css' />
   <link rel="stylesheet" href="/dist/css/all.min.css">
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplemde@latest/dist/simplemde.min.css">
+  <!-- <link rel="stylesheet" href="bower_components/github-markdown-css/github-markdown.css" /> -->
+  <script src="https://cdn.jsdelivr.net/npm/simplemde@latest/dist/simplemde.min.js"></script>
 </head>
 
 <body class='draft-body'>
@@ -116,32 +118,13 @@
             </div>
             <div class='draft-markdown'>
               <textarea name=' id=' rows='5' class='draft-form-control' placeholder='在這裡開始寫文章囉...'></textarea>
-              <div class="editor-toolbar">
-                <a title="粗體 (Cmd-B)" tabindex="-1" class="fas fa-bold"></a>
-                <a title="斜體 (Cmd-I)" tabindex="-1" class="fas fa-italic"></a>
-                <a title="插入連結 (Cmd-K)" tabindex="-1" class="fas fa-link"></a>
-                <a title="引用 (Cmd-')" tabindex="-1" class="fas fa-quote-left"></a>
-                <a title="新增程式碼 (Cmd-⌥-C)" tabindex="-1" class="fas fa-code"></a>
-                <a title="插入圖片 (Cmd-⌥-I)" tabindex="-1" class="far fa-image"></a>
-                <i class="separator">|</i>
-                <a title="上傳圖片" tabindex="-1" class="fa fa-upload"></a>
-                <a title="加入數學公式" tabindex="-1" class="fas fa-chart-pie"></a>
-                <a title="編號清單 (Cmd-⌥-L)" tabindex="-1" class="fa fa-list-ol"></a>
-                <a title="項目符號清單 (Cmd-L)" tabindex="-1" class="fa fa-list-ul"></a>
-                <a title="插入水平線" tabindex="-1" class="fa fa-minus"></a>
-                <a title="加入 YouTube 連結" tabindex="-1" class="fab fa-youtube"></a>
-                <i class="separator">|</i>
-                <a title="復原" tabindex="-1" class="fas fa-undo"></a>
-                <a title="取消復原" tabindex="-1" class="fas fa-redo"></a>
-                <a title="熊俠貼圖" tabindex="-1" class="far fa-smile"></a>
-                <i class="separator">|</i>
-                <a title="預覽 (Cmd-P)" tabindex="-1" class="mk__editor-pre no-disable"></a>
-              </div>
-              <div class="draft-codemirror">
+              <textarea id="mde"></textarea>
+          
+             
                 
                 <div class="draft-textarea-hidden">
                   <textarea autocorrect="off" spellcheck="false" tabindex="0"></textarea>
-                </div>
+               
               </div>
             </div>
           </div>
@@ -198,5 +181,13 @@
       </ul>
     </div>
   </div>
+<script src="/simplemde-markdown-editor/dist/simplemde.min.js"></script>
+<script>
+        const mde = new SimpleMDE({
+            element: document.getElementById("mde"),
+            status: false,
+            spellChecker: false
+        });
 
+    </script>
 </body>
