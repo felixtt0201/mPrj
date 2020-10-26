@@ -1,0 +1,388 @@
+// colors
+$iT_background: #f2f2f2;
+$border_gray: #e5e5e5;
+$user_pro-banner: #e5f2f9;
+$user_title-banner: #ffe8cc;
+$itom-title-org: #fc836a;
+$mordenWeb-icon: #5e97df;
+$title_blue: #00a0e9;
+$text_gray: #858e96;
+$text_deep-gray: #303233;
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital@0;1&display=swap");
+* {
+  // border: 1px solid #000 !important;
+  box-sizing: border-box;
+}
+a {
+  transition: all 0.2s;
+}
+.user-body {
+  color: #666;
+  line-height: 1.6;
+  font-family: "Lato", "PingFang TC", "Helvetica Neue", Helvetica, "微軟正黑體", "新細明體", Arial, sans-serif;
+  background-color: $iT_background;
+}
+ul {
+  text-decoration: none;
+}
+.user-container {
+  max-width: 1138px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.user-profile__clearfix {
+  padding-left: 190px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid $border_gray;
+  border-bottom: none;
+  background-color: #fff;
+}
+.user-profile__name {
+  margin-top: 20px;
+  margin-bottom: 14px;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1;
+  color: $text_deep-gray;
+}
+.user-profile__id {
+  font-size: 16px;
+  font-weight: normal;
+  color: #666;
+}
+.user-profile__level {
+  min-height: 25px;
+  margin-bottom: 6px;
+  font-size: 16px;
+  color: #666;
+}
+.user-profile__point {
+  a {
+    color: $title_blue;
+    text-decoration: none;
+  }
+}
+
+.user-menu {
+  border: 1px solid $border_gray;
+  border-top: none;
+  padding-left: 160px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: $user_pro-banner;
+  li {
+    margin-left: 50px;
+    margin-top: -5px;
+    margin-bottom: -5px;
+  }
+  h5,
+  .far {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    z-index: 1;
+  }
+  h4:hover {
+    color: $title_blue;
+  }
+  a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    color: #666;
+    h5 {
+      font-weight: bold;
+    }
+  }
+  .menu-link-style {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    z-index: 100;
+  }
+  .far {
+    line-height: 1.7;
+  }
+}
+.user-profile-photo {
+  position: absolute;
+  left: -30px;
+  top: -114px;
+  img {
+    border-radius: 5px;
+    border: 1px solid $border_gray;
+  }
+}
+.user-profile__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: $text_deep-gray;
+  margin-right: 16px;
+}
+.people-count {
+  margin-right: 20px;
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-end;
+}
+.people-count__view-num,
+.follow-num {
+  font-weight: 500;
+  font-size: 24px;
+}
+.people-count__follow-num,
+.people-count__view-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.people-count__view {
+  margin-right: 20px;
+}
+.people-count__follow {
+  margin-left: 20px;
+}
+.hr {
+  height: 30px;
+  margin-bottom: 20px;
+  color: $border_gray;
+}
+
+.user-profile__settingBtn {
+  margin-bottom: 10px;
+  margin-top: 4px;
+  .profile__settingBtn {
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(160, 160, 160);
+    margin-top: 8px;
+    border: 1px solid rgb(171, 171, 171);
+    border-radius: 4px;
+    width: 81px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    text-align: center;
+    i {
+      color: #999;
+      font-size: 14px;
+      margin-right: 2px;
+    }
+  }
+  .profile__settingBtn:hover {
+    color: $title_blue;
+    border: 1px solid $title_blue;
+    i {
+      color: $title_blue;
+    }
+  }
+}
+
+/* 左區 */
+.user-Lside {
+  margin-top: 20px;
+  float: left;
+  width: calc(100% - 330px);
+}
+.ir-profile-header {
+  position: relative;
+  padding: 14px 0px;
+  margin: 0px 14px;
+  padding-left: 80px;
+  font-size: 24px;
+  box-shadow: 0 30px 0 #fff inset, 0 60px 0 #ffe8cc inset;
+}
+
+/* 右區 */
+.user-Rside {
+  margin-top: 20px;
+  width: 300px;
+  float: right;
+}
+.userBoard {
+  margin-top: 14px;
+  background-color: white;
+  border: 1px solid #e5e5e5;
+  position: relative;
+  padding: 14px;
+  padding-bottom: 7px;
+  margin-bottom: 7px;
+  font-weight: bold;
+  color: #00a0e9;
+  cursor: pointer;
+  i {
+    margin-right: 4px;
+    font-size: 14px;
+  }
+}
+.user-Rside__myiTom {
+  margin-top: 0px;
+  position: relative;
+  padding-left: 68px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #fc6e51;
+  border: 1px solid #fc6e51;
+  img {
+    position: absolute;
+    left: 6px;
+    top: -10px;
+    width: 58px;
+  }
+}
+.userBoard__title {
+  margin-bottom: 7px;
+}
+.userBoard__side-icon {
+  position: absolute;
+  top: 20px;
+  right: 14px;
+}
+.block-list {
+  color: #979797;
+}
+
+/* 左邊區塊 */
+.ir-profile-header {
+  position: relative;
+  padding: 14px 0px;
+  margin: 0px 14px;
+  padding-left: 80px;
+  font-size: 24px;
+  box-shadow: 0 30px 0 #fff inset, 0 60px 0 #ffe8cc inset;
+  line-height: 1.5;
+  font-weight: bold;
+  img {
+    position: absolute;
+    left: 4px;
+    top: -15px;
+    width: 66px;
+    vertical-align: middle;
+  }
+}
+.ir-profile-years {
+  position: relative;
+  padding-left: 16px;
+  padding-bottom: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #495057;
+  &::before {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background-color: #495057;
+  }
+}
+.ir-profile-years--bottom-line {
+  border-bottom: 1px solid #ddd;
+}
+.ir-profile-content {
+  padding: 10px 20px;
+  background-color: #fff
+}
+.group__badge {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.4;
+  border-radius: 16px;
+  background-color: #4a89dc;
+  margin-bottom: 6px;
+  &:hover {
+    background-color: #5f97e0;
+  }
+}
+.ir-profile-list {
+  padding: 12px 4px 10px;
+  border-bottom: 1px solid #ddd;
+}
+.qa-list__title--ironman {
+  margin-top: 1px;
+  margin-bottom: 4px;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: bold;
+  a {
+    color: #303233;
+    font-size: 18px;
+    &:hover {
+      color: #007db6;
+    }
+  }
+}
+.qa-list__info--ironman {
+  color: #e8590c;
+  font-size: 14px;
+  .rss-btn {
+    float: right;
+    margin: 0 8px;
+    padding: 0;
+    font-size: 14px;
+    color: #f26522;
+    padding: 0px 6px;
+    border-radius: 10px;
+  }
+}
+.profile-main--index{
+  margin-top: 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+}
+.ir-profile-index{
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+}
+.profile-main__title{
+  display: block;
+  margin-bottom: 0;
+  padding: 14px 24px;
+  font-size: 20px;
+  line-height: 1;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+  color: #303233;
+}
+.profile-main__content{
+  padding: 24px 30px;
+}
+.profile-content__title{
+  font-size: 18px;
+  color: #D55906;
+  margin-top: 0;
+  line-height: 1.5;
+  font-weight: bold;
+  margin-bottom: 10px;
+  span{
+    display: inline-block;
+    margin-left: 8px;
+    font-weight: normal;
+    font-size: 14px;
+    color: #999;
+  }
+}
+.profile-content__desc{
+  margin-bottom: 30px;
+}
+
+.profile-side__ad{
+  margin-top: 20px;
+}
+.footer{
+    clear:both;
+}
+.container{
+  height: auto !important;
+}
+.user-Rside{
+  margin-bottom: 30px;
+}
