@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
     <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js'></script>
+    
 </head>
 
 <body>
@@ -44,10 +46,10 @@
         <div class="menu">
             <div class="menuContainer">
                 <ul class="menuLeft">
-                    <a href="">
+                    <a href="http://127.0.0.1:5501/index.html">
                         <li>技術問答</li>
                     </a>
-                    <a href="">
+                    <a href="http://127.0.0.1:5501/articles.html">
                         <li>技術文章</li>
                     </a>
                     <a href="">
@@ -273,7 +275,7 @@
                             </textarea>
                             <div class="btnBox">
                                 <div class="fakebox"></div>
-                                <input class="btn btn-main btn-lg btn-right btn-reply" type="submit" value="留言">
+                                <input class="btn btn-main btn-lg btn-right btn-reply" type="submit" id="leaveMessage" value="留言">
                             </div>
                         </div>
                     </div>
