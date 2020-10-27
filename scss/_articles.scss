@@ -163,22 +163,21 @@
                 }
             }
         }
-        .pagination {
+        .articlesPagination {
             display: flex;
             justify-content: center;
-            flex-direction: row;
             border-top: 1px solid #ddd;
             padding: 20px;
             border: 1px solid #ccc;
             background: white;
-            a {
-                display: flex;
-                align-items: center;
-                text-decoration: none;
-                li {
+            li {
+                a {
+                    display: flex;
+                    text-decoration: none;
+                    color: #999999;
                     margin: 0 5px;
                     padding: 5px 12px;
-                    color: gray;
+                    border: 1px solid #999999;
                     border-radius: 6px;
                     &:hover {
                         color: #00a0e9;
