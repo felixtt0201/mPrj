@@ -9,7 +9,8 @@ let loginStatus = {
   loginCheck: false,
   loginID: '',
   loginName: '',
-  loginEmail: ''
+  loginEmail: '',
+  loginPassword: ''
 }
 
 //登入功能
@@ -26,14 +27,16 @@ function login(event) {
         loginStatus.loginCheck = true;
         loginStatus.loginName = i.name;
         loginStatus.loginEmail = i.email;
+        loginStatus.loginPassword = i.password
         localStorage.setItem('loginStatus', JSON.stringify(loginStatus));
 
+        alert(loginStatus.loginName + '你已成功登入')
         // 跳轉頁面
         let url = `${window.location.origin}/user.html`;
         window.location.replace(url)
       }
       else {
-        console.log('輸入錯誤');
+        // alert('帳號密碼錯誤');
       }
     });
   })
