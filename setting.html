@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" class="html">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register</title>
+  <title>Setting</title>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.js'></script>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.css' />
   <link rel="stylesheet" href="dist/css/all.min.css">
@@ -25,34 +25,32 @@
   <div class="content_bgi">
     <div class="content_register_out">
       <form action="" class="content_register" required="required">
-        <h2>註冊iThome會員</h2>
+        <h2>修改iThome會員密碼</h2>
         <div class="content_input">
+          <label for="">舊密碼</label>
           <div class="content_input-account">
-            <i class="fas fa-id-card form-control-feedback"></i><input type="text" placeholder="姓名" class="account"
-              id="inputName" required="required" />
+            <i class="fas fa-key form-control-feedback"></i><input type="password" placeholder="舊密碼" class="account"
+              id="oldPassword" required="required" />
           </div>
+          <label for="">新密碼
+          </label>
           <div class="content_input-password">
-            <i class="fas fa-envelope form-control-feedback"></i><input type="email" placeholder="E-mail"
-              class="password" id="inputEmail" required="required" />
+            <i class="fas fa-lock-open form-control-feedback"></i><input type="password" placeholder="新密碼"
+              class="password" id="newPassword" required="required" />
           </div>
+          <label for="">新密碼確認</label>
           <div class="content_input-account">
-            <i class="fa fa-user form-control-feedback"></i><input type="text" placeholder="帳號(非email)" class="account"
-              id="inputAccount" required="required" />
-          </div>
-          <div class="content_input-password">
-            <i class="fa fa-lock form-control-feedback"></i><input type="password" placeholder="密碼" class="password"
-              id="inputPassword" required="required" />
+            <i class="fa fa-lock form-control-feedback"></i><input type="text" placeholder="在輸入一次新密碼" class="account"
+              id="confirmNewPassword" required="required" />
           </div>
         </div>
-        <button type="submit" id="login" required="required">註冊</button>
-        <a href="#" class="fb-login"><i class="fab fa-facebook-square">
-          </i>使用Facebook帳號註冊</a>
+        <button type="submit" id="login" required="required">確認修改</button>
       </form>
     </div>
   </div>
 
 
-  <div class="footer_register">
+  <!-- <div class="footer_register">
     <ul>
       <li>頻道服務介紹</li>
       <li><a href="#">iThome online</a></li>
@@ -60,8 +58,8 @@
       <li><a href="#">Techtalk</a></li>
     </ul>
     <p>©僅作火箭隊練習使用</p>
-  </div>
-  <script src="./js/register.js"></script>
+  </div> -->
+  <script src="./js/setting.js"></script>
 </body>
 
 </html>

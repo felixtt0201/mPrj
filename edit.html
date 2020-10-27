@@ -15,14 +15,16 @@
     sizes="32x32">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css' />
   <link rel="stylesheet" href="/dist/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplemde@latest/dist/simplemde.min.css">
-  <!-- <link rel="stylesheet" href="bower_components/github-markdown-css/github-markdown.css" /> -->
-  <script src="https://cdn.jsdelivr.net/npm/simplemde@latest/dist/simplemde.min.js"></script>
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+  <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="http://code.jquery.com/jquery.js"></script> -->
+  <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
 </head>
 
 <body class='draft-body'>
-  <div class='container'>
-    <div class='header'>
+  <div class='container draft-menuContainer'>
+    <div class='header '>
       <div class='headerInner'>
         <h1 class='headerLogo'>
           <a href='https://ithelp.ithome.com.tw/'>
@@ -117,8 +119,9 @@
               </div>
             </div>
             <div class='draft-markdown'>
-              <textarea name=' id=' rows='5' class='draft-form-control' placeholder='在這裡開始寫文章囉...'></textarea>
-              <textarea id="mde"></textarea>
+              <textarea id="editor-main" name="description" rows="5" placeholder="在這裡開始寫文章囉..."
+              ></textarea>
+             
           
              
                 
@@ -154,7 +157,7 @@
     <!--本文結束-->
     
   </div>
-  <div class="footer">
+  <div class="footer draft-footer">
     <div class="footerInner">
       <a href="https://itadapi.ithome.com.tw/media/click?q=B1~ithome_forum~2008B102" target="_blank"><img border="0"
           alt="" src="https://itadstatic.ithome.com.tw/B1/1600226777_5f6185d94676d.gif"></a>
@@ -181,13 +184,8 @@
       </ul>
     </div>
   </div>
-<script src="/simplemde-markdown-editor/dist/simplemde.min.js"></script>
-<script>
-        const mde = new SimpleMDE({
-            element: document.getElementById("mde"),
-            status: false,
-            spellChecker: false
-        });
 
-    </script>
+  <script>
+    CKEDITOR.replace("description");
+  </script>
 </body>
