@@ -500,7 +500,7 @@ ul {
   border-radius: 6px;
   background: #0087aa;
   margin: 10px 4px 0 4px;
-  padding: 0px 8px 3px;
+  padding: 3px 8px 3px;
   border-top-width: 1px;
   -webkit-box-shadow: 0px 2px 1px 1px #00637d;
           box-shadow: 0px 2px 1px 1px #00637d;
@@ -513,7 +513,7 @@ ul {
 }
 
 .container .menu .menuContainer .menuRight a li .fa-sort-down {
-  margin-left: 2px;
+  margin-left: 5px;
   font-size: 2px;
   vertical-align: text-top;
 }
@@ -812,23 +812,20 @@ ul {
   color: #37c0ff;
 }
 
-.content .leftSide .pagination {
+.content .leftSide .indexPagination {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   border-top: 1px solid #ddd;
   padding: 20px;
   border: 1px solid #ccc;
   background: white;
 }
 
+<<<<<<< HEAD
 .content .leftSide .pagination a {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -836,17 +833,25 @@ ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+=======
+.content .leftSide .indexPagination li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+>>>>>>> b01ee5d439b33b8f34d0283ab886cb7cc35b3ab1
   text-decoration: none;
-}
-
-.content .leftSide .pagination a li {
+  color: #999999;
   margin: 0 5px;
   padding: 5px 12px;
+<<<<<<< HEAD
   color: gray;
+=======
+  border: 1px solid #999999;
+>>>>>>> b01ee5d439b33b8f34d0283ab886cb7cc35b3ab1
   border-radius: 6px;
 }
 
-.content .leftSide .pagination a li:hover {
+.content .leftSide .indexPagination li a:hover {
   color: #00a0e9;
   border-color: #00a0e9;
 }
@@ -1421,41 +1426,32 @@ ul {
   color: #37c0ff;
 }
 
-.content .leftSide .pagination {
+.content .leftSide .articlesPagination {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   border-top: 1px solid #ddd;
   padding: 20px;
   border: 1px solid #ccc;
   background: white;
 }
 
-.content .leftSide .pagination a {
+.content .leftSide .articlesPagination li a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   text-decoration: none;
-}
-
-.content .leftSide .pagination a li {
+  color: #999999;
   margin: 0 5px;
   padding: 5px 12px;
-  color: gray;
+  border: 1px solid #999999;
   border-radius: 6px;
 }
 
-.content .leftSide .pagination a li:hover {
+.content .leftSide .articlesPagination li a:hover {
   color: #00a0e9;
   border-color: #00a0e9;
 }

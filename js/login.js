@@ -5,24 +5,27 @@ const password = document.querySelector('.password');
 let accountData = [];
 const accountURL = "https://fierce-forest-92782.herokuapp.com/account";
 
+
 let loginStatus = {
   loginCheck: false,
   loginID: '',
   loginName: '',
   loginEmail: '',
   loginPassword: ''
-}
+};
+
+
 
 //登入功能
-function login(event) {
+function login() {
   event.preventDefault();
-  axios.get(accountURL).then((res) => {
+  let inputAccount = account.value;
+  let inputPassword = password.value;
+
+  axios.get(accountURL).then(res => {
     accountData = res.data;
-    let inputAccount = account.value;
-    let inputPassword = password.value;
-    localStorage.clear();
-    accountData.find(i => {
-      if (inputAccount == i.account && inputPassword == i.password) {
+    accountData.some(function (i) {
+      if (i.account === inputAccount && i.password === inputPassword) {
         loginStatus.loginID = i.id;
         loginStatus.loginCheck = true;
         loginStatus.loginName = i.name;
@@ -34,12 +37,22 @@ function login(event) {
         // 跳轉頁面
         let url = `${window.location.origin}/user.html`;
         window.location.replace(url)
+        return true;
+      }
+      else if (inputAccount === "") {
+        alert('帳號不得為空白')
+        return true;
+      }
+      else if (inputPassword === "") {
+        alert('密碼不得為空白')
+        return true;
       }
       else {
-        // alert('帳號密碼錯誤 >.0');
+        alert('帳號或密碼不存在')
+        return true;
       }
-    });
+    })
   })
-};
+}
 
 loginBtn.addEventListener('click', login)
