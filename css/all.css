@@ -825,29 +825,15 @@ ul {
   background: white;
 }
 
-<<<<<<< HEAD
-.content .leftSide .pagination a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-=======
 .content .leftSide .indexPagination li a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
->>>>>>> b01ee5d439b33b8f34d0283ab886cb7cc35b3ab1
   text-decoration: none;
   color: #999999;
   margin: 0 5px;
   padding: 5px 12px;
-<<<<<<< HEAD
-  color: gray;
-=======
   border: 1px solid #999999;
->>>>>>> b01ee5d439b33b8f34d0283ab886cb7cc35b3ab1
   border-radius: 6px;
 }
 

@@ -24,7 +24,7 @@ function draft(){
 
   /* 取得時間 */
   const date = new Date();
-  const nowDay = date.toLocaleString();
+  const nowDay = date.toLocaleDateString();
   draft_obj.data = nowDay;
 
   /* 取得文章內容 */
