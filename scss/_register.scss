@@ -24,6 +24,7 @@ a{
     ul{
         display: flex;
         font-size: 14px;
+        list-style: none;
     }
     a{
         color: white;
@@ -98,7 +99,7 @@ a{
     }
     .content_input-account,.content_input-password{
         // box-sizing:content-box;
-        position: relative;
+        // position: relative;
         i{
             font-size: 13px;
         }
@@ -185,6 +186,7 @@ a{
         display: flex;
         align-items: center;
         justify-content: center;
+        list-style: none;
     }
     p{
         text-align: center;
@@ -196,7 +198,7 @@ a{
     a{
         color: white;
     }
-    position: absolute;
-    bottom: 0;
+    position: fixed;
     width: 100%;
+    bottom: 0;
 }
