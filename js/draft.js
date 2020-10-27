@@ -8,7 +8,7 @@ const draft_api ='https://fierce-forest-92782.herokuapp.com/articles';
 let draft_obj ={
   title: '',
   author: '',
-  data: '',
+  date: '',
   content: '',
   artOnwerID: '',
   articleID:''
@@ -25,7 +25,7 @@ function draft(){
   /* 取得時間 */
   const date = new Date();
   const nowDay = date.toLocaleString();
-  draft_obj.data = nowDay;
+  draft_obj.date = nowDay;
 
   /* 取得文章內容 */
   draft_obj.content = CKEDITOR.instances['editor-main'].getData();

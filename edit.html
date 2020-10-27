@@ -15,6 +15,7 @@
     sizes="32x32">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css' />
   <link rel="stylesheet" href="/dist/css/all.min.css">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.js'></script>
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
   <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -115,7 +116,7 @@
                 <span class='caret'></span>
               </button>
               <div class='draft-form-group'>
-                <input type='text' class='draft-header-title' placeholder='在這裡幫文章下個好標題...' value="JavaScript 如何成為JS小達人？">
+                <input type='text' class='draft-header-title' placeholder='在這裡幫文章下個好標題...' value="JavaScript 如何成為JS小達人？" id="draft-header-title">
               </div>
             </div>
             <div class='draft-markdown'>
@@ -143,7 +144,7 @@
               </div>
             </div>
             <div class="draft-btn">
-              <input type="submit" class="btn-draft edit-btn" value="更新文章">
+              <input type="button" class="btn-draft edit-btn" value="更新文章" id="btn-draft-edit-btn">
             </div>
           </div>
         </form>
@@ -188,4 +189,6 @@
   <script>
     CKEDITOR.replace("description");
   </script>
+  <script src="js/edit.js"></script>
+  <!-- <script src="js/draft.js"></script> -->
 </body>
