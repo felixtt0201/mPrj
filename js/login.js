@@ -36,7 +36,7 @@ function login(event) {
         window.location.replace(url)
       }
       else {
-        // alert('帳號密碼錯誤');
+        // alert('帳號密碼錯誤 >.0');
       }
     });
   })
