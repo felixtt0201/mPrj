@@ -42,7 +42,7 @@ function register(e) {
         account: inputAccount.value,
         password: inputPassword.value
       })
-      console.log('成功註冊');
+      alert('註冊成功')
     }
   })
 };

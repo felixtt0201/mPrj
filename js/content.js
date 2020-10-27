@@ -9,7 +9,7 @@ console.log(parseStatus);
 
 // 把loginStatus取得的值(loginName)，塞到menuRight的欄位
 let menuRight = document.getElementById('menuRight');
-menuRight.innerHTML = 
+menuRight.innerHTML =
 `<a href=""><li><i class="fas fa-search"></i></li></a>
 <a href=""><li><button type="button" class="menu__ironman-btn" data-toggle="modal" data-target="#group">鐵人發文</button></li></a>
 <a href=""><li>發問</li></a>
@@ -17,7 +17,8 @@ menuRight.innerHTML =
 <a href=""><li><i class="fas fa-comment-dots"></i></li></a>
 <a href=""><li><i class="fa fa-bell fa-fw"></i></li></a>
 <a href=""><li><img src="https://member.ithome.com.tw/avatars/151507?s=ithelp" class="accountPhoto">
-<span>${parseStatus.loginName}</span><i class="fas fa-sort-down"></i></li></a>`;
+<span>${parseStatus.loginName}</span><i class="fas fa-sort-down"></i></li></a>
+<a href="./setting.html"><li>修改密碼</li></a>`;
 
 // 把loginStatus取得的值(loginName)，塞到留言板的名稱欄位
 let replyFramePerson = document.getElementById('replyFrame-person');
