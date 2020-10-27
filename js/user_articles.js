@@ -1,5 +1,4 @@
 const api =`https://fierce-forest-92782.herokuapp.com/articles`;
-const ua_title = document.querySelector('.qa-list__title-link');
 const article_num = document.querySelector('.profile-main__badge');
 const article_list = document.querySelector('.user-article-list');
 
@@ -18,9 +17,11 @@ axios.get(api)
   let data = res.data;
   let newData = data.filter(i=>i.artOnwerID==userID)
 
+  let user_article_num = 0;
   // render
   let str ='';
   newData.forEach(i=>{
+    user_article_num ++;
     str += `<div class="qa-list profile-list">
     <div class="profile-list__condition">
       <p class="qa-condition">
@@ -61,6 +62,8 @@ axios.get(api)
   </div>`
     
 })
+console.log(user_article_num)
   article_list.innerHTML = str;
+  article_num.textContent = user_article_num;
 })
 
