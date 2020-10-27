@@ -33,6 +33,7 @@ body {
                     line-height: 1.85;
                     margin: 4px;
                     font-size: 14px;
+                    list-style: none;
                     a {
                         text-decoration: none;
                         color: black;
@@ -56,6 +57,7 @@ body {
             .menuLeft {
                 display: flex;
                 flex-direction: row;
+                list-style: none;
                 a {
                     text-decoration: none;
                     color: white;
@@ -71,6 +73,7 @@ body {
             .menuRight {
                 display: flex;
                 flex-direction: row;
+                list-style: none;
                 a {
                     text-decoration: none;
                     color: white;
@@ -133,6 +136,7 @@ body {
             justify-content: space-between;
             align-items: center;
             color: white;
+            list-style: none;
             a {
                 li {
                     color: white;
