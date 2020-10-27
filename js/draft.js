@@ -8,7 +8,7 @@ const draft_api ='https://fierce-forest-92782.herokuapp.com/articles';
 let draft_obj ={
   title: '',
   author: '',
-  data: '',
+  date: '',
   content: '',
   artOnwerID: '',
   articleID:''
