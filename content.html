@@ -10,7 +10,8 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css' />
     <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
-    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js'></script>
+    <script src="https://cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script>
 </head>
 
 <body>
@@ -44,10 +45,10 @@
         <div class="menu">
             <div class="menuContainer">
                 <ul class="menuLeft">
-                    <a href="">
+                    <a href="http://127.0.0.1:5501/index.html">
                         <li>技術問答</li>
                     </a>
-                    <a href="">
+                    <a href="http://127.0.0.1:5501/articles.html">
                         <li>技術文章</li>
                     </a>
                     <a href="">
@@ -63,34 +64,12 @@
                         <li>鐵人賽</li>
                     </a>
                 </ul>
-                <ul class="menuRight">
+                <ul class="menuRight" id="menuRight">
                     <a href="">
                         <li><i class="fas fa-search"></i></li>
                     </a>
-                    <a href=""></a>
-                    <a href="">
-                        <li><button type="button" class="menu__ironman-btn" data-toggle="modal"
-                                data-target="#group">鐵人發文</button>
-                        </li>
-                    </a>
-                    <a href="">
-                        <li>發問</li>
-                    </a>
-                    <a href="">
-                        <li>發文<i class="fas fa-sort-down"></i></li>
-                    </a>
-                    <a href="">
-                        <li><i class="fas fa-comment-dots"></i></li>
-                    </a>
-                    <a href="">
-                        <li><i class="fa fa-bell fa-fw"></i></li>
-                    </a>
-                    <a href="">
-                        <li>
-                            <img src="https://member.ithome.com.tw/avatars/151507?s=ithelp" class="accountPhoto">
-                            <span>阿瀚</span>
-                            <i class="fas fa-sort-down"></i>
-                        </li>
+                    <a href="http://127.0.0.1:5501/login.html">
+                        <li>登入/註冊</li>
                     </a>
                 </ul>
             </div>
@@ -260,7 +239,7 @@
                             <img src="https://member.ithome.com.tw/avatars/151507?s=ithelp"
                                 class="img-circle ans-header__avatar response__avatar-size">
                             <div class="replyFrame-info">
-                                <div class="replyFrame-person">
+                                <div class="replyFrame-person" id="replyFrame-person">
                                     阿瀚
                                 </div>
                                 <div class="replyFrame-leveltime">
@@ -269,11 +248,12 @@
                             </div>
                         </div>
                         <div class="replyFrame-body">
-                            <textarea id="MyID" class="form-control" name="description" rows="5" placeholder="留言">
-                            </textarea>
+                            <textarea id="editor1"></textarea>
+                            
                             <div class="btnBox">
                                 <div class="fakebox"></div>
-                                <input class="btn btn-main btn-lg btn-right btn-reply" type="submit" value="留言">
+                                <input class="btn btn-main btn-lg btn-right btn-reply" type="submit" id="leaveMessage"
+                                    value="留言">
                             </div>
                         </div>
                     </div>

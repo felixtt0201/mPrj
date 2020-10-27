@@ -99,7 +99,7 @@
   line-height: 1.2;
   margin-bottom: 8px;
 }
-.pagination {
+.pagination.pagination.pagination {
   margin-bottom: 10px;
   border-radius: 0;
   display: inline-block;
@@ -107,6 +107,7 @@
   margin: 20px 0;
   li {
     display: inline;
+
   }
   .now-page{
     margin-right: 15px;
@@ -139,4 +140,9 @@
 }
 .profile-pagination {
   text-align: center;
+}
+.qa-list__title.qa-list__title{
+
+    margin-bottom: 10px !important;
+
 }

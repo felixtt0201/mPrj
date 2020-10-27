@@ -16,6 +16,21 @@ $text_deep-gray: #303233;
 a {
   transition: all 0.2s;
 }
+
+// reset
+.user-body{
+  p,ul,li,span,a,h4,h5,h1{
+    margin: 0;
+  }
+  ul,li{
+    list-style: none;
+  }
+  h3{
+    margin: 0;
+    font-size: 100%;
+    font-weight: 400;
+  }
+}
 .user-body {
   color: #666;
   line-height: 1.6;
@@ -99,15 +114,23 @@ ul {
       font-weight: bold;
     }
   }
-  .menu-link-style {
+  .menu-link-style.menu-link-style.menu-link-style {
     margin-top: 15px;
     margin-bottom: 15px;
     z-index: 100;
+    h4{
+      font-weight: normal;
+    }
+    span{
+      font-weight: bold ;
+    }
   }
+ 
   .far {
     line-height: 1.7;
   }
 }
+
 .user-profile-photo {
   position: absolute;
   left: -30px;
@@ -306,18 +329,25 @@ ul {
   padding: 12px 4px 10px;
   border-bottom: 1px solid #ddd;
 }
-.qa-list__title--ironman {
-  margin-top: 1px;
-  margin-bottom: 4px;
+.qa-list__title--ironman,.qa-list__title--ironman {
+  margin-top: 8px !important;
+  margin-bottom: 8px !important;
+  display: flex;
   font-size: 18px;
-  line-height: 1.4;
+  line-height: 1.6;
   font-weight: bold;
   a {
     color: #303233;
+    font-weight: bold;
     font-size: 18px;
     &:hover {
       color: #007db6;
     }
+  }
+  span{
+    font-weight: bold;
+    font-size: 18px;
+    color: #868e96
   }
 }
 .qa-list__info--ironman {
@@ -352,10 +382,13 @@ ul {
   font-weight: bold;
   color: #303233;
 }
+.user-profile__level.user-profile__level{
+  margin-bottom: 10px;
+}
 .profile-main__content{
   padding: 24px 30px;
 }
-.profile-content__title{
+.profile-content__title.profile-content__title{
   font-size: 18px;
   color: #D55906;
   margin-top: 0;
