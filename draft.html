@@ -20,7 +20,7 @@
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="http://code.jquery.com/jquery.js"></script> -->
   <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
-                    
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js'></script>           
 </head>
 
 <body class='draft-body'>
@@ -116,7 +116,7 @@
                 <span class='caret'></span>
               </button>
               <div class='draft-form-group'>
-                <input type='text' class='draft-header-title' placeholder='在這裡幫文章下個好標題...'>
+                <input type='text' class='draft-header-title' placeholder='在這裡幫文章下個好標題...' id='draft-header-title'>
               </div>
             </div>
             <div class='draft-markdown'>
@@ -163,7 +163,7 @@
               </div>
             </div>
             <div class="draft-btn">
-              <input type="submit" class="btn-draft" value="發表文章">
+              <input type="button" class="btn-draft" value="發表文章">
             </div>
           </div>
         </form>
@@ -208,4 +208,7 @@
   <script>
     CKEDITOR.replace("description");
   </script>
+  <script src="/js/login.js"></script>
+  <!-- <script src="/js/setting.js"></script> -->
+  <script src="/js/draft.js"></script>
 </body>
