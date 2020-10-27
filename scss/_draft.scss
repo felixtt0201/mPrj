@@ -255,6 +255,7 @@ a.mk__editor-pre {
 .draft-ques-markdown{
   left: 0;
   cursor: pointer;
+  top: 2px
 }
 .editor-toolbar,.CodeMirror {
   border: none !important;
@@ -267,4 +268,7 @@ a.mk__editor-pre {
 
 .draft-tags__title{
   margin: 0;
+}
+.cke_contents{
+  min-height: 500px !important;
 }

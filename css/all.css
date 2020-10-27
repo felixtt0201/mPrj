@@ -4090,6 +4090,7 @@ a.mk__editor-pre:before {
 .draft-ques-markdown {
   left: 0;
   cursor: pointer;
+  top: 2px;
 }
 
 .editor-toolbar, .CodeMirror {
@@ -4103,6 +4104,10 @@ a.mk__editor-pre:before {
 
 .draft-tags__title {
   margin: 0;
+}
+
+.cke_contents {
+  min-height: 500px !important;
 }
 
 .edit-btn {
