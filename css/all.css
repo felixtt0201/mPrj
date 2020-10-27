@@ -2665,6 +2665,20 @@ a {
   transition: all 0.2s;
 }
 
+.user-body p, .user-body ul, .user-body li, .user-body span, .user-body a, .user-body h4, .user-body h5, .user-body h1 {
+  margin: 0;
+}
+
+.user-body ul, .user-body li {
+  list-style: none;
+}
+
+.user-body h3 {
+  margin: 0;
+  font-size: 100%;
+  font-weight: 400;
+}
+
 .user-body {
   color: #666;
   line-height: 1.6;
@@ -2779,10 +2793,18 @@ ul {
   font-weight: bold;
 }
 
-.user-menu .menu-link-style {
+.user-menu .menu-link-style.menu-link-style.menu-link-style {
   margin-top: 15px;
   margin-bottom: 15px;
   z-index: 100;
+}
+
+.user-menu .menu-link-style.menu-link-style.menu-link-style h4 {
+  font-weight: normal;
+}
+
+.user-menu .menu-link-style.menu-link-style.menu-link-style span {
+  font-weight: bold;
 }
 
 .user-menu .far {
@@ -3035,21 +3057,31 @@ ul {
   border-bottom: 1px solid #ddd;
 }
 
-.qa-list__title--ironman {
-  margin-top: 1px;
-  margin-bottom: 4px;
+.qa-list__title--ironman, .qa-list__title--ironman {
+  margin-top: 8px !important;
+  margin-bottom: 8px !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 18px;
-  line-height: 1.4;
+  line-height: 1.6;
   font-weight: bold;
 }
 
-.qa-list__title--ironman a {
+.qa-list__title--ironman a, .qa-list__title--ironman a {
   color: #303233;
+  font-weight: bold;
   font-size: 18px;
 }
 
-.qa-list__title--ironman a:hover {
+.qa-list__title--ironman a:hover, .qa-list__title--ironman a:hover {
   color: #007db6;
+}
+
+.qa-list__title--ironman span, .qa-list__title--ironman span {
+  font-weight: bold;
+  font-size: 18px;
+  color: #868e96;
 }
 
 .qa-list__info--ironman {
@@ -3089,11 +3121,15 @@ ul {
   color: #303233;
 }
 
+.user-profile__level.user-profile__level {
+  margin-bottom: 10px;
+}
+
 .profile-main__content {
   padding: 24px 30px;
 }
 
-.profile-content__title {
+.profile-content__title.profile-content__title {
   font-size: 18px;
   color: #D55906;
   margin-top: 0;
@@ -3102,7 +3138,7 @@ ul {
   margin-bottom: 10px;
 }
 
-.profile-content__title span {
+.profile-content__title.profile-content__title span {
   display: inline-block;
   margin-left: 8px;
   font-weight: normal;
@@ -3674,7 +3710,7 @@ a {
   margin-bottom: 8px;
 }
 
-.pagination {
+.pagination.pagination.pagination {
   margin-bottom: 10px;
   border-radius: 0;
   display: inline-block;
@@ -3682,11 +3718,11 @@ a {
   margin: 20px 0;
 }
 
-.pagination li {
+.pagination.pagination.pagination li {
   display: inline;
 }
 
-.pagination .now-page {
+.pagination.pagination.pagination .now-page {
   margin-right: 15px;
   border-radius: 6px;
   color: #FFF;
@@ -3697,12 +3733,12 @@ a {
   font-size: 14px;
 }
 
-.pagination .now-page:hover {
+.pagination.pagination.pagination .now-page:hover {
   color: #FFF;
   cursor: default;
 }
 
-.pagination a {
+.pagination.pagination.pagination a {
   margin-right: 15px;
   border-radius: 6px;
   color: #999999;
@@ -3713,13 +3749,17 @@ a {
   font-size: 14px;
 }
 
-.pagination a:hover {
+.pagination.pagination.pagination a:hover {
   border: 1px solid #00a0E9;
   color: #00a0E9;
 }
 
 .profile-pagination {
   text-align: center;
+}
+
+.qa-list__title.qa-list__title {
+  margin-bottom: 10px !important;
 }
 
 a:focus,
@@ -3736,6 +3776,9 @@ input:focus {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .draft-content {
@@ -3753,6 +3796,10 @@ input:focus {
 .draft-header {
   position: relative;
   margin: 12px 16px;
+}
+
+.draft-menuContainer ul, .draft-topheader ul, .draft-footer ul {
+  list-style: none;
 }
 
 .draft-type {
