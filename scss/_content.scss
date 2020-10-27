@@ -2,7 +2,6 @@
     margin-top: 30px;
     display: flex;
     justify-content: center;
-    max-width: 1170px;
     margin: auto;
     margin-top: 30px;
     .leftSide {
@@ -381,6 +380,9 @@
                 .replyFrame-body {
                     .form-control {
                         color: black;
+                    }
+                    .CodeMirror, .CodeMirror-scroll {
+                        min-height: 200px !important;
                     }
                     .btnBox {
                         display: flex;
