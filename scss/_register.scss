@@ -4,14 +4,17 @@ $bg-color-login:#239AD1;
 $font-color-gray:#777;
 $font-family: Microsoft JhengHei;
 
+.html{
+    position: relative;
+}
 .register-body{
-    font-family: $font-family;
-    background-image: url(https://member.ithome.com.tw/img/bg2.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-    background-attachment: fixed;
-    height: 100%;
+    // font-family: $font-family;
+    // background-image: url(https://member.ithome.com.tw/img/bg2.jpg);
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // overflow: hidden;
+    // background-attachment: fixed;
+    // height: 100%;
 }
 a{
     text-decoration: none;
@@ -64,14 +67,14 @@ a{
         margin-top: 10px;
     }
 }
-// .content_bgi{
-//     background-image: url(https://member.ithome.com.tw/img/bg2.jpg);
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//     overflow: hidden;
-//     background-attachment: fixed;
-//     height: 100%;
-// }
+.content_bgi{
+    background-image: url(https://member.ithome.com.tw/img/bg2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    background-attachment: fixed;
+    height: 100%;
+}
 .content_register_out{
     display: flex;
     flex-direction: column;

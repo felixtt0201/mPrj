@@ -2,11 +2,14 @@
     margin-top: 30px;
     display: flex;
     justify-content: center;
-    width: 100%;
+    max-width: 1170px;
     .leftSide {
         margin-right: 30px;
         .leftSideTopAD {
             margin-bottom: 10px;
+            img {
+                width: 100%;
+            }
         }
         .announcement {
             margin-bottom: 30px;
@@ -169,12 +172,13 @@
             border: 1px solid #ccc;
             background: white;
             a {
+                display: flex;
+                align-items: center;
                 text-decoration: none;
                 li {
                     margin: 0 5px;
                     padding: 5px 12px;
                     color: gray;
-                    border: 1px solid #ccc;
                     border-radius: 6px;
                     &:hover {
                         color: #00a0e9;
@@ -185,7 +189,6 @@
         }
     }
     .rightSide {
-        width: 300px;
         .trainee {
             margin-top: 15px;
             .traineeHeader {
@@ -422,7 +425,7 @@
                         background-color: #c8c8c8;
                         color: white;
                         border-radius: 50%;
-                        text-align:center;
+                        text-align: center;
                     }
                     a {
                         text-decoration: none;
@@ -430,7 +433,7 @@
                         line-height: 1.6;
                     }
                 }
- 
+
                 .sidebox__rankItem--bgyellow {
                     a:before {
                         background: #f9b446;
