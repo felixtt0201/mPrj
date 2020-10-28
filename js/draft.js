@@ -11,7 +11,10 @@ let draft_obj = {
   date: '',
   content: '',
   artOnwerID: '',
-  articleID: ''
+  articleID: '',
+  likes: '',
+  views: '',
+  type: 'article'
 }
 draft();
 

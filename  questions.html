@@ -10,6 +10,7 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css' />
     <link rel="stylesheet" href="css/all.css">
     <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js'></script>
 </head>
 
 <body class="bg">
@@ -118,7 +119,7 @@
                     style="display: none;"></textarea> -->
                     <!-- <textarea id="MyID" class="form-control" name="description" rows="5" placeholder="描述問題..."></textarea> -->
                     
-                    <textarea name="MyID"></textarea>
+                    <textarea name="MyID" id='question_content'></textarea>
                     
                     <!-- <textarea name="" id="MyID" cols="30" rows="10"></textarea> -->
                     <!-- <textarea id="description" cols="10" rows="5" placeholder="描述問題..."></textarea> -->
@@ -133,7 +134,7 @@
                 <input type="text" id="tag">
             </div>
             <div class="submit">
-                <button type="submit" class="subbtn">發問</button>
+                <button type="button" class="subbtn">發問</button>
             </div>
         </div>
         <div class="footer">
@@ -165,7 +166,8 @@
         </div>
     </div>
     <script>CKEDITOR.replace("MyID");</script>
-    
+    <script src="/js/question.js"></script>
+    <script src="/js/index.js"></script>
 </body>
 
 </html>

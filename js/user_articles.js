@@ -2,6 +2,7 @@ const api = `https://fierce-forest-92782.herokuapp.com/articles`;
 const article_num = document.querySelector('.profile-main__badge');
 const article_list = document.querySelector('.user-article-list');
 const get_draftID = document.getElementById('get_draftID');
+const articles = document.getElementById('articles');
 
 // (´・ω・｀)
 let userID = parseStatus.loginID;
@@ -65,6 +66,7 @@ axios.get(api)
     // console.log(user_article_num)
     article_list.innerHTML = str;
     article_num.textContent = user_article_num;
+    articles.textContent = user_article_num;
     getID();
   })
 
@@ -73,5 +75,9 @@ function getID() {
   get_draftID.addEventListener('click', function (e) {
     id = e.target.dataset.id
     console.log(id)
+    localStorage.setItem('articleID',id);
+    window.location.href = '/content.html';
   });
 }
+
+// window.onload 
