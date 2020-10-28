@@ -1,17 +1,34 @@
 var test = CKEDITOR.replace('editor1');
-/* -----------------------  文章渲染  -----------------------*/
+const api = `https://fierce-forest-92782.herokuapp.com/articles`;
 const content_userName = document.querySelector('.nameInfo');
 const timeInfo = document.querySelector('.timeInfo');
-const api = `https://fierce-forest-92782.herokuapp.com/articles`;
-
-function getData() {
+const content_title = document.getElementById('content_title');
+const nameInfo = document.getElementById('nameInfo');
+const qaMarkDown = document.getElementById('qaMarkDown');
+/* -----------------------  文章渲染  -----------------------*/
+get_articleID()
+function get_articleID(){
+    let a = localStorage.getItem('articleID')
     axios.get(api)
-        .then(function getdata(res) {
-            let content_data = [];
-            content_data = res.data;
-            console.log(content_data)
-        })
+    .then(res=>{
+        let contentData = res.data;
+        // console.log(data)
+        //let newData = data.filter(i => i.artOnwerID == userID)
+        let new_Data = contentData.filter(i=>i.articleID == a );
+        console.log(new_Data) 
+
+        content_title.textContent = new_Data[0].title;
+        nameInfo.textContent = new_Data[0].author;
+        qaMarkDown.innerHTML = new_Data[0].content;
+        timeInfo.textContent = new_Data[0].date;
+
+
+    })
 }
+
+
+
+
 
 
 
@@ -28,11 +45,7 @@ console.log(parseStatus);
 // 把loginStatus取得的值(loginName)，塞到menuRight的欄位
 let menuRight = document.getElementById('menuRight');
 menuRight.innerHTML =
-<<<<<<< HEAD
-    `<a href=""><li><i class="fas fa-search"></i></li></a>
-=======
 `<a href=""><li><i class="fas fa-search"></i></li></a>
->>>>>>> 4b6313bbe14f1c140d54d9ced411666596b47096
 <a href=""><li><button type="button" class="menu__ironman-btn" data-toggle="modal" data-target="#group">鐵人發文</button></li></a>
 <a href=""><li>發問</li></a>
 <a href=""><li>發文<i class="fas fa-sort-down"></i></li></a>

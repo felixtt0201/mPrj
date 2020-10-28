@@ -73,5 +73,9 @@ function getID() {
   get_draftID.addEventListener('click', function (e) {
     id = e.target.dataset.id
     console.log(id)
+    localStorage.setItem('articleID',id);
+    window.location.href = '/content.html';
   });
 }
+
+// window.onload 
