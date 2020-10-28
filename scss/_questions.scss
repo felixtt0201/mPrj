@@ -39,7 +39,7 @@ $fz-size-14: 14px;
 .content-ques_outside_title,.content-ques_outside_description,.content-ques_outside_tag{
     label{
         @include label
-        margin-right: 5px;
+        // margin-right: 5px;
     }
     span{
         @include span;
