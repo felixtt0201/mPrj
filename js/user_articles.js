@@ -22,7 +22,7 @@ axios.get(api)
   let str ='';
   newData.forEach(i=>{
     user_article_num ++;
-    str += `<div class="qa-list profile-list">
+    str += `<div class="qa-list profile-list" data-id='${i.articleID}'>
     <div class="profile-list__condition">
       <p class="qa-condition">
         <span class="qa-condition__count">100</span>
