@@ -6,7 +6,8 @@ const content_title = document.getElementById('content_title');
 const nameInfo = document.getElementById('nameInfo');
 const qaMarkDown = document.getElementById('qaMarkDown');
 /* -----------------------  文章渲染  -----------------------*/
-get_articleID()
+
+
 function get_articleID(){
     let a = localStorage.getItem('articleID')
     axios.get(api)
@@ -16,7 +17,7 @@ function get_articleID(){
         //let newData = data.filter(i => i.artOnwerID == userID)
         let new_Data = contentData.filter(i=>i.articleID == a );
         console.log(new_Data) 
-
+        
         content_title.textContent = new_Data[0].title;
         nameInfo.textContent = new_Data[0].author;
         qaMarkDown.innerHTML = new_Data[0].content;
@@ -27,7 +28,7 @@ function get_articleID(){
 }
 
 
-
+get_articleID()
 
 
 
@@ -51,7 +52,7 @@ menuRight.innerHTML =
 <a href=""><li>發文<i class="fas fa-sort-down"></i></li></a>
 <a href=""><li><i class="fas fa-comment-dots"></i></li></a>
 <a href=""><li><i class="fa fa-bell fa-fw"></i></li></a>
-<a href=""><li><img src="https://member.ithome.com.tw/avatars/151507?s=ithelp" class="accountPhoto">
+<a href="/user.html"><li><img src="https://member.ithome.com.tw/avatars/151507?s=ithelp" class="accountPhoto">
 <span>${parseStatus.loginName}</span><i class="fas fa-sort-down"></i></li></a>
 <a href="./setting.html"><li>修改密碼</li></a>`;
 
