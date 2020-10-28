@@ -21,43 +21,51 @@ menuRight.innerHTML =
 const btn = document.getElementById('btn-draft-edit-btn');
 const edit_api = 'https://fierce-forest-92782.herokuapp.com/articles';
 const edit_content = document.getElementById('editor-main');
+const edit_title = document.getElementById('draft-header-title');
+// 要覆蓋掉的話要取Dom , 只有渲染ㄉ時候會取物件值 //
 
 // 取api的值
 getData();
-// let data = {};
+let data = {};
 function getData(){
     axios.get(edit_api)
         .then(function(res){
             data = res.data
-            // console.log(data)
             render();
         })
         .catch(function(error){
             console.log(error)
         })
 }
+
 function render(){
     let str = '';
+    // 2絕對不能開
     let A = data[3].content; 
     str += CKEDITOR.instances["editor-main"].setData(A);
-    console.log(str);
+    // console.log(str);
     // edit_content.innerHTML = str;
 }
 
 
+// 以上程式碼沒問題 //
+
+// 修改ㄉ 程式碼 //
 function getpatch(){
-    axios.patch(edit_api + data[2],{
-        // title: title.value,
-        // author: author,
+    axios.patch(edit_api + `/2`,{
+        title: edit_title.value,
         // date: '',
-        content: edit_content.value,
-        // artOnwerID: '',
-        // articleID:''
+        content: CKEDITOR.instances["editor-main"].getData()
       })
     .then(function(res){
         console.log(res)
-        // getData()
+        console.log('修改成功')
     })
 }
 // CKEDITOR.instances["editor-main"].setData();
-btn.addEventListener('click',getpatch());
+
+// 測試按鈕是否正常 OK //
+// function test(){
+//     console.log('測試成功!');
+// }
+btn.addEventListener('click',getpatch);
