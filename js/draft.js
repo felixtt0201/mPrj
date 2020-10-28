@@ -24,8 +24,18 @@ function draft() {
 
   /* 取得時間 */
   const date = new Date();
-  const nowDay = date.getTime();
-  draft_obj.data = nowDay;
+  const nowDay = {
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric'
+  }
+  const result = date.toLocaleDateString("ja-JP", nowDay);
+  draft_obj.date = result;
+  // console.log(result)
+
 
 
 
@@ -44,7 +54,7 @@ function draft() {
   draft_obj.author = parseStatus.loginName;
 
   /* 文章ID */
-  let today = Date.parse(nowDay);
+  let today = date.getTime();
   draft_obj.articleID = `${parseStatus.loginID}${today}`;
   console.log(draft_obj.articleID);
 }

@@ -21,43 +21,62 @@ menuRight.innerHTML =
 const btn = document.getElementById('btn-draft-edit-btn');
 const edit_api = 'https://fierce-forest-92782.herokuapp.com/articles';
 const edit_content = document.getElementById('editor-main');
-
+const edit_title = document.querySelector('.draft-header-title');
+// 要覆蓋掉的話要取Dom , 只有渲染ㄉ時候會取物件值 //
+const date = new Date();
+  const nowDay = {
+    year:'numeric',
+    month: 'numeric',
+    day: 'numeric',
+    hour: 'numeric', 
+    minute: 'numeric', 
+    second: 'numeric'
+  }
+  const result = date.toLocaleDateString("ja-JP", nowDay);
 // 取api的值
 getData();
-// let data = {};
+let data = {};
 function getData(){
     axios.get(edit_api)
         .then(function(res){
             data = res.data
-            // console.log(data)
             render();
         })
         .catch(function(error){
             console.log(error)
         })
 }
+
 function render(){
     let str = '';
-    let A = data[3].content; 
+    let A = data[2].content; 
     str += CKEDITOR.instances["editor-main"].setData(A);
-    console.log(str);
-    // edit_content.innerHTML = str;
+    let rendertitle = data[1].title;
+    console.log(rendertitle);
+    // 因為input無法使用textContent，所以要改用setAttribute改值
+    edit_title.setAttribute("value",`${rendertitle}`);
 }
 
 
+// 以上程式碼沒問題 //
+
+// 修改ㄉ 程式碼 //
 function getpatch(){
-    axios.patch(edit_api + data[2],{
-        // title: title.value,
-        // author: author,
-        // date: '',
-        content: edit_content.value,
-        // artOnwerID: '',
-        // articleID:''
+    axios.patch(edit_api + `/6`,{
+        title: edit_title.value,
+        date: result,
+        content: CKEDITOR.instances["editor-main"].getData()
       })
     .then(function(res){
         console.log(res)
-        // getData()
+        console.log('修改成功')
+        getData();
     })
 }
 // CKEDITOR.instances["editor-main"].setData();
-btn.addEventListener('click',getpatch());
+
+// 測試按鈕是否正常 OK //
+// function test(){
+//     console.log('測試成功!');
+// }
+btn.addEventListener('click',getpatch);

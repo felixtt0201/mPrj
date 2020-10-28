@@ -3179,6 +3179,16 @@ ul {
   position: relative;
 }
 
+.register-body {
+  font-family: Microsoft JhengHei;
+  background-image: url(https://member.ithome.com.tw/img/bg2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  background-attachment: fixed;
+  height: 100%;
+}
+
 a {
   text-decoration: none;
 }
@@ -3249,15 +3259,6 @@ a {
   text-align: center;
   padding-bottom: 23px;
   margin-top: 10px;
-}
-
-.content_bgi {
-  background-image: url(https://member.ithome.com.tw/img/bg2.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden;
-  background-attachment: fixed;
-  height: 100%;
 }
 
 .content_register_out {
