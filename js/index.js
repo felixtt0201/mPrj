@@ -19,10 +19,17 @@ menuRight.innerHTML =
 <a href="./setting.html"><li>修改密碼</li></a>`;
 
 
+const articleApi = `https://fierce-forest-92782.herokuapp.com/articles`;
+
 const artName = document.querySelector('.user-profile__name');
-artName.textContent = parseStatus.loginName;
+artName.textContent = parseStatus.loginName + " ";
 
 const Name = document.querySelectorAll('.userBoard_nameID')
 Name.forEach(i => {
-  i.textContent = parseStatus.loginName;
+  i.textContent = parseStatus.loginName + " ";
+})
+
+
+axios.get(articleApi).then(res => {
+  let data = res.data;
 })

@@ -41,7 +41,8 @@ function newPasswordCheck() {
       password: confirmNewPassword.value
     }).then((res => {
       console.log(res)
-      console.log('修改成功')
+      alert('修改成功')
+      window.location.href = `/login.html`
     }))
   }
   else {
