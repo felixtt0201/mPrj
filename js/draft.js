@@ -14,10 +14,9 @@ let draft_obj = {
   articleID: '',
   likes: '',
   views: '',
-  type: ''
+  type: 'article'
 }
 draft();
-draft_obj.type = 'article';
 
 // (´・ω・｀)
 function draft() {
