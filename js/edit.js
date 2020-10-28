@@ -21,9 +21,18 @@ menuRight.innerHTML =
 const btn = document.getElementById('btn-draft-edit-btn');
 const edit_api = 'https://fierce-forest-92782.herokuapp.com/articles';
 const edit_content = document.getElementById('editor-main');
-const edit_title = document.getElementById('draft-header-title');
+const edit_title = document.querySelector('.draft-header-title');
 // 要覆蓋掉的話要取Dom , 只有渲染ㄉ時候會取物件值 //
-
+const date = new Date();
+  const nowDay = {
+    year:'numeric',
+    month: 'numeric',
+    day: 'numeric',
+    hour: 'numeric', 
+    minute: 'numeric', 
+    second: 'numeric'
+  }
+  const result = date.toLocaleDateString("ja-JP", nowDay);
 // 取api的值
 getData();
 let data = {};
@@ -40,11 +49,12 @@ function getData(){
 
 function render(){
     let str = '';
-    // 2絕對不能開
-    let A = data[3].content; 
+    let A = data[2].content; 
     str += CKEDITOR.instances["editor-main"].setData(A);
-    // console.log(str);
-    // edit_content.innerHTML = str;
+    let rendertitle = data[1].title;
+    console.log(rendertitle);
+    // 因為input無法使用textContent，所以要改用setAttribute改值
+    edit_title.setAttribute("value",`${rendertitle}`);
 }
 
 
@@ -52,14 +62,15 @@ function render(){
 
 // 修改ㄉ 程式碼 //
 function getpatch(){
-    axios.patch(edit_api + `/2`,{
+    axios.patch(edit_api + `/6`,{
         title: edit_title.value,
-        // date: '',
+        date: result,
         content: CKEDITOR.instances["editor-main"].getData()
       })
     .then(function(res){
         console.log(res)
         console.log('修改成功')
+        getData();
     })
 }
 // CKEDITOR.instances["editor-main"].setData();
