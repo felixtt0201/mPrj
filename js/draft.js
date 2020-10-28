@@ -24,8 +24,13 @@ function draft() {
 
   /* 取得時間 */
   const date = new Date();
-  const nowDay = date.toLocaleDateString();
+  const nowDay = date.getTime();
   draft_obj.data = nowDay;
+
+
+
+
+
 
   /* 取得文章內容 */
   draft_obj.content = CKEDITOR.instances['editor-main'].getData();
