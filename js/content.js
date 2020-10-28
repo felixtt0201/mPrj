@@ -28,11 +28,7 @@ console.log(parseStatus);
 // 把loginStatus取得的值(loginName)，塞到menuRight的欄位
 let menuRight = document.getElementById('menuRight');
 menuRight.innerHTML =
-<<<<<<< HEAD
-    `<a href=""><li><i class="fas fa-search"></i></li></a>
-=======
 `<a href=""><li><i class="fas fa-search"></i></li></a>
->>>>>>> b01ee5d439b33b8f34d0283ab886cb7cc35b3ab1
 <a href=""><li><button type="button" class="menu__ironman-btn" data-toggle="modal" data-target="#group">鐵人發文</button></li></a>
 <a href=""><li>發問</li></a>
 <a href=""><li>發文<i class="fas fa-sort-down"></i></li></a>
