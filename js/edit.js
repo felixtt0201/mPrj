@@ -46,35 +46,46 @@ function getData(){
             console.log(error)
         })
 }
-
+// 取得localStorage的edidID(編輯拼錯惹懶得改la)
+let local = localStorage.getItem('edidID');
+// console.log(local);
+/*---------- 渲染 -------------------*/
 function render(){
-    let str = '';
-    let A = data[2].content; 
-    str += CKEDITOR.instances["editor-main"].setData(A);
-    let rendertitle = data[1].title;
+    let A = ''; 
+    // 中間如果值被刪除會導致順序錯誤，故使用index取順序 //
+    data.forEach(function(i,index){
+        if(i.id == local){
+            A = index
+            // console.log(index)
+        }else{
+            console.log('安安你失敗ㄌ ')
+        }
+    });
+    console.log(A);
+    let B = data[A].content;
+    console.log(B);
+    let str = CKEDITOR.instances["editor-main"].setData(B);
+    let rendertitle = data[A].title;
     console.log(rendertitle);
     // 因為input無法使用textContent，所以要改用setAttribute改值
     edit_title.setAttribute("value",`${rendertitle}`);
 }
 
-
-// 以上程式碼沒問題 //
-
 // 修改ㄉ 程式碼 //
 function getpatch(){
-    axios.patch(edit_api + `/6`,{
+    axios.patch(edit_api + `/${local}`,{
         title: edit_title.value,
         date: result,
         content: CKEDITOR.instances["editor-main"].getData()
       })
     .then(function(res){
-        console.log(res)
+        // console.log(res)
         console.log('修改成功')
         getData();
+        // 跳轉回content頁面ㄉ 寫法 //
+        window.location.href = '/content.html'
     })
 }
-// CKEDITOR.instances["editor-main"].setData();
-
 // 測試按鈕是否正常 OK //
 // function test(){
 //     console.log('測試成功!');
