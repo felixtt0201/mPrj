@@ -1,6 +1,7 @@
-const api =`https://fierce-forest-92782.herokuapp.com/articles`;
+const api = `https://fierce-forest-92782.herokuapp.com/articles`;
 const article_num = document.querySelector('.profile-main__badge');
 const article_list = document.querySelector('.user-article-list');
+const get_draftID = document.getElementById('get_draftID');
 
 // (´・ω・｀)
 let userID = parseStatus.loginID;
@@ -13,16 +14,15 @@ console.log(`${userID}:${userName}`)//6
 
 /* 找到自己ID 的文章 */
 axios.get(api)
-.then(res=>{
-  let data = res.data;
-  let newData = data.filter(i=>i.artOnwerID==userID)
-
-  let user_article_num = 0;
-  // render
-  let str ='';
-  newData.forEach(i=>{
-    user_article_num ++;
-    str += `<div class="qa-list profile-list" data-id='${i.articleID}'>
+  .then(res => {
+    let data = res.data;
+    let newData = data.filter(i => i.artOnwerID == userID)
+    let user_article_num = 0;
+    // render
+    let str = '';
+    newData.forEach(i => {
+      user_article_num++;
+      str += `<li class="qa-list profile-list">
     <div class="profile-list__condition">
       <p class="qa-condition">
         <span class="qa-condition__count">100</span>
@@ -42,7 +42,7 @@ axios.get(api)
         <span class="title-badge title-badge--tech">
           技術
         </span>
-        <a href="#" class="qa-list__title-link">
+        <a href="#" class="qa-list__title-link" data-id='${i.articleID}'>
           ${i.title}
         </a>
       </h3>
@@ -59,11 +59,19 @@ axios.get(api)
         分享
       </div>
     </div>
-  </div>`
-    
-})
-console.log(user_article_num)
-  article_list.innerHTML = str;
-  article_num.textContent = user_article_num;
-})
+  </li>`
 
+    })
+    // console.log(user_article_num)
+    article_list.innerHTML = str;
+    article_num.textContent = user_article_num;
+    getID();
+  })
+
+function getID() {
+  let id = '';
+  get_draftID.addEventListener('click', function (e) {
+    id = e.target.dataset.id
+    console.log(id)
+  });
+}
