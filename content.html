@@ -96,11 +96,11 @@
                     </div>
                     <div class="qaContent">
                         <div class="qaHeader">
-                            <div class="groupBadge">
+                            <!-- <div class="groupBadge">
                                 <span>自我挑戰組</span>
                                 <h3>30天菜鳥學Linux系列第49篇</h3>
-                            </div>
-                            <h2>第49天-學習 crontab 工作排程 Part 2 - 認真學 crontab 表達式</h2>
+                            </div> -->
+                            <h2 id='content_title'>第49天-學習 crontab 工作排程 Part 2 - 認真學 crontab 表達式</h2>
                             <div class="tagGroup">
                                 <span>12th鐵人賽</span>
                                 <span>linux</span>
@@ -109,39 +109,15 @@
                                 <a href=""><img src="https://member.ithome.com.tw/avatars/150403?s=ithelp"
                                         class="img-circle"></a>
                                 <div class="irArticleInfo">
-                                    <a class="nameInfo" href="">我思故我在</a>
-                                    <a class="timeInfo" href="">2020-10-22 11:00:52</a>
+                                    <a class="nameInfo" href="/user.html" id='nameInfo'></a>
+                                    <span class="timeInfo" href="" >2020-10-22 11:00:52</span>
                                 </div>
                                 <div class="articleView">
                                     67 瀏覽
                                 </div>
                             </div>
                         </div>
-                        <div class="qaMarkDown">
-                            <h3>Lorem ipsum dolor sit amet.</h3>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit eos voluptatum vel.
-                                Veniam obcaecati distinctio cupiditate optio nihil magnam ab, vero, culpa at laborum
-                                suscipit earum perspiciatis voluptate ipsam molestiae.</p>
-                            <h3>Lorem, ipsum dolor.</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem possimus quod
-                                repellendus ea minima rem in corporis eos vero facere delectus cumque maiores
-                                cupiditate, beatae nostrum eaque laborum ad dolorum.</p>
-                            <h3>Lorem, ipsum dolor.</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus molestias reiciendis minus
-                                maiores dignissimos. Cupiditate labore cum tenetur. Ad dolores dolorum consequuntur
-                                ipsam ipsa dolor expedita odit quis quisquam accusamus!</p>
-                            <h3>Lorem ipsum dolor sit amet.</h3>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit eos voluptatum vel.
-                                Veniam obcaecati distinctio cupiditate optio nihil magnam ab, vero, culpa at laborum
-                                suscipit earum perspiciatis voluptate ipsam molestiae.</p>
-                            <h3>Lorem, ipsum dolor.</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem possimus quod
-                                repellendus ea minima rem in corporis eos vero facere delectus cumque maiores
-                                cupiditate, beatae nostrum eaque laborum ad dolorum.</p>
-                            <h3>Lorem, ipsum dolor.</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus molestias reiciendis minus
-                                maiores dignissimos. Cupiditate labore cum tenetur. Ad dolores dolorum consequuntur
-                                ipsam ipsa dolor expedita odit quis quisquam accusamus!</p>
+                        <div class="qaMarkDown" id='qaMarkDown'>
                         </div>
                         <div class="qaAction">
                             <div class="qaActionLeft">
@@ -149,7 +125,8 @@
                                 <button><i class="fa fa-fw qa-action__icon fa-heart"></i>追蹤</button>
                             </div>
                             <div class="qaActionRight">
-                                <button><i class="fa fa-flag fa-fw qa-action__icon"></i>檢舉</button>
+                                <button class="Report"><i class="fa fa-flag fa-fw qa-action__icon"></i>檢舉</button>
+                                <!-- <button id="edit">＠編輯</button> -->
                             </div>
                         </div>
                     </div>
@@ -415,7 +392,7 @@
                         <a href="https://ithelp.ithome.com.tw/users/20108446/ironman/3463?sc=iThelpR" target="_blank"
                             class="sidebox__itemLink">從題目中學習k8s</a>
                         <a href="https://ithelp.ithome.com.tw/users/20108446/ironman/3463?sc=iThelpR" target="_blank"
-                            class="sidebox__itemLink">破釜沉舟的轉職路 - 去年說要成為軟體工程師的我，今年 38 歲了，我成為工程師了嗎？</a>
+                            class="sidebox__itemLink">破釜沉舟的轉職路 - 50年前說要成為軟體工程師的我，今年 78 歲了，沒問題嗎？</a>
                     </ul>
                 </div>
                 <div class="sidebox">
@@ -562,7 +539,7 @@
                     <div class="leaderBoard__header">
                         一週點數排行
                     </div>
-                    <ol class="leaderBoard__body">
+                    <ol class="leaderBoard__body" style='list-style: none'>
                         <li class="sidebox__rankItem  sidebox__rankItem--bgyellow  ">
                             <a href="https://ithelp.ithome.com.tw/users/20129008/profile"
                                 class="sidebox__rankItemLink">我思故我在 (sfl86280)</a>

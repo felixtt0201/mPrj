@@ -27,6 +27,7 @@
         }
         .qaPanel {
             display: flex;
+            background-color: #fff;
             .qaSide {
                 display: flex;
                 flex-direction: column;
@@ -76,6 +77,7 @@
                         font-weight: bold;
                         line-height: 1.5;
                         margin-bottom: 12px;
+                        margin-top: 10px;
                     }
                     .tagGroup {
                         span {

@@ -1812,6 +1812,7 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background-color: #fff;
 }
 
 .content .leftSide .qaPanel .qaSide {
@@ -1882,6 +1883,7 @@ ul {
   font-weight: bold;
   line-height: 1.5;
   margin-bottom: 12px;
+  margin-top: 10px;
 }
 
 .content .leftSide .qaPanel .qaContent .qaHeader .tagGroup span {
@@ -3352,6 +3354,16 @@ ul {
   position: relative;
 }
 
+.register-body {
+  font-family: Microsoft JhengHei;
+  background-image: url(https://member.ithome.com.tw/img/bg2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  background-attachment: fixed;
+  height: 100%;
+}
+
 a {
   text-decoration: none;
 }
@@ -3422,15 +3434,6 @@ a {
   text-align: center;
   padding-bottom: 23px;
   margin-top: 10px;
-}
-
-.content_bgi {
-  background-image: url(https://member.ithome.com.tw/img/bg2.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden;
-  background-attachment: fixed;
-  height: 100%;
 }
 
 .content_register_out {
@@ -3628,7 +3631,6 @@ a {
   font-size: 22px;
   color: #00a0e9;
   font-weight: bold;
-  margin-right: 5px;
 }
 
 .content-ques_outside_title span, .content-ques_outside_description span, .content-ques_outside_tag span {
@@ -3767,6 +3769,24 @@ a {
 
 .footer ul {
   margin-top: 26px;
+}
+
+.qaSide1.qaSide1.qaSide1.qaSide1.qaSide1.qaSide1 {
+  padding-left: 30px;
+  width: 60px;
+}
+
+.qa_title.qa_title.qa_title.qa_title.qa_title.qa_title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.qaMarkDown1.qaMarkDown1.qaMarkDown1.qaMarkDown1.qaMarkDown1.qaMarkDown1 {
+  padding: 10px;
+}
+
+.qaContent1.qaContent1.qaContent1.qaContent1.qaContent1.qaContent1 {
+  margin-bottom: 20px;
 }
 
 .profile-main {

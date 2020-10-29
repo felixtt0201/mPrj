@@ -8,13 +8,13 @@ $font-family: Microsoft JhengHei;
     position: relative;
 }
 .register-body{
-    // font-family: $font-family;
-    // background-image: url(https://member.ithome.com.tw/img/bg2.jpg);
-    // background-repeat: no-repeat;
-    // background-size: cover;
-    // overflow: hidden;
-    // background-attachment: fixed;
-    // height: 100%;
+    font-family: $font-family;
+    background-image: url(https://member.ithome.com.tw/img/bg2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    background-attachment: fixed;
+    height: 100%;
 }
 a{
     text-decoration: none;
@@ -68,12 +68,12 @@ a{
     }
 }
 .content_bgi{
-    background-image: url(https://member.ithome.com.tw/img/bg2.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-    background-attachment: fixed;
-    height: 100%;
+    // background-image: url(https://member.ithome.com.tw/img/bg2.jpg);
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // overflow: hidden;
+    // background-attachment: fixed;
+    // height: 100%;
 }
 .content_register_out{
     display: flex;

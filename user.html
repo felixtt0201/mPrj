@@ -49,10 +49,10 @@
     <div class="menu">
       <div class="menuContainer">
         <ul class="menuLeft">
-          <a href="">
+          <a href="http://127.0.0.1:5501/index.html">
             <li>技術問答</li>
           </a>
-          <a href="">
+          <a href="http://127.0.0.1:5501/articles.html">
             <li>技術文章</li>
           </a>
           <a href="">
@@ -68,36 +68,12 @@
             <li>鐵人賽</li>
           </a>
         </ul>
-        <ul class="menuRight">
+        <ul class="menuRight" id="menuRight">
           <a href="">
             <li><i class="fas fa-search"></i></li>
           </a>
-          <a href=""></a>
-          <a href="">
-            <li><button type="button" class="menu__ironman-btn" data-toggle="modal" data-target="#group">鐵人發文</button>
-            </li>
-          </a>
-          <a href="">
-            <li>發問</li>
-          </a>
-          <a href="">
-            <li>發文<i class="fas fa-sort-down"></i></li>
-          </a>
-          <a href="">
-            <li><i class="fas fa-comment-dots"></i></li>
-          </a>
-          <a href="">
-            <li><i class="fa fa-bell fa-fw"></i></li>
-          </a>
-          <a href="">
-            <li>
-              <img src="https://member.ithome.com.tw/avatars/151507?s=ithelp" class="accountPhoto">
-              <span id="name">阿瀚</span>
-              <i class="fas fa-sort-down"></i>
-            </li>
-          </a>
-          <a href="./setting.html">
-            <li>修改密碼</li>
+          <a href="http://127.0.0.1:5501/login.html">
+            <li>登入/註冊</li>
           </a>
         </ul>
       </div>
@@ -110,7 +86,8 @@
           <div class="user-profile__content">
             <h2 class="user-profile__name">SONYKO りん <span class='user-profile__id'>(xxsonykoxx)</span></h2>
 
-            <h3 class='user-profile__level'>iT邦新手 5 級・點數 <span class='user-profile__point'><a href="#">87</a></span></h3>
+            <h3 class='user-profile__level'>iT邦新手 5 級・點數 <span class='user-profile__point'><a href="#">87</a></span>
+            </h3>
 
             <h3 class='user-profile__edu'>専門学校ESPエンターテインメント東京シンガーソングライター</h3>
           </div>
@@ -151,8 +128,8 @@
             </a>
           </li>
           <li>
-            <a href="#" class="menu-link-style">
-              <h5>30</h5>
+            <a href="/user_articles.html" class="menu-link-style">
+              <h5 id='articles'>30</h5>
               <h4>文章</h4>
             </a>
           </li>
@@ -196,8 +173,8 @@
               </h3>
               <div class="qa-list__info--ironman">
                 <sapn>鐵人練成｜</sapn>
-                <span>共30篇文章｜</span>
-                <span>13人訂閱</span>
+                <span>共&nbsp<span class='articles'></span>&nbsp篇文章｜</span>
+                <span>13 人訂閱</span>
                 <a href="#" class="rss-btn">
                   <i class="fas fa-rss"></i>
                   RSS系列文
@@ -319,5 +296,8 @@
     </div>
   </div>
 </body>
+<script src="/js/index.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.js'></script>
+<script src="/js/user.js"></script>
 
 </html>

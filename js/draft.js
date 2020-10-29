@@ -1,31 +1,49 @@
 const draft_title = document.getElementById('draft-header-title');
 const draft_btn = document.querySelector('.btn-draft');
-const draft_api ='https://fierce-forest-92782.herokuapp.com/articles';
+const draft_api = 'https://fierce-forest-92782.herokuapp.com/articles';
 
 // console.log(draft_btn)
 // console.log(draft_title)
 
-let draft_obj ={
+let draft_obj = {
   title: '',
   author: '',
-  data: '',
+  date: '',
   content: '',
   artOnwerID: '',
-  articleID:''
+  articleID: '',
+  likes: '',
+  views: '',
+  type: 'article'
 }
 draft();
 
 // (´・ω・｀)
-function draft(){
+function draft() {
   /* 取得title */
   let title = draft_title.value;
-  draft_obj.title = title ;
+  draft_obj.title = title;
   // console.log(draft_obj.title)
 
   /* 取得時間 */
   const date = new Date();
-  const nowDay = date.toLocaleString();
-  draft_obj.data = nowDay;
+  const nowDay = {
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric'
+  }
+  const result = date.toLocaleDateString("ja-JP", nowDay);
+  draft_obj.date = result;
+  // console.log(result)
+
+
+
+
+
+
 
   /* 取得文章內容 */
   draft_obj.content = CKEDITOR.instances['editor-main'].getData();
@@ -36,20 +54,20 @@ function draft(){
   let parseStatus = JSON.parse(getStatus);
   // console.log(parseStatus)
   draft_obj.artOnwerID = parseStatus.loginID;
-  draft_obj.author = parseStatus.loginName ;
+  draft_obj.author = parseStatus.loginName;
 
   /* 文章ID */
-  let today = Date.parse(nowDay);
+  let today = date.getTime();
   draft_obj.articleID = `${parseStatus.loginID}${today}`;
   console.log(draft_obj.articleID);
 }
 
-function post_draft(){
+function post_draft() {
   draft();
-  axios.post(draft_api,draft_obj)
-  .then(res=>{
-    console.log (res);
-  })
+  axios.post(draft_api, draft_obj)
+    .then(res => {
+      console.log(res);
+    })
 }
 
-draft_btn.addEventListener('click',post_draft)
+draft_btn.addEventListener('click', post_draft)
