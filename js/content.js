@@ -9,7 +9,8 @@ const contentedit = document.getElementById('edit');
 const Report = document.querySelector('.Report');
 const edit = document.querySelector('.halo');
 /* -----------------------  文章渲染  -----------------------*/
-get_articleID()
+
+
 function get_articleID(){
     let a = localStorage.getItem('articleID')
     axios.get(api)
@@ -18,9 +19,8 @@ function get_articleID(){
         // console.log(data)
         //let newData = data.filter(i => i.artOnwerID == userID)
         let new_Data = contentData.filter(i=>i.articleID == a );
-        console.log(new_Data[0].artOnwerID)
-        // console.log(new_Data)
-
+        console.log(new_Data) 
+        
         content_title.textContent = new_Data[0].title;
         nameInfo.textContent = new_Data[0].author;
         qaMarkDown.innerHTML = new_Data[0].content;
@@ -29,27 +29,32 @@ function get_articleID(){
         // 判斷文章作者是否同人才可編輯
         if(new_Data[0].artOnwerID === parseStatus.loginID){
         // Report.innerHTML =`<a href="/edit.html" style="color:#777;font-size:16px;" class="halo" target="_blank">編輯</a>`
-        Report.innerHTML =`<p class="www" data-id='${new_Data[0].id}'>hhhhh</p>`
-        const www = document.querySelector('.www');
-        // const www = document.querySelector('.www');
-        // console.log(www);
-        hhhhh(www);
+        Report.innerHTML =`<p class="editbtn" data-id='${new_Data[0].id}'>編輯</p>`
+        const editbtn = document.querySelector('.editbtn');
+        editor(editbtn);
         }else{
             console.log('安安你無法編輯')
         }
         
     })
 }
-// const www = document.querySelector('.www');
-function hhhhh(www){
-    // let id='';
-    www.addEventListener('click',function(e){
+function editor(editbtn){
+    let id='';
+    editbtn.addEventListener('click',function(e){
     id = e.target.dataset.id;
-    console.log(id);
+    // console.log(id);
     localStorage.setItem('edidID',id);
     window.location.href = '/edit.html';
     })
 }
+
+
+get_articleID()
+
+
+
+
+
 
 /* -----------------------  留言功能  -----------------------*/
 // 以localStorage.getItem('key')取得使用者登入資料(這裡取得的資料為一組字串，沒辦法直接使用)
@@ -68,7 +73,7 @@ menuRight.innerHTML =
 <a href=""><li>發文<i class="fas fa-sort-down"></i></li></a>
 <a href=""><li><i class="fas fa-comment-dots"></i></li></a>
 <a href=""><li><i class="fa fa-bell fa-fw"></i></li></a>
-<a href=""><li><img src="https://member.ithome.com.tw/avatars/151507?s=ithelp" class="accountPhoto">
+<a href="/user.html"><li><img src="https://member.ithome.com.tw/avatars/151507?s=ithelp" class="accountPhoto">
 <span>${parseStatus.loginName}</span><i class="fas fa-sort-down"></i></li></a>
 <a href="./setting.html"><li>修改密碼</li></a>`;
 

@@ -3457,7 +3457,6 @@ a {
   font-size: 22px;
   color: #00a0e9;
   font-weight: bold;
-  margin-right: 5px;
 }
 
 .content-ques_outside_title span, .content-ques_outside_description span, .content-ques_outside_tag span {
@@ -3596,6 +3595,24 @@ a {
 
 .footer ul {
   margin-top: 26px;
+}
+
+.qaSide1.qaSide1.qaSide1.qaSide1.qaSide1.qaSide1 {
+  padding-left: 30px;
+  width: 60px;
+}
+
+.qa_title.qa_title.qa_title.qa_title.qa_title.qa_title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.qaMarkDown1.qaMarkDown1.qaMarkDown1.qaMarkDown1.qaMarkDown1.qaMarkDown1 {
+  padding: 10px;
+}
+
+.qaContent1.qaContent1.qaContent1.qaContent1.qaContent1.qaContent1 {
+  margin-bottom: 20px;
 }
 
 .profile-main {

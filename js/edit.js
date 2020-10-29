@@ -14,7 +14,7 @@ menuRight.innerHTML =
 <a href=""><li>發文<i class="fas fa-sort-down"></i></li></a>
 <a href=""><li><i class="fas fa-comment-dots"></i></li></a>
 <a href=""><li><i class="fa fa-bell fa-fw"></i></li></a>
-<a href=""><li><img src="https://member.ithome.com.tw/avatars/151507?s=ithelp" class="accountPhoto">
+<a href="/user.html"><li><img src="https://member.ithome.com.tw/avatars/151507?s=ithelp" class="accountPhoto">
 <span>${parseStatus.loginName}</span><i class="fas fa-sort-down"></i></li></a>
 <a href="./setting.html"><li>修改密碼</li></a>`;
  // 以上是kent哥ㄉ 
@@ -61,9 +61,9 @@ function render(){
             console.log('安安你失敗ㄌ ')
         }
     });
-    console.log(A);
+    // console.log(A);
     let B = data[A].content;
-    console.log(B);
+    // console.log(B);
     let str = CKEDITOR.instances["editor-main"].setData(B);
     let rendertitle = data[A].title;
     console.log(rendertitle);
