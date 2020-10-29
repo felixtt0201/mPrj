@@ -56,7 +56,8 @@ function render(){
     data.forEach(function(i,index){
         if(i.id == local){
             A = index
-            // console.log(index)
+            console.log(index)
+            console.log('OK!')
         }else{
             console.log('安安你失敗ㄌ ')
         }
