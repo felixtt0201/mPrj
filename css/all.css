@@ -2368,6 +2368,180 @@ ul {
   line-height: 1.33333;
 }
 
+.content .leftSide .reply .qaStatus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.content .leftSide .reply .qaStatus .qaStatus-title p {
+  margin-left: 12px;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.content .leftSide .reply .qaStatus .qaStatus-catagory {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.content .leftSide .reply .qaStatus .qaStatus-catagory li {
+  padding-right: 15px;
+}
+
+.content .leftSide .reply .qaStatus .qaStatus-catagory li button {
+  font-size: 16px;
+  padding: 4px 0px;
+  color: #999;
+  border: none;
+  outline: none;
+}
+
+.content .leftSide .reply .qaStatus .qaStatus-catagory li button:active {
+  font-weight: bold;
+  color: #00a0e9;
+  border-bottom: 3px solid #00a0e9;
+}
+
+.content .leftSide .reply .ansPanel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: white;
+  margin-bottom: 20px;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 30px;
+  color: #333;
+  padding: 20px;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-side p {
+  font-size: 30px;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content {
+  padding: 25px;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content .ansPanel-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content .ansPanel-header .ansPanel-header-logo img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content .ansPanel-header .ansPanel-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content .ansPanel-header .ansPanel-info .ansPanel-header-name {
+  color: #00a0e9;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content .ansPanel-header .ansPanel-info .ansPanelHeaderClass {
+  font-size: 14px;
+  color: #888;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content .ansPanel-header .ansPanel-info .ansPanel-header-time {
+  font-size: 14px;
+  color: #888;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content .ansPanelMainSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #303233;
+  font-weight: normal;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content .ansPanel-action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #777;
+  padding: 6px 0;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content .ansPanel-action .ansPanel-action-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content .ansPanel-action .ansPanel-action-left li {
+  padding-right: 8px;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content .ansPanel-action .ansPanel-action-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content .ansPanel-action .ansPanel-action-right li {
+  padding-right: 8px;
+}
+
 .content .rightSide {
   width: 300px;
 }

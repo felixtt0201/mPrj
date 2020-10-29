@@ -414,6 +414,125 @@
                     }
                 }
             }
+            .qaStatus {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 40px;
+                margin-bottom: 20px;
+                .qaStatus-title {
+                    // display: flex;
+                    p {
+                        margin-left: 12px;
+                        font-size: 24px;
+                        font-weight: bold;
+                        line-height: 1.5;
+                        span {
+                        }
+                    }
+                }
+                .qaStatus-catagory {
+                    display: flex;
+                    justify-content: space-between;
+                    li {
+                        padding-right: 15px;
+                        button {
+                            font-size: 16px;
+                            padding: 4px 0px;
+                            color: #999;
+                            border: none;
+                            outline: none;
+                            &:active {
+                                font-weight: bold;
+                                color: #00a0e9;
+                                border-bottom: 3px solid #00a0e9;
+                            }
+                        }
+                    }
+                }
+            }
+            .ansPanel {
+                display: flex;
+                flex-direction: column;
+                .ansPanel-clearfix {
+                    display: flex;
+                    background: white;
+                    margin-bottom: 20px;
+                    .ansPanel-side {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        font-size: 30px;
+                        color: #333;
+                        padding: 20px;
+                        p {
+                            font-size: 30px;
+                        }
+                    }
+                    .ansPanel-content {
+                        padding: 25px;
+                        .ansPanel-header {
+                            display: flex;
+                            align-items: center;
+                            .ansPanel-header-logo {
+                                img {
+                                    width: 48px;
+                                    height: 48px;
+                                    border-radius: 50%;
+                                }
+                            }
+                            .ansPanel-info {
+                                display: flex;
+                                flex-direction: column;
+                                .ansPanel-header-name {
+                                    color: #00a0e9;
+                                    font-weight: bold;
+                                    font-size: 18px;
+                                }
+                                .ansPanelHeaderClass {
+                                    font-size: 14px;
+                                    color: #888;
+                                }
+                                .ansPanel-header-time {
+                                    font-size: 14px;
+                                    color: #888;
+                                }
+                            }
+                        }
+                        .ansPanelMainSection {
+                            display: flex;
+                            padding-top: 20px;
+                            padding-bottom: 40px;
+                            font-size: 18px;
+                            line-height: 1.7;
+                            color: #303233;
+                            font-weight: normal;
+                        }
+                        .ansPanel-action {
+                            display: flex;
+                            justify-content: space-between;
+                            color: #777;
+                            padding: 6px 0;
+                            .ansPanel-action-left {
+                                display: flex;
+                                li {
+                                    padding-right: 8px;
+                                }
+                            }
+                            .ansPanel-action-right {
+                                display: flex;
+                                li {
+                                    padding-right: 8px;
+                                }
+                            }
+                        }
+                        .ansPanel-comment {
+                            .ansPanel-comment-body {
+                            }
+                        }
+                    }
+                }
+            }
         }
         // .socialShare {
         // }
