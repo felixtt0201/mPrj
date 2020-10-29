@@ -3,6 +3,7 @@ const article_num = document.querySelector('.profile-main__badge');
 const article_list = document.querySelector('.user-article-list');
 const get_draftID = document.getElementById('get_draftID');
 const articles = document.getElementById('articles');
+const questions = document.getElementById('questions');
 
 // (´・ω・｀)
 let userID = parseStatus.loginID;
@@ -17,8 +18,9 @@ console.log(`${userID}:${userName}`)//6
 axios.get(api)
   .then(res => {
     let data = res.data;
-    let newData = data.filter(i => i.artOnwerID == userID)
+    let newData = data.filter(i => i.artOnwerID == userID && i.type == 'article')
     let user_article_num = 0;
+    let user_question_num = 0
     // render
     let str = '';
     newData.forEach(i => {
@@ -54,7 +56,7 @@ axios.get(api)
         <a href="#" class="tag">Ben哥重課金</a>
       </div>
       <div class="qa-list__info">
-        <a title="2020-10-14 10:09:33" class="qa-list__info-time">2020-10-14</a> 由
+        <a title="2020-10-14 10:09:33" class="qa-list__info-time">${i.date}</a> 由
         <a href="#" class="qa-list__info-link">${i.author}
         </a>
         分享
@@ -68,6 +70,13 @@ axios.get(api)
     article_num.textContent = user_article_num;
     articles.textContent = user_article_num;
     getID();
+
+    data.forEach(i=>{
+      if(i.type == 'question' && i.artOnwerID == userID){
+        user_question_num++
+      }
+    })
+    questions.textContent = user_question_num;
   })
 
 function getID() {
