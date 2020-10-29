@@ -26,15 +26,15 @@ axios.get(api)
       str += `<li class="qa-list profile-list">
     <div class="profile-list__condition">
       <p class="qa-condition">
-        <span class="qa-condition__count">100</span>
+        <span class="qa-condition__count">0</span>
         <span class="qa-condition__text">Like</span>
       </p>
-      <p class="qa-condition qa-condition--had-answer">
-        <span class="qa-condition__count">100</span>
+      <p class="qa-condition">
+        <span class="qa-condition__count">0</span>
         <span class="qa-condition__text">留言</span>
       </p>
       <p class="qa-condition">
-        <span class="qa-condition__count">9527</span>
+        <span class="qa-condition__count">0</span>
         <span class="qa-condition__text">瀏覽</span>
       </p>
     </div>

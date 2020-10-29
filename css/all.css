@@ -3715,12 +3715,6 @@ a {
   font-size: 14px;
 }
 
-.qa-condition--had-answer {
-  background-color: #fca419;
-  color: #fff;
-  font-weight: bold;
-}
-
 .qa-list__title-link {
   font-weight: bold;
   color: #303233;
@@ -4167,4 +4161,20 @@ a.mk__editor-pre:before {
 
 .edit-btn:hover {
   background-color: #25b1f2;
+}
+
+.qa-done-render {
+  background-color: #fff;
+  color: #F9B037;
+  border: 1px solid  #F9B037;
+}
+
+.qa-condition--had-answer {
+  background-color: #fca419;
+  color: #fff;
+  font-weight: bold;
+}
+
+.liked, .seen {
+  color: #3f3f3f;
 }
