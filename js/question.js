@@ -1,8 +1,7 @@
 const q_api = `https://fierce-forest-92782.herokuapp.com/articles`;
-const question_title = document.getElementById('subject')
-const q_post_btn = document.querySelector('.subbtn')
-const question_content = document.getElementById('question_content')
-
+const question_title = document.getElementById('subject');
+const q_post_btn = document.querySelector('.subbtn');
+const question_content = document.getElementById('question_content');
 let q_obj = {
   title: '',
   author: '',
@@ -10,12 +9,12 @@ let q_obj = {
   content: '',
   artOnwerID: '',
   articleID: '',
-  likes: '',
-  views: '',
+  likes: 0,
+  views: 0,
   type: 'question'
 }
 
-q_post_btn.addEventListener('click', post_question)
+
 
 function question() {
   /* 取得 title */
@@ -53,11 +52,16 @@ function question() {
   
   
 }
-
+let halo = {};
 function post_question() {
   question();
   axios.post(q_api, q_obj)
     .then(res => {
-      console.log(res);
+      id = res.data.id
+      console.log(id);
+      localStorage.setItem('questionID',id);
+      window.location.href = '/qa_content.html';
     })
 }
+
+q_post_btn.addEventListener('click', post_question);

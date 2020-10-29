@@ -218,13 +218,21 @@
                 }
                 .fa-angle-left {
                     border: 1px solid #868e96;
-                    padding: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 30px;
+                    height: 30px;
                     border-radius: 50%;
                     margin-right: 5px;
                 }
                 .fa-angle-right {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                     border: 1px solid #868e96;
-                    padding: 5px;
+                    height: 30px;
+                    width: 30px;
                     border-radius: 50%;
                     margin-left: 5px;
                 }
@@ -543,8 +551,8 @@
                 }
             }
         }
-        .socialShare {
-        }
+        // .socialShare {
+        // }
     }
     .rightSide {
         width: 300px;
@@ -561,15 +569,15 @@
                 cursor: pointer;
                 .traineeTitle {
                     display: flex;
-                    .fa-exclamation-circle {
-                    }
-                    p {
-                    }
+                    // .fa-exclamation-circle {
+                    // }
+                    // p {
+                    // }
                 }
-                .traineeArrowBtn {
-                    .fa-caret-down {
-                    }
-                }
+                // .traineeArrowBtn {
+                //     // .fa-caret-down {
+                //     // }
+                // }
             }
             .traineeBody {
                 padding-top: 6px;

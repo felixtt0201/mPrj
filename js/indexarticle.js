@@ -36,12 +36,14 @@ axios.get(articleApi).then(res => {
                                     <h3 data-id='${i.articleID}'>${i.title}</h3>
                                 </a>
                                 <div class="qaTrivia">
-                                    <a href="https://ithelp.ithome.com.tw/tags/questions/asus%20k401u%20%E7%AD%86%E9%9B%BB%E5%95%8F%E9%A1%8C"
-                                        class="qaTags">asus k401u 筆電問題</a>
+                                    <a href=""
+                                        class="qaTags">JavaScript</a>
+                                        <a href=""
+                                        class="qaTags">Web</a>
                                     <a class="qaTime" title="2020-10-21 13:16:08">2020-10-21</a>‧ 由
                                     <a class="qaInfoLink" href="https://ithelp.ithome.com.tw/users/20067337">
                                         ${i.author}
-                                    </a>提問
+                                    </a> 提問
                                 </div>
                             </li>
                         </div>
@@ -57,6 +59,6 @@ function getID() {
     id = e.target.dataset.id
     console.log(id)
     localStorage.setItem('articleID', id);
-    window.location.href = '/content.html';
+    window.location.href = '/qa_content.html';
   });
 }
