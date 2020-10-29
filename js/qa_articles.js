@@ -2,8 +2,8 @@ const api = `https://fierce-forest-92782.herokuapp.com/articles`;
 const article_num = document.querySelector('.profile-main__badge');
 const article_list = document.querySelector('.user-article-list');
 const get_draftID = document.getElementById('get_draftID');
-const articles = document.getElementById('articles');
 const questions = document.getElementById('questions');
+const articles = document.getElementById('articles');
 
 // (´・ω・｀)
 let userID = parseStatus.loginID;
@@ -18,7 +18,7 @@ console.log(`${userID}:${userName}`)//6
 axios.get(api)
   .then(res => {
     let data = res.data;
-    let newData = data.filter(i => i.artOnwerID == userID && i.type == 'article')
+    let newData = data.filter(i => i.artOnwerID == userID && i.type == 'question')
     let user_article_num = 0;
     let user_question_num = 0
     // render
@@ -28,7 +28,7 @@ axios.get(api)
       str += `<li class="qa-list profile-list">
     <div class="profile-list__condition">
       <p class="qa-condition">
-        <span class="qa-condition__count">0</span>
+        <span class="qa-condition__count">${i.like}</span>
         <span class="qa-condition__text">Like</span>
       </p>
       <p class="qa-condition">
@@ -36,30 +36,26 @@ axios.get(api)
         <span class="qa-condition__text">留言</span>
       </p>
       <p class="qa-condition">
-        <span class="qa-condition__count">0</span>
+        <span class="qa-condition__count">${i.view}</span>
         <span class="qa-condition__text">瀏覽</span>
       </p>
     </div>
     <div class="profile-list__content">
       <h3 class="qa-list__title">
-        <span class="title-badge title-badge--tech">
-          技術
-        </span>
         <a href="#" class="qa-list__title-link" data-id='${i.articleID}'>
           ${i.title}
         </a>
       </h3>
       <div class="qa-list__tags">
-        <a href="#" class="tag">12th鐵人賽</a>
-        <a href="#" class="tag">JavaScript</a>
-        <a href="#" class="tag">火箭隊讚</a>
-        <a href="#" class="tag">Ben哥重課金</a>
+      <a href="#" class="tag">web</a>
+      <a href="#" class="tag">拜託救我</a>
+      <a href="#" class="tag">霸脫(´・ω・｀)</a>
       </div>
       <div class="qa-list__info">
         <a title="2020-10-14 10:09:33" class="qa-list__info-time">${i.date}</a> 由
         <a href="#" class="qa-list__info-link">${i.author}
         </a>
-        分享
+        提問
       </div>
     </div>
   </li>`
@@ -68,15 +64,15 @@ axios.get(api)
     // console.log(user_article_num)
     article_list.innerHTML = str;
     article_num.textContent = user_article_num;
-    articles.textContent = user_article_num;
+    questions.textContent = user_article_num;
     getID();
 
     data.forEach(i=>{
-      if(i.type == 'question' && i.artOnwerID == userID){
+      if(i.type == 'article' && i.artOnwerID == userID){
         user_question_num++
       }
     })
-    questions.textContent = user_question_num;
+    articles.textContent = user_question_num;
   })
 
 function getID() {
@@ -85,7 +81,7 @@ function getID() {
     id = e.target.dataset.id
     console.log(id)
     localStorage.setItem('articleID',id);
-    window.location.href = '/content.html';
+    window.location.href = '/qa_content.html';
   });
 }
 

@@ -9,8 +9,8 @@ let q_obj = {
   content: '',
   artOnwerID: '',
   articleID: '',
-  likes: '',
-  views: '',
+  likes: 0,
+  views: 0,
   type: 'question'
 }
 
