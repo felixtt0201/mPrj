@@ -9,16 +9,18 @@ const contentedit = document.getElementById('edit');
 const Report = document.querySelector('.Report');
 const edit = document.querySelector('.halo');
 /* -----------------------  文章渲染  -----------------------*/
-
-
+let a = localStorage.getItem('articleID')
+get_articleID()
 function get_articleID(){
-    let a = localStorage.getItem('articleID')
+
+    console.log(a)
     axios.get(api)
     .then(res=>{
         let contentData = res.data;
-        // console.log(data)
-        //let newData = data.filter(i => i.artOnwerID == userID)
-        let new_Data = contentData.filter(i=>i.articleID == a );
+        console.log(contentData)
+        let new_Data = contentData.filter(function(i){
+            return i.articleID == a ;
+        } );
         console.log(new_Data) 
         
         content_title.textContent = new_Data[0].title;
@@ -49,7 +51,7 @@ function editor(editbtn){
 }
 
 
-get_articleID()
+
 
 
 

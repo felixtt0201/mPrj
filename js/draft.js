@@ -40,11 +40,6 @@ function draft() {
   // console.log(result)
 
 
-
-
-
-
-
   /* 取得文章內容 */
   draft_obj.content = CKEDITOR.instances['editor-main'].getData();
   // console.log(draft_obj.content)
@@ -59,7 +54,11 @@ function draft() {
   /* 文章ID */
   let today = date.getTime();
   draft_obj.articleID = `${parseStatus.loginID}${today}`;
-  console.log(draft_obj.articleID);
+  // console.log(draft_obj.articleID);
+
+  localStorage.setItem('articleID',draft_obj.articleID)
+  // console.log(draft_obj.articleID)
+  
 }
 
 function post_draft() {
@@ -67,7 +66,11 @@ function post_draft() {
   axios.post(draft_api, draft_obj)
     .then(res => {
       console.log(res);
-    })
+      window.location.href = '/content.html';
+    }) 
 }
 
 draft_btn.addEventListener('click', post_draft)
+
+/* 發文成功後跳轉頁面 */
+
