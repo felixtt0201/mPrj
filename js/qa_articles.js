@@ -4,11 +4,13 @@ const article_list = document.querySelector('.user-article-list');
 const get_draftID = document.getElementById('get_draftID');
 const questions = document.getElementById('questions');
 const articles = document.getElementById('articles');
+const user_name = document.getElementById('user_name')
 
 // (´・ω・｀)
 let userID = parseStatus.loginID;
 let userName = parseStatus.loginName;
 
+user_name.textContent = userName;
 console.log(`${userID}:${userName}`)//6
 
 // (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)

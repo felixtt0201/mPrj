@@ -9,16 +9,18 @@ const contentedit = document.getElementById('edit');
 const Report = document.querySelector('.Report');
 const edit = document.querySelector('.halo');
 /* -----------------------  文章渲染  -----------------------*/
-
-
+let a = localStorage.getItem('articleID')
+get_articleID()
 function get_articleID(){
-    let a = localStorage.getItem('articleID')
+
+    console.log(a)
     axios.get(api)
     .then(res=>{
         let contentData = res.data;
-        // console.log(data)
-        //let newData = data.filter(i => i.artOnwerID == userID)
-        let new_Data = contentData.filter(i=>i.articleID == a );
+        console.log(contentData)
+        let new_Data = contentData.filter(function(i){
+            return i.articleID == a ;
+        } );
         console.log(new_Data) 
         
         content_title.textContent = new_Data[0].title;
@@ -38,18 +40,18 @@ function get_articleID(){
         
     })
 }
-function editor(editbtn){
-    let id='';
-    editbtn.addEventListener('click',function(e){
-    id = e.target.dataset.id;
-    // console.log(id);
-    localStorage.setItem('edidID',id);
-    window.location.href = '/edit.html';
+function editor(editbtn) {
+    let id = '';
+    editbtn.addEventListener('click', function (e) {
+        id = e.target.dataset.id;
+        // console.log(id);
+        localStorage.setItem('edidID', id);
+        window.location.href = '/edit.html';
     })
 }
 
 
-get_articleID()
+
 
 
 
@@ -68,8 +70,8 @@ let menuRight = document.getElementById('menuRight');
 menuRight.innerHTML =
     `<a href=""><li><i class="fas fa-search"></i></li></a>
 <a href=""><li><button type="button" class="menu__ironman-btn" data-toggle="modal" data-target="#group">鐵人發文</button></li></a>
-<a href=""><li>發問</li></a>
-<a href=""><li>發文<i class="fas fa-sort-down"></i></li></a>
+<a href="questions.html"><li>發問</li></a>
+<a href="draft.html"><li>發文<i class="fas fa-sort-down"></i></li></a>
 <a href=""><li><i class="fas fa-comment-dots"></i></li></a>
 <a href=""><li><i class="fa fa-bell fa-fw"></i></li></a>
 <a href="/user.html"><li><img src="https://member.ithome.com.tw/avatars/151507?s=ithelp" class="accountPhoto">
@@ -104,8 +106,8 @@ function printComment(data) {
         str += `<li>
         <div class="ansPanel-clearfix">
         <dic class="ansPanel-side">
-            <button id="likeBtn"><i class="fa fa-caret-up"></i></button>
-            <p class="likeNum"></p>
+            <button class="likeBtn"><i class="fa fa-caret-up"></i></button>
+            <ul class="likeNum">0</ul>
         </dic>
         <div class="ansPanel-content">
             <div class="ansPanel-header">
@@ -152,17 +154,30 @@ function renderData() {
         let msgNum = document.getElementById('msgNum');
         msgNum.innerHTML = res.data.length;
 
-        // // 
-        // let likeBtn = document.querySelectorAll('.ansPanel');
-        // let likeNum = document.querySelectorAll('.likeNum');
-        // // 當使用者點擊likeBtn時，按鈕下方會顯示1
-        // for (let i = 0; i < likeBtn.length; i++) {
-        //     likeBtn[i].addEventListener('click', function () {
-        //         likeNum.innerHTML = 1;
-        //         // console.log(res.data);
-        //     }, false)
-        // }
+        // like功能
+        let likeBtn = document.querySelectorAll('.likeBtn');
+        let likeNum = document.querySelectorAll('.likeNum');
+        let like = 0;
+        let loginID = parseStatus.loginID;
+        for (let i = 0; i < likeBtn.length; i++) {
+            likeBtn[i].addEventListener('click', function () {
+                // 判斷式：當使用者的loginID，等於msg資料庫裡的msgOwenerID，才可累加
+                if (loginID == res.data[i].msgOwenerID) {
+                    // 確認點擊項目的id
+                    console.log('ID:' + res.data[i].id)
+                    // 使用者端：當使用者點擊likeBtn時，likeNum會顯示1
+                    likeNum[i].innerHTML = `${like + 1}`;
 
+                    // 資料庫端：當使用者點擊likeBtn時，msg資料庫的like欄位數字+1
+                    like += 1;
+                    // 修改指定id網址的特定內容
+                    axios.patch(`${msgURL}/${res.data[i].id}`, {
+                        like: `${like}`,
+                    }).then((res) => {
+                    })
+                }
+            }, false)
+        }
     });
 }
 renderData(); // 執行renderData函式，顯示預設畫面(舊至新)
@@ -194,16 +209,3 @@ function sortButton(HTMLBtn, isSort) {
 // 賦予sortButton函式兩個參數值，Old2New與New2Old對應到監聽按鈕HTMLBtn，true與false對應到isSort判斷式
 sortButton(Old2New, true);
 sortButton(New2Old, false);
-
-
-
-
-// // 
-// function likeFn() {
-//     axios.get(`${msgURL}`, {
-//         like: '1',
-//     }).then((res) => {
-
-//     })
-// }
-// likeFn();

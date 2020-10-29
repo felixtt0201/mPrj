@@ -2339,7 +2339,8 @@ ul {
   color: black;
 }
 
-.content .leftSide .reply .replyFrame .replyFrame-body .CodeMirror, .content .leftSide .reply .replyFrame .replyFrame-body .CodeMirror-scroll {
+.content .leftSide .reply .replyFrame .replyFrame-body .CodeMirror,
+.content .leftSide .reply .replyFrame .replyFrame-body .CodeMirror-scroll {
   min-height: 200px !important;
 }
 
@@ -2450,8 +2451,33 @@ ul {
   padding: 20px;
 }
 
-.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-side p {
-  font-size: 30px;
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-side .likeBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  outline: none;
+  border: none;
+  background: white;
+  width: 36px;
+  height: 27px;
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-side .likeBtn:hover {
+  background: #f2f2f2;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-side .likeBtn:active, .content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-side .likeBtn :visited {
+  color: blue;
 }
 
 .content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content {
