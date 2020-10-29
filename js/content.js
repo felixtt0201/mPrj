@@ -5,6 +5,9 @@ const timeInfo = document.querySelector('.timeInfo');
 const content_title = document.getElementById('content_title');
 const nameInfo = document.getElementById('nameInfo');
 const qaMarkDown = document.getElementById('qaMarkDown');
+const contentedit = document.getElementById('edit');
+const Report = document.querySelector('.Report');
+const edit = document.querySelector('.halo');
 /* -----------------------  文章渲染  -----------------------*/
 
 
@@ -23,7 +26,25 @@ function get_articleID(){
         qaMarkDown.innerHTML = new_Data[0].content;
         timeInfo.textContent = new_Data[0].date;
 
-
+        // 判斷文章作者是否同人才可編輯
+        if(new_Data[0].artOnwerID === parseStatus.loginID){
+        // Report.innerHTML =`<a href="/edit.html" style="color:#777;font-size:16px;" class="halo" target="_blank">編輯</a>`
+        Report.innerHTML =`<p class="editbtn" data-id='${new_Data[0].id}'>編輯</p>`
+        const editbtn = document.querySelector('.editbtn');
+        editor(editbtn);
+        }else{
+            console.log('安安你無法編輯')
+        }
+        
+    })
+}
+function editor(editbtn){
+    let id='';
+    editbtn.addEventListener('click',function(e){
+    id = e.target.dataset.id;
+    // console.log(id);
+    localStorage.setItem('edidID',id);
+    window.location.href = '/edit.html';
     })
 }
 
