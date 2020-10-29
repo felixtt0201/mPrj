@@ -383,7 +383,8 @@
                     .form-control {
                         color: black;
                     }
-                    .CodeMirror, .CodeMirror-scroll {
+                    .CodeMirror,
+                    .CodeMirror-scroll {
                         min-height: 200px !important;
                     }
                     .btnBox {
@@ -457,8 +458,24 @@
                         font-size: 30px;
                         color: #333;
                         padding: 20px;
-                        p {
-                            font-size: 30px;
+                        .likeBtn {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            outline:none;
+                            border: none;
+                            background: white;
+                            width: 36px;
+                            height: 27px;
+                            border-radius: 4px;
+                            cursor: pointer;
+                            transition: 0.2s ease;
+                            &:hover {
+                                background: #f2f2f2;
+                            }
+                            &:active,:visited{
+                                color:blue;
+                            }
                         }
                     }
                     .ansPanel-content {
