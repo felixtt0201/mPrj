@@ -79,8 +79,9 @@ function getID() {
   let id = '';
   get_draftID.addEventListener('click', function (e) {
     id = e.target.dataset.id
-    console.log(id)
+    console.log(id) //51603938410108
     localStorage.setItem('articleID',id);
+    localStorage.setItem('貓','喵');
     window.location.href = '/qa_content.html';
   });
 }
