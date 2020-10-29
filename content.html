@@ -8,6 +8,7 @@
         sizes="32x32">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css' />
     <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js'></script>
     <script src="https://cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script>
 </head>
@@ -231,16 +232,19 @@
                             </div>
                         </div>
                     </div>
-
+                    <div class="qaStatus">
+                        <div class="qaStatus-title">
+                            <p><span id="msgNum"></span><span>個回答</span></p>
+                        </div>
+                        <ul class="qaStatus-catagory">
+                            <li><button class="OldtoNew" id="Old2New">舊至新</button></li>
+                            <li><button class="NewtoOld" id="New2Old">新至舊</button></li>
+                            <li><button class="">最高Like數</button></li>
+                        </ul>
+                    </div>
+                    <ul class="ansPanel" id="ansPanel"></ul>
                 </div>
-                <div class="socialShare">
-
-                </div>
-
-
-
             </div>
-
             <div class="rightSide">
                 <a class="rightSideAD"
                     href="https://ithelp.ithome.com.tw/ironman/?utm_source=ithelp&amp;utm_medium=Banner300*100&amp;utm_campaign=ironman12"

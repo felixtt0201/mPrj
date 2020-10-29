@@ -81,6 +81,8 @@
                 border-right: 1px solid #ddd;
                 border-left: 1px solid #ddd;
                 background: white;
+                padding-top: 10px;
+                padding-bottom: 10px;
                 .qaCondition {
                     display: flex;
                     margin-right: 10px;
@@ -104,8 +106,7 @@
                         .answer {
                             text-decoration: none;
                             padding: 6px 10px;
-                            color: #fcb037;
-                            border: 1px solid #fcb037;
+                            color: #999;
                             span {
                                 display: flex;
                                 flex-direction: column;
@@ -115,7 +116,7 @@
                         .view {
                             text-decoration: none;
                             padding: 6px 10px;
-                            color: black;
+                            color:#999;
                             span {
                                 display: flex;
                                 flex-direction: column;
@@ -128,12 +129,17 @@
                     display: flex;
                     align-items: center;
                     h3 {
+                        color: #303233;
                         font-size: 18px;
                         font-weight: bold;
-                        margin-bottom: 8px;
+                        margin-bottom: 10px;
                         line-height: 1.2;
+                        &:hover{
+                            color: #337ab7;
+                        }
                     }
                     .qaTrivia {
+                        font-size: 14px;
                         .qaTags {
                             padding: 2px 8px;
                             border-radius: 4px;
@@ -153,7 +159,7 @@
                             }
                         }
                         .qaInfoLink {
-                            color: #23527c;
+                            color: #00A0E9;
                             text-decoration: none;
                             &:hover {
                                 color: #37c0ff;
