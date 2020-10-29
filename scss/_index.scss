@@ -38,6 +38,7 @@
             border-bottom: 3px solid #00a0e9;
             .content-nav-bar-left {
                 display: flex;
+                align-items: flex-end;
                 .tab-title {
                     font-size: 26px;
                     font-weight: bold;
@@ -45,13 +46,17 @@
                     letter-spacing: 2px;
                 }
                 .rss-icon {
+                    
                     display: flex;
                     align-items: center;
                     font-size: 14px;
                     color: #f26522;
                     border: 1px solid #f26522;
                     border-radius: 16px;
-                    padding: 0 4px;
+                    padding: 0px 0px;
+                    height: 25px;
+                    margin-bottom: 5px;
+                    margin-left: 5px;
                 }
             }
             .content-nav-bar-right {
@@ -104,8 +109,7 @@
                         .answer {
                             text-decoration: none;
                             padding: 6px 10px;
-                            color: #fcb037;
-                            border: 1px solid #fcb037;
+                            
                             span {
                                 display: flex;
                                 flex-direction: column;
@@ -153,7 +157,7 @@
                             }
                         }
                         .qaInfoLink {
-                            color: #23527c;
+                            color: #00A0E9;
                             text-decoration: none;
                             &:hover {
                                 color: #37c0ff;

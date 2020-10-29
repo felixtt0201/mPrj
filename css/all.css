@@ -633,6 +633,9 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 .content .leftSide .content-nav-bar .content-nav-bar-left .tab-title {
@@ -653,7 +656,10 @@ ul {
   color: #f26522;
   border: 1px solid #f26522;
   border-radius: 16px;
-  padding: 0 4px;
+  padding: 0px 0px;
+  height: 25px;
+  margin-bottom: 5px;
+  margin-left: 5px;
 }
 
 .content .leftSide .content-nav-bar .content-nav-bar-right {
@@ -732,8 +738,6 @@ ul {
 .content .leftSide .columnBoard .qaList .qaCondition li .answer {
   text-decoration: none;
   padding: 6px 10px;
-  color: #fcb037;
-  border: 1px solid #fcb037;
 }
 
 .content .leftSide .columnBoard .qaList .qaCondition li .answer span {
@@ -804,7 +808,7 @@ ul {
 }
 
 .content .leftSide .columnBoard .qaList .qaContent .qaTrivia .qaInfoLink {
-  color: #23527c;
+  color: #00A0E9;
   text-decoration: none;
 }
 
@@ -1290,6 +1294,8 @@ ul {
   border-right: 1px solid #ddd;
   border-left: 1px solid #ddd;
   background: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .content .leftSide .columnBoard .qaList .qaCondition {
@@ -1332,8 +1338,7 @@ ul {
 .content .leftSide .columnBoard .qaList .qaCondition li .answer {
   text-decoration: none;
   padding: 6px 10px;
-  color: #fcb037;
-  border: 1px solid #fcb037;
+  color: #999;
 }
 
 .content .leftSide .columnBoard .qaList .qaCondition li .answer span {
@@ -1352,7 +1357,7 @@ ul {
 .content .leftSide .columnBoard .qaList .qaCondition li .view {
   text-decoration: none;
   padding: 6px 10px;
-  color: black;
+  color: #999;
 }
 
 .content .leftSide .columnBoard .qaList .qaCondition li .view span {
@@ -1378,10 +1383,19 @@ ul {
 }
 
 .content .leftSide .columnBoard .qaList .qaContent h3 {
+  color: #303233;
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   line-height: 1.2;
+}
+
+.content .leftSide .columnBoard .qaList .qaContent h3:hover {
+  color: #337ab7;
+}
+
+.content .leftSide .columnBoard .qaList .qaContent .qaTrivia {
+  font-size: 14px;
 }
 
 .content .leftSide .columnBoard .qaList .qaContent .qaTrivia .qaTags {
@@ -1404,7 +1418,7 @@ ul {
 }
 
 .content .leftSide .columnBoard .qaList .qaContent .qaTrivia .qaInfoLink {
-  color: #23527c;
+  color: #00A0E9;
   text-decoration: none;
 }
 
@@ -3700,7 +3714,6 @@ a {
   padding: 6px 10px;
   display: inline-block;
   text-align: center;
-  color: #303233;
   line-height: 1;
   font-weight: bold;
 }
