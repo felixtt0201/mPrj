@@ -10,16 +10,18 @@ const Report = document.querySelector('.Report');
 const edit = document.querySelector('.halo');
 const msgURL = 'https://fierce-forest-92782.herokuapp.com/message';
 /* -----------------------  文章渲染  -----------------------*/
-
-
+let a = localStorage.getItem('articleID')
+get_articleID()
 function get_articleID() {
-    let a = localStorage.getItem('articleID')
+
+    console.log(a)
     axios.get(api)
         .then(res => {
             let contentData = res.data;
-            // console.log(data)
-            //let newData = data.filter(i => i.artOnwerID == userID)
-            let new_Data = contentData.filter(i => i.articleID == a);
+            console.log(contentData)
+            let new_Data = contentData.filter(function (i) {
+                return i.articleID == a;
+            });
             console.log(new_Data)
 
             content_title.textContent = new_Data[0].title;
@@ -29,7 +31,6 @@ function get_articleID() {
 
             // 判斷文章作者是否同人才可編輯
             if (new_Data[0].artOnwerID === parseStatus.loginID) {
-                // Report.innerHTML =`<a href="/edit.html" style="color:#777;font-size:16px;" class="halo" target="_blank">編輯</a>`
                 Report.innerHTML = `<p class="editbtn" data-id='${new_Data[0].id}'>編輯</p>`
                 const editbtn = document.querySelector('.editbtn');
                 editor(editbtn);
@@ -50,7 +51,7 @@ function editor(editbtn) {
 }
 
 
-get_articleID()
+
 
 
 
@@ -59,23 +60,23 @@ get_articleID()
 
 /* -----------------------  留言功能  -----------------------*/
 // 以localStorage.getItem('key')取得使用者登入資料(這裡取得的資料為一組字串，沒辦法直接使用)
-let getStatus = localStorage.getItem('loginStatus');
-// 以JSON.parse解析資料，將字串轉成JSON陣列，只有將字串轉成陣列，才能提取loginStatus裡面的值(loginName)
-let parseStatus = JSON.parse(getStatus);
-console.log(parseStatus);
+// let getStatus = localStorage.getItem('loginStatus');
+// // 以JSON.parse解析資料，將字串轉成JSON陣列，只有將字串轉成陣列，才能提取loginStatus裡面的值(loginName)
+// let parseStatus = JSON.parse(getStatus);
+// console.log(parseStatus);
 
-// 將message資料渲染到menuRight：把loginStatus取得的值(loginName)，塞到menuRight的欄位
-let menuRight = document.getElementById('menuRight');
-menuRight.innerHTML =
-    `<a href=""><li><i class="fas fa-search"></i></li></a>
-<a href=""><li><button type="button" class="menu__ironman-btn" data-toggle="modal" data-target="#group">鐵人發文</button></li></a>
-<a href="questions.html"><li>發問</li></a>
-<a href="draft.html"><li>發文<i class="fas fa-sort-down"></i></li></a>
-<a href=""><li><i class="fas fa-comment-dots"></i></li></a>
-<a href=""><li><i class="fa fa-bell fa-fw"></i></li></a>
-<a href="/user.html"><li><img src="https://member.ithome.com.tw/avatars/151507?s=ithelp" class="accountPhoto">
-<span>${parseStatus.loginName}</span><i class="fas fa-sort-down"></i></li></a>
-<a href="./setting.html"><li>修改密碼</li></a>`;
+// // 將message資料渲染到menuRight：把loginStatus取得的值(loginName)，塞到menuRight的欄位
+// let menuRight = document.getElementById('menuRight');
+// menuRight.innerHTML =
+//     `<a href=""><li><i class="fas fa-search"></i></li></a>
+// <a href=""><li><button type="button" class="menu__ironman-btn" data-toggle="modal" data-target="#group">鐵人發文</button></li></a>
+// <a href="questions.html"><li>發問</li></a>
+// <a href="draft.html"><li>發文<i class="fas fa-sort-down"></i></li></a>
+// <a href=""><li><i class="fas fa-comment-dots"></i></li></a>
+// <a href=""><li><i class="fa fa-bell fa-fw"></i></li></a>
+// <a href="/user.html"><li><img src="https://member.ithome.com.tw/avatars/151507?s=ithelp" class="accountPhoto">
+// <span>${parseStatus.loginName}</span><i class="fas fa-sort-down"></i></li></a>
+// <a href="./setting.html"><li>修改密碼</li></a>`;
 
 // 將message資料渲染到動態留言板：把loginStatus取得的值(loginName)，塞到留言板的名稱欄位
 let replyFramePerson = document.getElementById('replyFrame-person');

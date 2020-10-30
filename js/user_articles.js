@@ -4,14 +4,28 @@ const article_list = document.querySelector('.user-article-list');
 const get_draftID = document.getElementById('get_draftID');
 const articles = document.getElementById('articles');
 const questions = document.getElementById('questions');
+const user_name = document.getElementById('user_name')
 
 // (´・ω・｀)
 let userID = parseStatus.loginID;
 let userName = parseStatus.loginName;
 
 console.log(`${userID}:${userName}`)//6
-
+user_name.textContent = userName;
 // (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)
+
+function getPersonInfo() {
+  const artName = document.querySelector('.user-profile__name');
+  artName.textContent = parseStatus.loginName + " ";
+
+  const Name = document.querySelectorAll('.userBoard_nameID')
+  Name.forEach(i => {
+    i.textContent = parseStatus.loginName + " ";
+  });
+}
+getPersonInfo();
+
+
 
 
 /* 找到自己ID 的文章 */
@@ -71,8 +85,8 @@ axios.get(api)
     articles.textContent = user_article_num;
     getID();
 
-    data.forEach(i=>{
-      if(i.type == 'question' && i.artOnwerID == userID){
+    data.forEach(i => {
+      if (i.type == 'question' && i.artOnwerID == userID) {
         user_question_num++
       }
     })
@@ -84,7 +98,7 @@ function getID() {
   get_draftID.addEventListener('click', function (e) {
     id = e.target.dataset.id
     console.log(id)
-    localStorage.setItem('articleID',id);
+    localStorage.setItem('articleID', id);
     window.location.href = '/content.html';
   });
 }

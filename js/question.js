@@ -52,16 +52,26 @@ function question() {
   
   
 }
-let halo = {};
+let id = {};
 function post_question() {
   question();
   axios.post(q_api, q_obj)
     .then(res => {
-      id = res.data.id
+      id = res.data.articleID
       console.log(id);
-      localStorage.setItem('questionID',id);
+      localStorage.setItem('articleID',id);
       window.location.href = '/qa_content.html';
+      getqa_data()
     })
 }
 
+// let getdata = {}; // id~106
+// function getqa_data(){
+//   axios.get(q_api)
+//   .then(function(res){
+//     getdata = res.data;
+//     console.log(getdata);
+//     render();
+//   })
+// }
 q_post_btn.addEventListener('click', post_question);
