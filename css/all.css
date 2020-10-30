@@ -2496,7 +2496,8 @@ ul {
   background: #f2f2f2;
 }
 
-.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-side .likeBtn:active, .content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-side .likeBtn :visited {
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-side .likeBtn:active,
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-side .likeBtn :visited {
   color: blue;
 }
 
@@ -2586,6 +2587,71 @@ ul {
 
 .content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content .ansPanel-action .ansPanel-action-right li {
   padding-right: 8px;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content .ansPanel-comment .ansPanel-header {
+  padding: 12px 14px;
+  background: #f2f5f7;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content .ansPanel-comment .img-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content .ansPanel-comment .commentMsg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 3px 24px;
+  margin-bottom: 10px;
+  width: 710px;
+  height: 100px;
+  background: #f2f5f7;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content .ansPanel-comment .ansPanel-comment-markdown {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 12px 14px;
+  background-color: #f2f5f7;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content .ansPanel-comment .ansPanel-comment-markdown .img-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content .ansPanel-comment .ansPanel-comment-markdown .msgerMsg {
+  width: 580px;
+  height: 150px;
+  margin-right: 5px;
+  padding: 5px;
+  outline: none;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content .ansPanel-comment .ansPanel-comment-markdown .commentSubmitBtn {
+  cursor: pointer;
+  color: white;
+  background-color: #00a0e9;
+  padding: 6px 12px;
+  border: 1px solid transparent;
+  outline: none;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 400;
+  height: 30px;
 }
 
 .content .rightSide {

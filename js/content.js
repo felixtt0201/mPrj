@@ -1,4 +1,4 @@
-var test = CKEDITOR.replace('editor1');
+const editor1 = CKEDITOR.replace('editor1');
 const api = `https://fierce-forest-92782.herokuapp.com/articles`;
 const userapi = `https://fierce-forest-92782.herokuapp.com/account`;
 const content_userName = document.querySelector('.nameInfo');
@@ -13,6 +13,7 @@ const articleView = document.querySelector('.articleView')
 // const liker = document.getElementById('liker')
 // const likeGroup = document.getElementById('likeGroup')
 
+const msgURL = 'https://fierce-forest-92782.herokuapp.com/message';
 /* -----------------------  文章渲染  -----------------------*/
 
 let a = localStorage.getItem('articleID')
@@ -173,9 +174,21 @@ function printComment(data) {
                 </ul>
             </div>
             <div class="ansPanel-comment">
-                <ul class="ansPanel-comment-body">
-                </ul>
-            </div
+                <div class="ansPanel-header">
+                    <a class="ansPanel-header-logo" href="#"><img
+                            src="https://member.ithome.com.tw/avatars/151507?s=ithelp" alt=""></a>
+                    <div class="ansPanel-info">
+                        <h3 class="ansPanel-header-name" id="ansPanelHeaderName">${data[i].mName}</h3>
+                        <p><span class="ansPanelHeaderClass">iT邦好手1級．</span><span class="ansPanel-header-time" id="ansPanelHeaderTime">${data[i].date}</span></p>
+                    </div>
+                </div>
+                <ul class="commentMsg"></ul>
+                <div class="ansPanel-comment-markdown">
+                    <img src="https://member.ithome.com.tw/avatars/151507?s=ithelp" class="img-circle comment__avatar">
+                    <textarea class="msgerMsg" placeholder="回應"></textarea>
+                    <button class="commentSubmitBtn" id="commentSubmitBtn">送出</button>
+                </div>
+            </div>
         </div>
         </div>
         </li>`
@@ -183,7 +196,6 @@ function printComment(data) {
     return str;
 }
 
-const msgURL = 'https://fierce-forest-92782.herokuapp.com/message';
 // 將message資料渲染到靜態留言板
 function renderData() {
     axios.get(msgURL, {
@@ -197,33 +209,45 @@ function renderData() {
         // like功能
         let likeBtn = document.querySelectorAll('.likeBtn');
         let likeNum = document.querySelectorAll('.likeNum');
-        let like = 0;
+        let like = 0; // like變數必須建立在迴圈外，否則每次執行都會從0開始計算
         let loginID = parseStatus.loginID;
         for (let i = 0; i < likeBtn.length; i++) {
             likeBtn[i].addEventListener('click', function () {
-                // 判斷式：當使用者的loginID，等於msg資料庫裡的msgOwenerID，才可累加
+                // 判斷式：當localStorage的loginID，等於msg資料庫裡的msgOwenerID，才可累加
                 if (loginID == res.data[i].msgOwenerID) {
                     // 確認點擊項目的id
                     console.log('ID:' + res.data[i].id)
-                    // 使用者端：當使用者點擊likeBtn時，likeNum會顯示1
-                    likeNum[i].innerHTML = `${like + 1}`;
 
-                    // 資料庫端：當使用者點擊likeBtn時，msg資料庫的like欄位數字+1
-                    like += 1;
-                    // 修改指定id網址的特定內容
+                    // 使用者端：當使用者點擊likeBtn時，likeNum會顯示1
+                    likeNum[i].innerHTML = `${like + 1}`; // 變數like的預設值為0，若此處不設定+1，則必須按兩次才會顯示1
+
+                    // 資料庫端：當使用者點擊likeBtn時，以patch方法修改msg資料庫的like欄位
                     axios.patch(`${msgURL}/${res.data[i].id}`, {
-                        like: `${like}`,
+                        like: `${like + 1}`,
                     }).then((res) => {
+                        like++;
                     })
                 }
+            }, false)
+        }
+        // 留言板的留言功能...
+        let commentSubmitBtn = document.querySelectorAll('.commentSubmitBtn'); //留言的按鈕
+        let msgerMsg = document.querySelectorAll('.msgerMsg'); //擷取msgerMsg裡的文字內容
+        let commentMsg = document.querySelectorAll('.commentMsg'); //顯示文字的<div>
+        for (let i = 0; i < commentSubmitBtn.length; i++) {
+            commentSubmitBtn[i].addEventListener('click', function () {
+                console.log(res.data[i].id)
+                commentMsg[i].innerHTML = `${msgerMsg[i].value}`;
             }, false)
         }
     });
 }
 renderData(); // 執行renderData函式，顯示預設畫面(舊至新)
+
+// 分類功能
 let Old2New = document.getElementById('Old2New');
 let New2Old = document.getElementById('New2Old');
-
+let MostLike = document.getElementById('MostLike');
 // 分類函式sortButton：HTMLBtn與isSort在一開始都是空值，所有函式都必須經過呼叫才能執行
 function sortButton(HTMLBtn, isSort) {
     // HTMLBtn在事件監聽的此時還是空值
@@ -231,14 +255,18 @@ function sortButton(HTMLBtn, isSort) {
         axios.get(msgURL, {
         }).then((res) => {
             // isSort在此也是空值
-            if (isSort) {
+            if (isSort == '舊至新') {
                 // 不能寫res.data[i].id.sort，因為這樣會對應到一個數字，沒辦法以sort方法做比較
                 res.data.sort((a, b) => {
                     return a.id - b.id;
                 });
-            } else {
+            } else if (isSort == '新至舊') {
                 res.data.sort((a, b) => {
                     return b.id - a.id;
+                });
+            } else {
+                res.data.sort((a, b) => {
+                    return parseInt(b.like) - parseInt(a.like);
                 });
             }
             let ansPanel = document.getElementById('ansPanel');
@@ -246,7 +274,7 @@ function sortButton(HTMLBtn, isSort) {
         });
     }, false)
 }
-// 賦予sortButton函式兩個參數值，Old2New與New2Old對應到監聽按鈕HTMLBtn，true與false對應到isSort判斷式
-sortButton(Old2New, true);
-sortButton(New2Old, false);
-
+// 賦予sortButton函式三個參數值，Old2New與New2Old對應到監聽按鈕HTMLBtn，'舊至新'與'新至舊'對應到isSort判斷式
+sortButton(Old2New, '舊至新');
+sortButton(New2Old, '新至舊');
+sortButton(MostLike)
