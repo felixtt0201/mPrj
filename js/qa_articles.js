@@ -30,7 +30,7 @@ axios.get(api)
       str += `<li class="qa-list profile-list">
     <div class="profile-list__condition">
       <p class="qa-condition">
-        <span class="qa-condition__count">${i.like}</span>
+        <span class="qa-condition__count">${i.likes}</span>
         <span class="qa-condition__text">Like</span>
       </p>
       <p class="qa-condition">
@@ -38,7 +38,7 @@ axios.get(api)
         <span class="qa-condition__text">留言</span>
       </p>
       <p class="qa-condition">
-        <span class="qa-condition__count">${i.view}</span>
+        <span class="qa-condition__count">${i.views}</span>
         <span class="qa-condition__text">瀏覽</span>
       </p>
     </div>

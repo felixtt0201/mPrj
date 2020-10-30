@@ -38,6 +38,12 @@
                 .likeGroup {
                     font-size: 24px;
                     line-height: 1.2;
+                    cursor: pointer;
+                    transition: all 0.3s;
+                    &:hover{
+                        color: #7196bb;
+                        
+                    }
                 }
                 .collection {
                     margin-top: 10px;
@@ -470,7 +476,7 @@
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            outline:none;
+                            outline: none;
                             border: none;
                             background: white;
                             width: 36px;
@@ -481,8 +487,9 @@
                             &:hover {
                                 background: #f2f2f2;
                             }
-                            &:active,:visited{
-                                color:blue;
+                            &:active,
+                            :visited {
+                                color: blue;
                             }
                         }
                     }
@@ -544,7 +551,55 @@
                             }
                         }
                         .ansPanel-comment {
-                            .ansPanel-comment-body {
+                            .ansPanel-header {
+                                padding: 12px 14px;
+                                background: #f2f5f7;
+                            }
+                            .img-circle {
+                                width: 34px;
+                                height: 34px;
+                                border-radius: 50%;
+                                margin-right: 5px;
+                            }
+                            .commentMsg {
+                                display: flex;
+                                flex-direction: column;
+                                padding: 3px 24px;
+                                margin-bottom: 10px;
+                                width: 710px;
+                                height: 100px;
+                                background: #f2f5f7;
+                            }
+                            .ansPanel-comment-markdown {
+                                display: flex;
+                                padding: 12px 14px;
+                                background-color: #f2f5f7;
+                                .img-circle {
+                                    width: 34px;
+                                    height: 34px;
+                                    border-radius: 50%;
+                                    margin-right: 5px;
+                                }
+                                .msgerMsg {
+                                    width: 580px;
+                                    height: 150px;
+                                    margin-right: 5px;
+                                    padding: 5px;
+                                    outline: none;
+                                }
+                                .commentSubmitBtn {
+                                    cursor: pointer;
+                                    color: white;
+                                    background-color: #00a0e9;
+                                    padding: 6px 12px;
+                                    border: 1px solid transparent;
+                                    outline: none;
+                                    transition: 0.2s linear;
+                                    border-radius: 6px;
+                                    font-size: 16px;
+                                    font-weight: 400;
+                                    height: 30px;
+                                }
                             }
                         }
                     }
@@ -809,4 +864,10 @@
             }
         }
     }
+}
+.content .rightSide .sidebox .sidebox__body a:before {
+    background-color: #fff;
+}
+.un_liker{
+    color: #F7B16B ;
 }

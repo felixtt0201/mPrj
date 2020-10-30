@@ -85,9 +85,9 @@
 
                 <div class="qaPanel">
                     <div class="qaSide">
-                        <div class="likeGroup">
+                        <div class="likeGroup" id="likeGroup">
                             <i class="fa fa-caret-up"></i>
-                            <div class="likeGroup__num">0</div>
+                            <div class="likeGroup__num un_liked" id='liker'>0</div>
                         </div>
                         <div class="collection">
                             <button data-type="article" data-id="10253879" data-toggle="tooltip" data-placement="bottom"
@@ -102,7 +102,7 @@
                                 <span>自我挑戰組</span>
                                 <h3>30天菜鳥學Linux系列第49篇</h3>
                             </div> -->
-                            <h2 id='content_title'>第49天-學習 crontab 工作排程 Part 2 - 認真學 crontab 表達式</h2>
+                            <h2 id='content_title'></h2>
                             <div class="tagGroup">
                                 <span>12th鐵人賽</span>
                                 <span>linux</span>
@@ -115,7 +115,7 @@
                                     <span class="timeInfo" href="">2020-10-22 11:00:52</span>
                                 </div>
                                 <div class="articleView">
-                                    67 瀏覽
+                                    
                                 </div>
                             </div>
                         </div>
@@ -226,7 +226,6 @@
                         </div>
                         <div class="replyFrame-body">
                             <textarea id="editor1"></textarea>
-
                             <div class="btnBox">
                                 <div class="fakebox"></div>
                                 <input class="btn btn-main btn-lg btn-right btn-reply" type="submit" id="leaveMessage"
@@ -241,7 +240,7 @@
                         <ul class="qaStatus-catagory">
                             <li><button class="OldtoNew" id="Old2New">舊至新</button></li>
                             <li><button class="NewtoOld" id="New2Old">新至舊</button></li>
-                            <li><button class="">最高Like數</button></li>
+                            <li><button class="MostLike" id="MostLike">最高Like數</button></li>
                         </ul>
                     </div>
                     <ul class="ansPanel" id="ansPanel"></ul>
@@ -626,6 +625,7 @@
     <script src="js/index.js"></script>
     <script src="js/logout.js"></script>
     <script src="js/content.js"></script>
+    
 </body>
 
 </html>

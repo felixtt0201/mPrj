@@ -50,7 +50,7 @@ axios.get(api)
         <span class="qa-condition__text">留言</span>
       </p>
       <p class="qa-condition">
-        <span class="qa-condition__count">0</span>
+        <span class="qa-condition__count">${i.views}</span>
         <span class="qa-condition__text">瀏覽</span>
       </p>
     </div>
@@ -84,7 +84,6 @@ axios.get(api)
     article_num.textContent = user_article_num;
     articles.textContent = user_article_num;
     getID();
-
     data.forEach(i => {
       if (i.type == 'question' && i.artOnwerID == userID) {
         user_question_num++
@@ -99,8 +98,20 @@ function getID() {
     id = e.target.dataset.id
     console.log(id)
     localStorage.setItem('articleID', id);
-    window.location.href = '/content.html';
+    
+    axios.get(api)
+      .then(res => {
+        let apiData = res.data;
+        let countData = apiData.filter(i => i.articleID== id)
+        // console.log(countData)
+        let views = parseInt(countData[0].views)+1;
+        console.log(views)
+        axios.patch(`${api}/${countData[0].id}`,{
+          views : `${views}`
+        }).then(res=>{
+          window.location.href = '/content.html';
+        })
+      })
   });
 }
 
-// window.onload 
