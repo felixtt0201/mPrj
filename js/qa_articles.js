@@ -13,6 +13,17 @@ let userName = parseStatus.loginName;
 user_name.textContent = userName;
 console.log(`${userID}:${userName}`)//6
 
+function getPersonInfo() {
+  const artName = document.querySelector('.user-profile__name');
+  artName.textContent = parseStatus.loginName + " ";
+
+  const Name = document.querySelectorAll('.userBoard_nameID')
+  Name.forEach(i => {
+    i.textContent = parseStatus.loginName + " ";
+  });
+}
+getPersonInfo();
+
 // (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)
 
 
