@@ -37,7 +37,7 @@ function compareInfo() {
     localStorage.setItem('loginStatus', JSON.stringify(loginStatus));
     // let url = `${window.location.origin}/user.html`;
     // window.location.replace(url)
-    window.location.href = 'user.html'
+    window.location.href = './user.html'
   }
   else {
     alert('帳號密碼錯誤');
