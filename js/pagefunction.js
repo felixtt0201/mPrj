@@ -13,7 +13,7 @@ let urlData = [];
 axios.get(url).then(res => {
   urlData = res.data;
   //篩選type=question的資料
-  const dataTotal = urlData.filter(i => i.type === "question");
+  const dataTotal = urlData.filter(i => i.type == "question");
   console.log(dataTotal);
 
 
@@ -22,7 +22,7 @@ axios.get(url).then(res => {
   const pageTotal = Math.ceil(dataTotal.length / perPage)
   console.log(pageTotal)
 
-  let currentPage = 5;
+  let currentPage = 1;
   if (currentPage > pageTotal) {
     currentPage = pageTotal;
   };
@@ -123,15 +123,15 @@ axios.get(url).then(res => {
   }
   getID();
 
-  function switchPage(e) {
-    e.preventDefault();
-    if (e.target.nodeName !== "A")
-      return;
-    const page = e.target.dataset.page;
-  }
+  // function switchPage(e) {
+  //   e.preventDefault();
+  //   if (e.target.nodeName !== "A")
+  //     return;
+  //   const page = e.target.dataset.page;
+  // }
 });
 
-indexPagination.addEventListener('click', switchPage())
+// indexPagination.addEventListener('click', switchPage())
 
 
 

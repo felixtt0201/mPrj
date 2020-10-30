@@ -10,23 +10,23 @@ let get_qa_articles = localStorage.getItem('articleID'); //點擊文章articleId
 let miu = localStorage.getItem('貓');
 let data = {};
 get_qa_contgent();
-function get_qa_contgent(){
+function get_qa_contgent() {
     axios.get(qa_api)
-        .then(function(res){
+        .then(function (res) {
             data = res.data;
-            if('喵' == miu){
+            if ('喵' == miu) {
                 console.log('OK')
                 localStorage.removeItem('貓') // 不清除的話會永遠無法判斷QAQ卡卡卡
                 listrender()
-            }else{
+            } else {
                 postrender()
                 console.log('555')
             }
-    })
+        })
 }
 
-function postrender(){
-    let ccc = data.filter(function(i){
+function postrender() {
+    let ccc = data.filter(function (i) {
         return i.articleID === get_qa_id
     });
     console.log(ccc);
@@ -36,12 +36,12 @@ function postrender(){
     qaMarkDown.innerHTML = ccc[0].content;
     timeInfo.textContent = ccc[0].date;
 }
-function listrender(){
-    let C ='';
-    data.forEach(function(i,index){
-        if( get_qa_articles == i.articleID){
+function listrender() {
+    let C = '';
+    data.forEach(function (i, index) {
+        if (get_qa_articles == i.articleID) {
             C = index;
-        }else{
+        } else {
             console.log('listno')
         }
     })
