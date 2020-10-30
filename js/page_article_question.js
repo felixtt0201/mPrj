@@ -147,7 +147,7 @@ function pageBtn(page) {
   if (page.hasNext) {
     str += `<li class="page-item"><a class="page-link" href="#" data-page="${Number(page.currentPage) + 1}">下一頁</a></li>`;
   } else {
-    // str += `<li class="page-item disabled"><span class="page-link">下一頁</span></li>`;
+    str += `<li class="page-item disabled"><span class="page-link">下一頁</span></li>`;
   }
 
   indexPagination.innerHTML = str;
