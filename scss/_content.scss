@@ -38,6 +38,12 @@
                 .likeGroup {
                     font-size: 24px;
                     line-height: 1.2;
+                    cursor: pointer;
+                    transition: all 0.3s;
+                    &:hover{
+                        color: #7196bb;
+                        
+                    }
                 }
                 .collection {
                     margin-top: 10px;
@@ -858,4 +864,10 @@
             }
         }
     }
+}
+.content .rightSide .sidebox .sidebox__body a:before {
+    background-color: #fff;
+}
+.un_liker{
+    color: #F7B16B ;
 }

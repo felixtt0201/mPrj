@@ -439,3 +439,13 @@
         }
     }
 }
+.disabled {
+    display: flex;
+    text-decoration: none;
+    color: #FFF;
+    margin: 0 5px;
+    padding: 5px 12px;
+    border: 1px solid #999999;
+    border-radius: 6px;
+    background-color: #999;
+}

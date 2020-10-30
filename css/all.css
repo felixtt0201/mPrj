@@ -1173,6 +1173,19 @@ ul {
   background: #f9b446;
 }
 
+.disabled {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-decoration: none;
+  color: #FFF;
+  margin: 0 5px;
+  padding: 5px 12px;
+  border: 1px solid #999999;
+  border-radius: 6px;
+  background-color: #999;
+}
+
 .content {
   margin-top: 30px;
   display: -webkit-box;
@@ -1848,6 +1861,13 @@ ul {
 .content .leftSide .qaPanel .qaSide .likeGroup {
   font-size: 24px;
   line-height: 1.2;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.content .leftSide .qaPanel .qaSide .likeGroup:hover {
+  color: #7196bb;
 }
 
 .content .leftSide .qaPanel .qaSide .collection {
@@ -2963,6 +2983,14 @@ ul {
 
 .content .rightSide .leaderBoard .leaderBoard__body .sidebox__rankItem--bgyellow a:before {
   background: #f9b446;
+}
+
+.content .rightSide .sidebox .sidebox__body a:before {
+  background-color: #fff;
+}
+
+.un_liker {
+  color: #F7B16B;
 }
 
 * {

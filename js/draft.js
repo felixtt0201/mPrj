@@ -66,7 +66,7 @@ function post_draft() {
   axios.post(draft_api, draft_obj)
     .then(res => {
       console.log(res);
-      window.location.href = '/content.html';
+      // window.location.href = '/content.html';
     }) 
 }
 

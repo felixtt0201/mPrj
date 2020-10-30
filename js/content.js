@@ -1,5 +1,6 @@
 const editor1 = CKEDITOR.replace('editor1');
 const api = `https://fierce-forest-92782.herokuapp.com/articles`;
+const userapi = `https://fierce-forest-92782.herokuapp.com/account`;
 const content_userName = document.querySelector('.nameInfo');
 const timeInfo = document.querySelector('.timeInfo');
 const content_title = document.getElementById('content_title');
@@ -8,9 +9,15 @@ const qaMarkDown = document.getElementById('qaMarkDown');
 const contentedit = document.getElementById('edit');
 const Report = document.querySelector('.Report');
 const edit = document.querySelector('.halo');
+const articleView = document.querySelector('.articleView')
+// const liker = document.getElementById('liker')
+// const likeGroup = document.getElementById('likeGroup')
+
 const msgURL = 'https://fierce-forest-92782.herokuapp.com/message';
 /* -----------------------  文章渲染  -----------------------*/
+
 let a = localStorage.getItem('articleID')
+let l_likeNum = localStorage.getItem('liked')
 get_articleID()
 function get_articleID() {
 
@@ -28,7 +35,7 @@ function get_articleID() {
             nameInfo.textContent = new_Data[0].author;
             qaMarkDown.innerHTML = new_Data[0].content;
             timeInfo.textContent = new_Data[0].date;
-
+            articleView.innerHTML = `${new_Data[0].views} 瀏覽`;
             // 判斷文章作者是否同人才可編輯
             if (new_Data[0].artOnwerID === parseStatus.loginID) {
                 Report.innerHTML = `<p class="editbtn" data-id='${new_Data[0].id}'>編輯</p>`
@@ -51,6 +58,39 @@ function editor(editbtn) {
 }
 
 
+
+/* Like 功能 */
+
+
+// let exists ;
+// axios.get(userapi)
+// .then(res=>{
+//     let checkData = res.data;
+//     checkData.forEach(i=>{
+//         if(i.id == parseStatus.loginID){
+//             exists = true
+//         }
+//     })
+//     // console.log(exists)
+// })
+// // window.onload = counter;
+
+// function counter() {
+
+//     axios.get(api)
+//         .then(res => {
+//             let articleData = res.data;
+//             let new_articleData = articleData.filter(i => i.articleID == a)
+//             // 目前文章物件
+//             counter()
+//             console.log(new_articleData[0].id)
+//             axios.patch(`${api}/${new_articleData[0].id}`, {
+//                 // views: `${views+1}`,
+//             }).then((res) => {
+//                 console.log(res)
+//             })
+//         })
+// }
 
 
 
@@ -78,8 +118,9 @@ function editor(editbtn) {
 // <span>${parseStatus.loginName}</span><i class="fas fa-sort-down"></i></li></a>
 // <a href="./setting.html"><li>修改密碼</li></a>`;
 
+
 // 將message資料渲染到動態留言板：把loginStatus取得的值(loginName)，塞到留言板的名稱欄位
-let replyFramePerson = document.getElementById('replyFrame-person');
+const replyFramePerson = document.getElementById('replyFrame-person');
 replyFramePerson.innerHTML = parseStatus.loginName;
 
 // 新增文字至留言板的功能

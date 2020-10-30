@@ -91,13 +91,13 @@ function displayData(data) {
                             </li>
                             <li>
                                 <a class="answer" href="">
-                                    <span></span>
+                                    <span>0</span>
                                     <span>回答</span>
                                 </a>
                             </li>
                             <li>
                                 <a class="view" href="">
-                                    <span>${i.view}</span>
+                                    <span>${i.views}</span>
                                     <span>瀏覽</span>
                                 </a>
                             </li>
@@ -108,8 +108,12 @@ function displayData(data) {
                                     <h3 data-id='${i.articleID}'>${i.title}</h3>
                                 </a>
                                 <div class="qaTrivia">
-                                    <a href="https://ithelp.ithome.com.tw/tags/questions/asus%20k401u%20%E7%AD%86%E9%9B%BB%E5%95%8F%E9%A1%8C"
-                                        class="qaTags">asus k401u 筆電問題</a>
+                                    <a href="#"
+                                        class="qaTags">火箭隊5th</a>
+                                        <a href="#"
+                                        class="qaTags">教練我想打球</a>
+                                        <a href="#"
+                                        class="qaTags">我盡力了</a>
                                     <a class="qaTime" title="2020-10-21 13:16:08">2020-10-21</a>‧ 由
                                     <a class="qaInfoLink" href="https://ithelp.ithome.com.tw/users/20067337">
                                         ${i.author}
