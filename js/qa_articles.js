@@ -80,8 +80,8 @@ axios.get(api)
     questions.textContent = user_article_num;
     getID();
 
-    data.forEach(i=>{
-      if(i.type == 'article' && i.artOnwerID == userID){
+    data.forEach(i => {
+      if (i.type == 'article' && i.artOnwerID == userID) {
         user_question_num++
       }
     })
@@ -93,9 +93,9 @@ function getID() {
   get_draftID.addEventListener('click', function (e) {
     id = e.target.dataset.id
     console.log(id) //51603938410108
-    localStorage.setItem('articleID',id);
-    localStorage.setItem('貓','喵');
-    window.location.href = '/qa_content.html';
+    localStorage.setItem('articleID', id);
+    localStorage.setItem('貓', '喵');
+    window.location.href = 'qa_content.html';
   });
 }
 

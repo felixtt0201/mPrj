@@ -37,7 +37,7 @@ function compareInfo() {
       account: inputAccount.value,
       password: inputPassword.value
     }).then(() => {
-      window.location.href = `/index.html`
+      window.location.href = `index.html`
     }
     )
 

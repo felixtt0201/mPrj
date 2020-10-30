@@ -20,7 +20,7 @@ function question() {
   /* 取得 title */
   let Qtitle = question_title.value;
   q_obj.title = Qtitle
-  
+
   /* 個人ID & 作者名字 */
   let getStatus = localStorage.getItem('loginStatus');
   let parseStatus = JSON.parse(getStatus);
@@ -30,7 +30,7 @@ function question() {
 
   /* 取得文章內容 */
   q_obj.content = CKEDITOR.instances['question_content'].getData();
-  
+
 
   /* 取得時間 */
   const date = new Date();
@@ -49,8 +49,8 @@ function question() {
   /* 文章ID */
   let today = date.getTime();
   q_obj.articleID = `${parseStatus.loginID}${today}`;
-  
-  
+
+
 }
 let id = {};
 function post_question() {
@@ -59,8 +59,8 @@ function post_question() {
     .then(res => {
       id = res.data.articleID
       console.log(id);
-      localStorage.setItem('articleID',id);
-      window.location.href = '/qa_content.html';
+      localStorage.setItem('articleID', id);
+      window.location.href = 'qa_content.html';
       getqa_data()
     })
 }

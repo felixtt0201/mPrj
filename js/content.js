@@ -53,7 +53,7 @@ function editor(editbtn) {
         id = e.target.dataset.id;
         // console.log(id);
         localStorage.setItem('edidID', id);
-        window.location.href = '/edit.html';
+        window.location.href = 'edit.html';
     })
 }
 

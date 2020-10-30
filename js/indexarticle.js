@@ -4,12 +4,12 @@ const get_draftID = document.getElementById('get_draftID');
 
 
 axios.get(articleApi).then(res => {
-  let indexData = res.data;
-  let articleAry = indexData.filter(i => i.type == "question");
-  //render
-  let str = "";
-  articleAry.forEach(i => {
-    str += `<div class="qaList">
+    let indexData = res.data;
+    let articleAry = indexData.filter(i => i.type == "question");
+    //render
+    let str = "";
+    articleAry.forEach(i => {
+        str += `<div class="qaList">
                         <div class="qaCondition">
                             <li>
                                 <a class="like" href="">
@@ -48,17 +48,17 @@ axios.get(articleApi).then(res => {
                             </li>
                         </div>
                     </div>`
-  });
-  columnBoard.innerHTML = str;
-  getID();
+    });
+    columnBoard.innerHTML = str;
+    getID();
 });
 
 function getID() {
-  let id = '';
-  get_draftID.addEventListener('click', function (e) {
-    id = e.target.dataset.id
-    console.log(id)
-    localStorage.setItem('articleID', id);
-    window.location.href = '/qa_content.html';
-  });
+    let id = '';
+    get_draftID.addEventListener('click', function (e) {
+        id = e.target.dataset.id
+        console.log(id)
+        localStorage.setItem('articleID', id);
+        window.location.href = 'qa_content.html';
+    });
 }

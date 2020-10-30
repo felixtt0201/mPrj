@@ -98,18 +98,18 @@ function getID() {
     id = e.target.dataset.id
     console.log(id)
     localStorage.setItem('articleID', id);
-    
+
     axios.get(api)
       .then(res => {
         let apiData = res.data;
-        let countData = apiData.filter(i => i.articleID== id)
+        let countData = apiData.filter(i => i.articleID == id)
         // console.log(countData)
-        let views = parseInt(countData[0].views)+1;
+        let views = parseInt(countData[0].views) + 1;
         console.log(views)
-        axios.patch(`${api}/${countData[0].id}`,{
-          views : `${views}`
-        }).then(res=>{
-          window.location.href = '/content.html';
+        axios.patch(`${api}/${countData[0].id}`, {
+          views: `${views}`
+        }).then(res => {
+          window.location.href = 'content.html';
         })
       })
   });

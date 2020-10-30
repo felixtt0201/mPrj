@@ -42,7 +42,7 @@ function newPasswordCheck() {
     }).then((res => {
       console.log(res)
       alert('修改成功')
-      window.location.href = `/login.html`
+      window.location.href = `login.html`
     }))
   }
   else {
