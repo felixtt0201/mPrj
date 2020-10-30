@@ -1,6 +1,6 @@
 var test = CKEDITOR.replace('editor1');
 const api = `https://fierce-forest-92782.herokuapp.com/articles`;
-const userapi =`https://fierce-forest-92782.herokuapp.com/account`;
+const userapi = `https://fierce-forest-92782.herokuapp.com/account`;
 const content_userName = document.querySelector('.nameInfo');
 const timeInfo = document.querySelector('.timeInfo');
 const content_title = document.getElementById('content_title');
@@ -9,40 +9,42 @@ const qaMarkDown = document.getElementById('qaMarkDown');
 const contentedit = document.getElementById('edit');
 const Report = document.querySelector('.Report');
 const edit = document.querySelector('.halo');
+const articleView = document.querySelector('.articleView')
 // const liker = document.getElementById('liker')
 // const likeGroup = document.getElementById('likeGroup')
 
 /* -----------------------  文章渲染  -----------------------*/
+
 let a = localStorage.getItem('articleID')
 let l_likeNum = localStorage.getItem('liked')
 get_articleID()
-function get_articleID(){
+function get_articleID() {
 
     console.log(a)
     axios.get(api)
-    .then(res=>{
-        let contentData = res.data;
-        console.log(contentData)
-        let new_Data = contentData.filter(function(i){
-            return i.articleID == a ;
-        } );
-        console.log(new_Data) 
-        
-        content_title.textContent = new_Data[0].title;
-        nameInfo.textContent = new_Data[0].author;
-        qaMarkDown.innerHTML = new_Data[0].content;
-        timeInfo.textContent = new_Data[0].date;
+        .then(res => {
+            let contentData = res.data;
+            console.log(contentData)
+            let new_Data = contentData.filter(function (i) {
+                return i.articleID == a;
+            });
+            console.log(new_Data)
 
-        // 判斷文章作者是否同人才可編輯
-        if(new_Data[0].artOnwerID === parseStatus.loginID){
-        Report.innerHTML =`<p class="editbtn" data-id='${new_Data[0].id}'>編輯</p>`
-        const editbtn = document.querySelector('.editbtn');
-        editor(editbtn);
-        }else{
-            console.log('安安你無法編輯')
-        }
-        
-    })
+            content_title.textContent = new_Data[0].title;
+            nameInfo.textContent = new_Data[0].author;
+            qaMarkDown.innerHTML = new_Data[0].content;
+            timeInfo.textContent = new_Data[0].date;
+            articleView.innerHTML = `${new_Data[0].views} 瀏覽`;
+            // 判斷文章作者是否同人才可編輯
+            if (new_Data[0].artOnwerID === parseStatus.loginID) {
+                Report.innerHTML = `<p class="editbtn" data-id='${new_Data[0].id}'>編輯</p>`
+                const editbtn = document.querySelector('.editbtn');
+                editor(editbtn);
+            } else {
+                console.log('安安你無法編輯')
+            }
+
+        })
 }
 function editor(editbtn) {
     let id = '';
@@ -70,14 +72,25 @@ function editor(editbtn) {
 //     })
 //     // console.log(exists)
 // })
+// // window.onload = counter;
 
-// axios.get(api)
-// .then(res=>{
-//     let articleData = res.data ;
-//     let new_articleData = articleData.filter(i=>i.articleID == a )
-//     // 目前文章物件
-   
-// })
+// function counter() {
+
+//     axios.get(api)
+//         .then(res => {
+//             let articleData = res.data;
+//             let new_articleData = articleData.filter(i => i.articleID == a)
+//             // 目前文章物件
+//             counter()
+//             console.log(new_articleData[0].id)
+//             axios.patch(`${api}/${new_articleData[0].id}`, {
+//                 // views: `${views+1}`,
+//             }).then((res) => {
+//                 console.log(res)
+//             })
+//         })
+// }
+
 
 
 
