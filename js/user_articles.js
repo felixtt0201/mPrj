@@ -4,7 +4,9 @@ const article_list = document.querySelector('.user-article-list');
 const get_draftID = document.getElementById('get_draftID');
 const articles = document.getElementById('articles');
 const questions = document.getElementById('questions');
-const user_name = document.getElementById('user_name')
+const user_name = document.getElementById('user_name');
+
+const views = document.querySelector('.people-count__view-num');
 
 // (´・ω・｀)
 let userID = parseStatus.loginID;
@@ -32,6 +34,30 @@ getPersonInfo();
 axios.get(api)
   .then(res => {
     let data = res.data;
+
+
+    let art = data.filter(i => i.artOnwerID == userID && (i.type == 'article' || i.type == 'question'));
+    // let user_article_num = art.length;
+    // articles.textContent = user_article_num;
+    // articles_1.textContent = user_article_num;
+    // let que = data.filter(i => i.artOnwerID == userID && i.type == 'question')
+    // let user_question_num = que.length;
+    // questions.textContent = user_question_num
+    let views_total = 0;
+    art.forEach(function (i) {
+      views_total += Number(i.views)
+      console.log(i.views)
+    })
+    console.log(views_total);
+    views.textContent = views_total;
+
+
+
+
+
+
+
+
     let newData = data.filter(i => i.artOnwerID == userID && i.type == 'article')
     let user_article_num = 0;
     let user_question_num = 0
@@ -91,6 +117,8 @@ axios.get(api)
     })
     questions.textContent = user_question_num;
   })
+
+
 
 function getID() {
   let id = '';

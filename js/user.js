@@ -32,7 +32,7 @@ getPersonInfo();
 axios.get(api)
   .then(res => {
     let data = res.data;
-    let art = data.filter(i => i.artOnwerID == userID && i.type == 'article')
+    let art = data.filter(i => i.artOnwerID == userID && (i.type == 'article' || i.type == 'question'));
     let user_article_num = art.length;
     articles.textContent = user_article_num;
     articles_1.textContent = user_article_num;
@@ -40,7 +40,7 @@ axios.get(api)
     let user_question_num = que.length;
     questions.textContent = user_question_num
     let views_total = 0;
-    art.forEach(function(i){
+    art.forEach(function (i) {
       views_total += Number(i.views)
       console.log(i.views)
     })
@@ -51,7 +51,8 @@ axios.get(api)
 
 
 // window.onload
-function b(){ 
-data.forEach(function(i,index){
-  
-})}
+function b() {
+  data.forEach(function (i, index) {
+
+  })
+}
