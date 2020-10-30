@@ -145,11 +145,10 @@ function pageBtn(page) {
   if (page.hasNext) {
     str += `<li class="page-item"><a class="page-link" href="#" data-page="${Number(page.currentPage) + 1}">下一頁</a></li>`;
   } else {
-    // str += `<li class="page-item disabled"><span class="page-link">下一頁</span></li>`;
+    str += `<li class="page-item disabled"><span class="page-link">下一頁</span></li>`;
   }
 
   articlesPagination.innerHTML = str;
-  getID();
 }
 
 function switchPage(e) {
@@ -157,6 +156,7 @@ function switchPage(e) {
   if (e.target.nodeName !== 'A') return;
   const page = e.target.dataset.page;
   pagination(jsonData, page);
+  getID();
 }
 
 function getID() {
@@ -165,7 +165,7 @@ function getID() {
     id = e.target.dataset.id
     console.log(id)
     localStorage.setItem('articleID', id);
-    window.location.href = '/qa_content.html';
+    window.location.href = '/content.html';
   });
 }
 
