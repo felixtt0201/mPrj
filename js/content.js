@@ -208,3 +208,4 @@ function sortButton(HTMLBtn, isSort) {
 // 賦予sortButton函式兩個參數值，Old2New與New2Old對應到監聽按鈕HTMLBtn，true與false對應到isSort判斷式
 sortButton(Old2New, true);
 sortButton(New2Old, false);
+

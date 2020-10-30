@@ -59,7 +59,7 @@ function post_question() {
     .then(res => {
       id = res.data.articleID
       console.log(id);
-      localStorage.setItem('questionID',id);
+      localStorage.setItem('articleID',id);
       window.location.href = '/qa_content.html';
       getqa_data()
     })
