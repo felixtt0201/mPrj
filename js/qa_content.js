@@ -17,7 +17,6 @@ function get_qa_contgent() {
     axios.get(qa_api)
         .then(function (res) {
             data = res.data;
-<<<<<<< HEAD
             postrender()
             // if('喵' == miu){
             //     console.log('OK')
@@ -33,22 +32,6 @@ let render_array = '';
 function postrender(){
     render_array = data.filter(function(i){
         return i.articleID === get_qa_articles
-=======
-            if ('喵' == miu) {
-                console.log('OK')
-                localStorage.removeItem('貓') // 不清除的話會永遠無法判斷QAQ卡卡卡
-                listrender()
-            } else {
-                postrender()
-                console.log('555')
-            }
-        })
-}
-
-function postrender() {
-    let ccc = data.filter(function (i) {
-        return i.articleID === get_qa_id
->>>>>>> e6eb4f0b94d3d15a10c8f2ee16a7fa945835e0a6
     });
     console.log(render_array);
     qa_title.textContent = render_array[0].title;
