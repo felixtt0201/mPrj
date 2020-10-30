@@ -15,15 +15,27 @@ console.log(`${userID}:${userName}`)//6
 // (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)
 
 
+function getPersonInfo() {
+  const artName = document.querySelector('.user-profile__name');
+  artName.textContent = parseStatus.loginName + " ";
+
+  const Name = document.querySelectorAll('.userBoard_nameID')
+  Name.forEach(i => {
+    i.textContent = parseStatus.loginName + " ";
+  });
+}
+getPersonInfo();
+
+
 /* 找到自己ID 的文章 */
 axios.get(api)
   .then(res => {
     let data = res.data;
-    let art = data.filter(i => i.artOnwerID == userID && i.type =='article')
+    let art = data.filter(i => i.artOnwerID == userID && i.type == 'article')
     let user_article_num = art.length;
-    articles.textContent = user_article_num ;
-    articles_1.textContent = user_article_num ;
-    let que = data.filter(i=>i.artOnwerID == userID && i.type =='question')
+    articles.textContent = user_article_num;
+    articles_1.textContent = user_article_num;
+    let que = data.filter(i => i.artOnwerID == userID && i.type == 'question')
     let user_question_num = que.length;
     questions.textContent = user_question_num
   })

@@ -14,6 +14,19 @@ console.log(`${userID}:${userName}`)//6
 user_name.textContent = userName;
 // (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)// (´・ω・｀)
 
+function getPersonInfo() {
+  const artName = document.querySelector('.user-profile__name');
+  artName.textContent = parseStatus.loginName + " ";
+
+  const Name = document.querySelectorAll('.userBoard_nameID')
+  Name.forEach(i => {
+    i.textContent = parseStatus.loginName + " ";
+  });
+}
+getPersonInfo();
+
+
+
 
 /* 找到自己ID 的文章 */
 axios.get(api)
