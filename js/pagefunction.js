@@ -49,20 +49,20 @@ axios.get(url).then(res => {
     str += `<div class="qaList">
                         <div class="qaCondition">
                             <li>
-                                <a class="like" href="">
+                                <a class="like" href="" style="cursor:default">
                                     <span>${i.likes}</span>
                                     <span>Like</span>
                                 </a>
                             </li>
                             <li>
-                                <a class="answer" href="">
-                                    <span></span>
+                                <a class="answer" href="" style="cursor:default">
+                                    <span>0</span>
                                     <span>回答</span>
                                 </a>
                             </li>
                             <li>
-                                <a class="view" href="">
-                                    <span>${i.view}</span>
+                                <a class="view" href="" style="cursor:default">
+                                    <span>${i.views}</span>
                                     <span>瀏覽</span>
                                 </a>
                             </li>

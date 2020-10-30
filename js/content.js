@@ -1,5 +1,6 @@
 var test = CKEDITOR.replace('editor1');
 const api = `https://fierce-forest-92782.herokuapp.com/articles`;
+const userapi =`https://fierce-forest-92782.herokuapp.com/account`;
 const content_userName = document.querySelector('.nameInfo');
 const timeInfo = document.querySelector('.timeInfo');
 const content_title = document.getElementById('content_title');
@@ -8,8 +9,12 @@ const qaMarkDown = document.getElementById('qaMarkDown');
 const contentedit = document.getElementById('edit');
 const Report = document.querySelector('.Report');
 const edit = document.querySelector('.halo');
+// const liker = document.getElementById('liker')
+// const likeGroup = document.getElementById('likeGroup')
+
 /* -----------------------  文章渲染  -----------------------*/
 let a = localStorage.getItem('articleID')
+let l_likeNum = localStorage.getItem('liked')
 get_articleID()
 function get_articleID(){
 
@@ -52,6 +57,28 @@ function editor(editbtn) {
 
 
 
+/* Like 功能 */
+
+
+// let exists ;
+// axios.get(userapi)
+// .then(res=>{
+//     let checkData = res.data;
+//     checkData.forEach(i=>{
+//         if(i.id == parseStatus.loginID){
+//             exists = true
+//         }
+//     })
+//     // console.log(exists)
+// })
+
+// axios.get(api)
+// .then(res=>{
+//     let articleData = res.data ;
+//     let new_articleData = articleData.filter(i=>i.articleID == a )
+//     // 目前文章物件
+   
+// })
 
 
 
@@ -68,8 +95,8 @@ console.log(parseStatus);
 // 將message資料渲染到menuRight：把loginStatus取得的值(loginName)，塞到menuRight的欄位
 let menuRight = document.getElementById('menuRight');
 menuRight.innerHTML =
-    `<a href=""><li><i class="fas fa-search"></i></li></a>
-<a href=""><li><button type="button" class="menu__ironman-btn" data-toggle="modal" data-target="#group">鐵人發文</button></li></a>
+    `<a href="draft.html"><li><i class="fas fa-search"></i></li></a>
+<a href="draft.html"><li><button type="button" class="menu__ironman-btn" data-toggle="modal" data-target="#group">鐵人發文</button></li></a>
 <a href="questions.html"><li>發問</li></a>
 <a href="draft.html"><li>發文<i class="fas fa-sort-down"></i></li></a>
 <a href=""><li><i class="fas fa-comment-dots"></i></li></a>
@@ -78,8 +105,9 @@ menuRight.innerHTML =
 <span>${parseStatus.loginName}</span><i class="fas fa-sort-down"></i></li></a>
 <a href="./setting.html"><li>修改密碼</li></a>`;
 
+
 // 將message資料渲染到動態留言板：把loginStatus取得的值(loginName)，塞到留言板的名稱欄位
-let replyFramePerson = document.getElementById('replyFrame-person');
+const replyFramePerson = document.getElementById('replyFrame-person');
 replyFramePerson.innerHTML = parseStatus.loginName;
 
 // 新增文字至留言板的功能

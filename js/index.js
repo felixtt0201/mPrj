@@ -10,7 +10,7 @@ console.log(parseStatus);
 let menuRight = document.getElementById('menuRight');
 menuRight.innerHTML =
   `<a href=""><li><i class="fas fa-search"></i></li></a>
-<a href=""><li><button type="button" class="menu__ironman-btn" data-toggle="modal" data-target="#group">鐵人發文</button></li></a>
+<a href="draft.html"><li><button type="button" class="menu__ironman-btn" data-toggle="modal" data-target="#group">鐵人發文</button></li></a>
 <a href="questions.html"><li>發問</li></a>
 <a href="draft.html"><li>發文<i class="fas fa-sort-down"></i></li></a>
 <a href=""><li><i class="fas fa-comment-dots"></i></li></a>

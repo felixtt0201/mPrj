@@ -1848,6 +1848,13 @@ ul {
 .content .leftSide .qaPanel .qaSide .likeGroup {
   font-size: 24px;
   line-height: 1.2;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.content .leftSide .qaPanel .qaSide .likeGroup:hover {
+  color: #7196bb;
 }
 
 .content .leftSide .qaPanel .qaSide .collection {
@@ -2897,6 +2904,10 @@ ul {
 
 .content .rightSide .leaderBoard .leaderBoard__body .sidebox__rankItem--bgyellow a:before {
   background: #f9b446;
+}
+
+.un_liker {
+  color: #F7B16B;
 }
 
 * {
