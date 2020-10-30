@@ -167,7 +167,7 @@ function getID() {
     id = e.target.dataset.id
     console.log(id)
     localStorage.setItem('articleID', id);
-    window.location.href = '/qa_content.html';
+    // window.location.href = '/qa_content.html';
   });
 }
 
