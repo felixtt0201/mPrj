@@ -56,9 +56,9 @@ function draft() {
   draft_obj.articleID = `${parseStatus.loginID}${today}`;
   // console.log(draft_obj.articleID);
 
-  localStorage.setItem('articleID',draft_obj.articleID)
+  localStorage.setItem('articleID', draft_obj.articleID)
   // console.log(draft_obj.articleID)
-  
+
 }
 
 function post_draft() {
@@ -66,8 +66,8 @@ function post_draft() {
   axios.post(draft_api, draft_obj)
     .then(res => {
       console.log(res);
-      // window.location.href = '/content.html';
-    }) 
+      window.location.href = 'content.html';
+    })
 }
 
 draft_btn.addEventListener('click', post_draft)
