@@ -35,8 +35,9 @@ function compareInfo() {
     loginStatus.loginEmail = chkAc.email;
     loginStatus.loginPassword = chkAc.password
     localStorage.setItem('loginStatus', JSON.stringify(loginStatus));
-    let url = `${window.location.origin}/user.html`;
-    window.location.replace(url)
+    // let url = `${window.location.origin}/user.html`;
+    // window.location.replace(url)
+    window.location.href = 'user.html'
   }
   else {
     alert('帳號密碼錯誤');
