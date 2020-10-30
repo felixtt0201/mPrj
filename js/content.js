@@ -35,7 +35,6 @@ function get_articleID(){
 
         // 判斷文章作者是否同人才可編輯
         if(new_Data[0].artOnwerID === parseStatus.loginID){
-        // Report.innerHTML =`<a href="/edit.html" style="color:#777;font-size:16px;" class="halo" target="_blank">編輯</a>`
         Report.innerHTML =`<p class="editbtn" data-id='${new_Data[0].id}'>編輯</p>`
         const editbtn = document.querySelector('.editbtn');
         editor(editbtn);

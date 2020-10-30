@@ -57,8 +57,8 @@ function post_question() {
   question();
   axios.post(q_api, q_obj)
     .then(res => {
-      id = res.data.id 
-      console.log(id); //107
+      id = res.data.articleID
+      console.log(id);
       localStorage.setItem('questionID',id);
       window.location.href = '/qa_content.html';
       getqa_data()
