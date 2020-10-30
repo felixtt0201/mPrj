@@ -91,13 +91,13 @@ function displayData(data) {
                             </li>
                             <li>
                                 <a class="answer" href="">
-                                    <span></span>
+                                    <span>0</span>
                                     <span>回答</span>
                                 </a>
                             </li>
                             <li>
                                 <a class="view" href="">
-                                    <span>${i.view}</span>
+                                    <span>${i.views}</span>
                                     <span>瀏覽</span>
                                 </a>
                             </li>
