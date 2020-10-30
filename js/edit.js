@@ -10,8 +10,8 @@ let menuRight = document.getElementById('menuRight');
 menuRight.innerHTML =
 `<a href=""><li><i class="fas fa-search"></i></li></a>
 <a href=""><li><button type="button" class="menu__ironman-btn" data-toggle="modal" data-target="#group">鐵人發文</button></li></a>
-<a href=""><li>發問</li></a>
-<a href=""><li>發文<i class="fas fa-sort-down"></i></li></a>
+<a href="questions.html"><li>發問</li></a>
+<a href="draft.html"><li>發文<i class="fas fa-sort-down"></i></li></a>
 <a href=""><li><i class="fas fa-comment-dots"></i></li></a>
 <a href=""><li><i class="fa fa-bell fa-fw"></i></li></a>
 <a href="/user.html"><li><img src="https://member.ithome.com.tw/avatars/151507?s=ithelp" class="accountPhoto">
@@ -56,7 +56,8 @@ function render(){
     data.forEach(function(i,index){
         if(i.id == local){
             A = index
-            // console.log(index)
+            console.log(index)
+            console.log('OK!')
         }else{
             console.log('安安你失敗ㄌ ')
         }
