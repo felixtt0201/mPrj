@@ -5,6 +5,7 @@ const get_draftID = document.getElementById('get_draftID');
 const articles = document.getElementById('articles');
 const articles_1 = document.querySelector('.articles');
 const questions = document.getElementById('questions');
+const views = document.querySelector('.people-count__view-num');
 
 // (´・ω・｀)
 let userID = parseStatus.loginID;
@@ -38,8 +39,19 @@ axios.get(api)
     let que = data.filter(i => i.artOnwerID == userID && i.type == 'question')
     let user_question_num = que.length;
     questions.textContent = user_question_num
+    let views_total = 0;
+    art.forEach(function(i){
+      views_total += Number(i.views)
+      console.log(i.views)
+    })
+    console.log(views_total);
+    views.textContent = views_total;
   })
 
 
 
-// window.onload 
+// window.onload
+function b(){ 
+data.forEach(function(i,index){
+  
+})}
