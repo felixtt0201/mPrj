@@ -206,31 +206,7 @@ function renderData() {
         let msgNum = document.getElementById('msgNum');
         msgNum.innerHTML = res.data.length;
 
-        // like功能
-        let likeBtn = document.querySelectorAll('.likeBtn');
-        let likeNum = document.querySelectorAll('.likeNum');
-        let like = 0; // like變數必須建立在迴圈外，否則每次執行都會從0開始計算
-        let loginID = parseStatus.loginID;
-        for (let i = 0; i < likeBtn.length; i++) {
-            likeBtn[i].addEventListener('click', function () {
-                // 判斷式：當localStorage的loginID，等於msg資料庫裡的msgOwenerID，才可累加
-                if (loginID == res.data[i].msgOwenerID) {
-                    // 確認點擊項目的id
-                    console.log('ID:' + res.data[i].id)
-
-                    // 使用者端：當使用者點擊likeBtn時，likeNum會顯示1
-                    likeNum[i].innerHTML = `${like + 1}`; // 變數like的預設值為0，若此處不設定+1，則必須按兩次才會顯示1
-
-                    // 資料庫端：當使用者點擊likeBtn時，以patch方法修改msg資料庫的like欄位
-                    axios.patch(`${msgURL}/${res.data[i].id}`, {
-                        like: `${like + 1}`,
-                    }).then((res) => {
-                        like++;
-                    })
-                }
-            }, false)
-        }
-        // 留言板的留言功能...
+        // 留言板的留言功能
         let commentSubmitBtn = document.querySelectorAll('.commentSubmitBtn'); //留言的按鈕
         let msgerMsg = document.querySelectorAll('.msgerMsg'); //擷取msgerMsg裡的文字內容
         let commentMsg = document.querySelectorAll('.commentMsg'); //顯示文字的<div>
@@ -239,6 +215,31 @@ function renderData() {
                 console.log(res.data[i].id)
                 commentMsg[i].innerHTML = `${msgerMsg[i].value}`;
             }, false)
+        }
+        // like功能
+        let likeBtn = document.querySelectorAll('.likeBtn'); //對應like按鈕
+        let likeNum = document.querySelectorAll('.likeNum'); //對應like顯示
+        let like = 0;
+        for (let i = 0; i < likeBtn.length; i++) {
+            likeBtn[i].addEventListener('click', function () {
+                // 確認點擊ID名稱
+                console.log('ID:' + res.data[i].id)
+                // 判斷式：當使用者點擊likeBtn時，likeNum會顯示1，因此以likeNum所顯示的數字為1或0做判斷
+                // 若數字為0，則進入axios.post的程序，將下列資料傳到JSON-Server;若數字為1，則什麼都不做
+                // 備註：likeNum[i].innerHTML=`${like + 1}`必須寫在if條件式後面，若先把數字1寫進HTML，則永遠無法進入下個步驟
+                if (likeNum[i].innerHTML == 0) {
+                    axios.post('https://fierce-forest-92782.herokuapp.com/like', {
+                        id: '', //預設值(自動生成)
+                        mName: `${parseStatus.loginName}`, // 登入者的名稱(使用localStorage打撈資料)
+                        msgOwenerID: `${parseStatus.loginID}`,　// 登入者的ID(使用localStorage打撈資料)
+                        articleID: `${a}`, //文章ID
+                        like: 1, //直接使用數字1即可，每一篇文章只能like一次
+                    }).then((res) => {
+                    }, false)
+                }
+                // 使用者端：當使用者點擊likeBtn時，likeNum會顯示1
+                likeNum[i].innerHTML = `${like + 1}`; // 變數like的預設值為0，若此處不設定+1，則必須按兩次才會顯示1
+            })
         }
     });
 }
@@ -254,7 +255,7 @@ function sortButton(HTMLBtn, isSort) {
     HTMLBtn.addEventListener('click', function () {
         axios.get(msgURL, {
         }).then((res) => {
-            // isSort在此也是空值
+            // isSort在也是空值
             if (isSort == '舊至新') {
                 // 不能寫res.data[i].id.sort，因為這樣會對應到一個數字，沒辦法以sort方法做比較
                 res.data.sort((a, b) => {
@@ -264,13 +265,64 @@ function sortButton(HTMLBtn, isSort) {
                 res.data.sort((a, b) => {
                     return b.id - a.id;
                 });
+                // 最高Like數排序...
             } else {
-                res.data.sort((a, b) => {
-                    return parseInt(b.like) - parseInt(a.like);
+                axios.get('https://fierce-forest-92782.herokuapp.com/like', {
+                }).then((res) => {
+                    let sumA = 0;
+                    let sumB = 0;
+                    for (i = 0; i < res.data.length; i++) {
+                        if (res.data[i].msgOwenerID == 1) {
+                            sumA += parseInt(res.data[i].like);
+                        } if (res.data[i].msgOwenerID == 2) {
+                            sumB += parseInt(res.data[i].like);
+                        }
+                    }
+                    console.log(sumA, sumB)
+                    // res.data.sort((a, b) => {
+                    //     return b.length - a.length;
+                    // });
                 });
+
             }
             let ansPanel = document.getElementById('ansPanel');
             ansPanel.innerHTML = printComment(res.data);
+
+            // 留言板的留言功能
+            let commentSubmitBtn = document.querySelectorAll('.commentSubmitBtn'); //留言的按鈕
+            let msgerMsg = document.querySelectorAll('.msgerMsg'); //擷取msgerMsg裡的文字內容
+            let commentMsg = document.querySelectorAll('.commentMsg'); //顯示文字的<div>
+            for (let i = 0; i < commentSubmitBtn.length; i++) {
+                commentSubmitBtn[i].addEventListener('click', function () {
+                    console.log(res.data[i].id)
+                    commentMsg[i].innerHTML = `${msgerMsg[i].value}`;
+                }, false)
+            }
+            // like功能
+            let likeBtn = document.querySelectorAll('.likeBtn'); //對應like按鈕
+            let likeNum = document.querySelectorAll('.likeNum'); //對應like顯示
+            let like = 0;
+            for (let i = 0; i < likeBtn.length; i++) {
+                likeBtn[i].addEventListener('click', function () {
+                    // 確認點擊ID名稱
+                    console.log('ID:' + res.data[i].id)
+                    // 判斷式：當使用者點擊likeBtn時，likeNum會顯示1，因此以likeNum所顯示的數字為1或0做判斷
+                    // 若數字為0，則進入axios.post的程序，將下列資料傳到JSON-Server;若數字為1，則什麼都不做
+                    // 備註：likeNum[i].innerHTML=`${like + 1}`必須寫在if條件式後面，若先把數字1寫進HTML，則永遠無法進入下個步驟
+                    if (likeNum[i].innerHTML == 0) {
+                        axios.post('https://fierce-forest-92782.herokuapp.com/like', {
+                            id: '', //預設值(自動生成)
+                            mName: `${parseStatus.loginName}`, // 登入者的名稱(使用localStorage打撈資料)
+                            msgOwenerID: `${parseStatus.loginID}`,　// 登入者的ID(使用localStorage打撈資料)
+                            articleID: `${a}`, //文章ID
+                            like: 1, //直接使用數字1即可，每一篇文章只能like一次
+                        }).then((res) => {
+                        }, false)
+                    }
+                    // 使用者端：當使用者點擊likeBtn時，likeNum會顯示1
+                    likeNum[i].innerHTML = `${like + 1}`; // 變數like的預設值為0，若此處不設定+1，則必須按兩次才會顯示1
+                })
+            }
         });
     }, false)
 }
@@ -278,3 +330,10 @@ function sortButton(HTMLBtn, isSort) {
 sortButton(Old2New, '舊至新');
 sortButton(New2Old, '新至舊');
 sortButton(MostLike)
+
+
+// let loginID = parseStatus.loginID;
+// // 判斷式：當localStorage的loginID，等於msg資料庫裡的msgOwenerID，才可累加
+// if (loginID == res.data[i].msgOwenerID) {
+//     確認點擊項目的id
+// }
