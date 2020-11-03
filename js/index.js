@@ -15,7 +15,7 @@ if (parseStatus.loginCheck == true) {
 <a href="draft.html"><li>發文<i class="fas fa-sort-down"></i></li></a>
 <a href=""><li><i class="fas fa-comment-dots"></i></li></a>
 <a href=""><li><i class="fa fa-bell fa-fw"></i></li></a>
-<a href="/user.html"><li><img src="https://member.ithome.com.tw/avatars/151507?s=ithelp" class="accountPhoto">
+<a href="user.html"><li><img src="https://member.ithome.com.tw/avatars/151507?s=ithelp" class="accountPhoto">
 <span>${parseStatus.loginName}</span><i class="fas fa-sort-down"></i></li></a>
 <a href="./setting.html"><li>修改密碼</li></a><a id="logout"><li>登出</li></a>`;
 }
