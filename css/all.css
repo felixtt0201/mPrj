@@ -2585,8 +2585,20 @@ ul {
   display: flex;
 }
 
-.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content .ansPanel-action .ansPanel-action-right li {
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content .ansPanel-action .ansPanel-action-right button {
+  background: white;
+  border: none;
+  outline: none;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content .ansPanel-action .ansPanel-action-right button li {
   padding-right: 8px;
+  color: #777;
+}
+
+.content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content .ansPanel-action .ansPanel-action-right button li:hover {
+  cursor: pointer;
+  color: blue;
 }
 
 .content .leftSide .reply .ansPanel .ansPanel-clearfix .ansPanel-content .ansPanel-comment .ansPanel-header {
@@ -2612,7 +2624,7 @@ ul {
   padding: 3px 24px;
   margin-bottom: 10px;
   width: 710px;
-  height: 100px;
+  height: 50px;
   background: #f2f5f7;
 }
 
@@ -2990,7 +3002,7 @@ ul {
 }
 
 .un_liker {
-  color: #F7B16B;
+  color: #f7b16b;
 }
 
 * {
@@ -4456,10 +4468,6 @@ a.mk__editor-pre:before {
 
 .draft-tags__title {
   margin: 0;
-}
-
-.cke_contents {
-  min-height: 500px !important;
 }
 
 .edit-btn {

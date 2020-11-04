@@ -1,4 +1,7 @@
-const editor1 = CKEDITOR.replace('editor1');
+CKEDITOR.replace('editor1', {
+    height: 100
+});
+
 const api = `https://fierce-forest-92782.herokuapp.com/articles`;
 const userapi = `https://fierce-forest-92782.herokuapp.com/account`;
 const content_userName = document.querySelector('.nameInfo');
@@ -60,8 +63,6 @@ function editor(editbtn) {
 
 
 /* Like 功能 */
-
-
 // let exists ;
 // axios.get(userapi)
 // .then(res=>{
@@ -91,10 +92,6 @@ function editor(editbtn) {
 //             })
 //         })
 // }
-
-
-
-
 
 
 
@@ -136,7 +133,6 @@ leaveMessage.addEventListener('click', function () {
         date: `${date} ${time}`,
         mcontent: `${getContent}`,
         msgOwenerID: `${parseStatus.loginID}`,　// 必須打撈localStorage的資料，才能取得
-        like: '',
     })
     alert('留言成功')
 }, false)
@@ -162,15 +158,15 @@ function printComment(data) {
             <ul class="ansPanelMainSection" id="ansPanelMainSection">${data[i].mcontent}</ul>
             <div class="ansPanel-action">
                 <ul class="ansPanel-action-left">
-                    <li class="ansPanel-action-comment"><i
-                            class="fa fa-comment fa-fw qa-action__icon"></i><span>回應</span></li>
-                    <li class="ansPanel-action-share"><i
-                            class="fa fa-share-alt fa-fw qa-action__icon qa-action__link--share"></i><span>分享</span>
-                    </li>
+                    <li class="ansPanel-action-comment"><i class="fa fa-comment fa-fw qa-action__icon"></i><span>回應</span></li>
                 </ul>
                 <ul class="ansPanel-action-right">
-                    <li><i class="fa fa-ban fa-fw qa-action__icon "></i><span>沒有幫助</span></li>
-                    <li><i class="fa fa-flag fa-fw qa-action__icon"></i><span>檢舉</span></li>
+                    <button class="editComment">
+                        <li><i class="fa fa-edit fa-fw qa-action__icon"></i><span>編輯</span></li>
+                    </button>
+                    <button class="saveComment">
+                        <li><i class="fas fa-save" data-id=${data[i].id}></i><span data-id=${data[i].id}>儲存</span></li>
+                    </button>
                 </ul>
             </div>
             <div class="ansPanel-comment">
@@ -185,7 +181,7 @@ function printComment(data) {
                 <ul class="commentMsg"></ul>
                 <div class="ansPanel-comment-markdown">
                     <img src="https://member.ithome.com.tw/avatars/151507?s=ithelp" class="img-circle comment__avatar">
-                    <textarea class="msgerMsg" placeholder="回應"></textarea>
+                    <div><textarea class="msgerMsg" name="msgerMsg" placeholder="回應"></textarea></div>
                     <button class="commentSubmitBtn" id="commentSubmitBtn">送出</button>
                 </div>
             </div>
@@ -211,11 +207,44 @@ function renderData() {
         let msgerMsg = document.querySelectorAll('.msgerMsg'); //擷取msgerMsg裡的文字內容
         let commentMsg = document.querySelectorAll('.commentMsg'); //顯示文字的<div>
         for (let i = 0; i < commentSubmitBtn.length; i++) {
+            // 為所有留言板插入CKEDITOR
+            CKEDITOR.replace(msgerMsg[i], { height: 100, });
+
+            // 留言板留言按鈕
             commentSubmitBtn[i].addEventListener('click', function () {
                 console.log(res.data[i].id)
                 commentMsg[i].innerHTML = `${msgerMsg[i].value}`;
             }, false)
+            // 留言板編輯功能
+            let loginID = parseStatus.loginID;
+            // 判斷式：當localStorage的loginID，等於msg資料庫裡的msgOwenerID，才可累加
+            if (loginID == res.data[i].msgOwenerID) {
+                let editComment = document.querySelectorAll('.editComment');
+                // 留言板編輯按鈕
+                let ansPanelMainSection = document.querySelectorAll('.ansPanelMainSection');
+                editComment[i].addEventListener('click', function (e) {
+                    // 取得留言板欄位的文字資訊做編輯
+                    ansPanelMainSection[i].innerHTML = CKEDITOR.replace(ansPanelMainSection[i]).getData();
+                }, false)
+                // 留言板儲存按鈕：原本將儲存鈕放在編輯裡，但這樣會有編輯鈕只能使用一次的窘境...
+                let saveComment = document.querySelectorAll('.saveComment');
+                saveComment[i].addEventListener('click', function (e) {
+                    console.log(e.target.dataset.id) // 確認data-id
+
+                    // 銷毀原本的文字內容，並以新的內容作替代
+                    CKEDITOR.instances.ansPanelMainSection.destroy();
+                    let getContent2 = document.querySelectorAll('.ansPanelMainSection')
+                    axios.patch(`${msgURL}/${e.target.dataset.id}`, {
+                        id: '',
+                        mName: `${parseStatus.loginName}`, // 必須打撈localStorage的資料，才能取得
+                        date: '',
+                        mcontent: `${getContent2[i].innerHTML}`,
+                        msgOwenerID: `${parseStatus.loginID}`,　// 必須打撈localStorage的資料，才能取得
+                    })
+                }, false)
+            }
         }
+
         // like功能
         let likeBtn = document.querySelectorAll('.likeBtn'); //對應like按鈕
         let likeNum = document.querySelectorAll('.likeNum'); //對應like顯示
@@ -330,10 +359,3 @@ function sortButton(HTMLBtn, isSort) {
 sortButton(Old2New, '舊至新');
 sortButton(New2Old, '新至舊');
 sortButton(MostLike)
-
-
-// let loginID = parseStatus.loginID;
-// // 判斷式：當localStorage的loginID，等於msg資料庫裡的msgOwenerID，才可累加
-// if (loginID == res.data[i].msgOwenerID) {
-//     確認點擊項目的id
-// }
